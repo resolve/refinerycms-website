@@ -86,3 +86,5 @@ end
 # USER DEFINED
 gem 'refinerycms-blog',         :git => 'git://github.com/resolve/refinerycms-blog.git'
 # END USER DEFINED
+
+gem 'refinerycms-tutorials', '1.0', :path => 'vendor/engines', :require => 'tutorials'

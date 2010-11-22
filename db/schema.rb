@@ -10,7 +10,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101006211228) do
+ActiveRecord::Schema.define(:version => 20101122091233) do
+
+  create_table "blog_categories", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blog_categories", ["id"], :name => "index_blog_categories_on_id"
+
+  create_table "blog_categories_blog_posts", :id => false, :force => true do |t|
+    t.integer "blog_category_id"
+    t.integer "blog_post_id"
+  end
+
+  create_table "blog_comments", :force => true do |t|
+    t.integer  "blog_post_id"
+    t.boolean  "spam"
+    t.string   "name"
+    t.string   "email"
+    t.text     "body"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blog_comments", ["id"], :name => "index_blog_comments_on_id"
+
+  create_table "blog_posts", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "draft"
+    t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blog_posts", ["id"], :name => "index_blog_posts_on_id"
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
@@ -43,6 +80,16 @@ ActiveRecord::Schema.define(:version => 20101006211228) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "news_items", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "publish_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "news_items", ["id"], :name => "index_news_items_on_id"
 
   create_table "page_parts", :force => true do |t|
     t.integer  "page_id"
@@ -133,6 +180,34 @@ ActiveRecord::Schema.define(:version => 20101006211228) do
 
   add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_name_and_sluggable_type_and_scope_and_sequence", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
+  create_table "tour_dates", :force => true do |t|
+    t.integer  "tour_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "total_openings"
+    t.integer  "filled_openings"
+    t.text     "notes"
+    t.integer  "status"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tour_dates", ["id"], :name => "index_tour_dates_on_id"
+
+  create_table "tutorials", :force => true do |t|
+    t.string   "title"
+    t.string   "category"
+    t.string   "author"
+    t.text     "content"
+    t.boolean  "draft"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tutorials", ["id"], :name => "index_tutorials_on_id"
 
   create_table "user_plugins", :force => true do |t|
     t.integer "user_id"

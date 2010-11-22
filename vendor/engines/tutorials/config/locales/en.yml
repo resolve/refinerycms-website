@@ -1,0 +1,24 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    tutorials:
+      title: Tutorials
+  admin:
+    tutorials:
+      index:
+        title: Tutorials
+        create_new: Add New Tutorial
+        reorder: Reorder Tutorials
+        reorder_done: Done Reordering Tutorials
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Tutorials yet. Click "Add New Tutorial" to add your first tutorial.
+      tutorial:
+        view_live_html: View this tutorial live <br/><em>(opens in a new window)</em>
+        edit: Edit this tutorial
+        delete: Remove this tutorial forever
+  tutorials:
+    show:
+      other: Other Tutorials

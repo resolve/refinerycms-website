@@ -1,0 +1,52 @@
+<% content_for :body_content_title do %>
+  <%= @tutorial.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <section>
+    <h1>Title</h1>
+<p>    <%=raw @tutorial.title %>
+</p>
+  </section>
+  
+  <section>
+    <h1>Category</h1>
+<p>    <%=raw @tutorial.category %>
+</p>
+  </section>
+  
+  <section>
+    <h1>Author</h1>
+<p>    <%=raw @tutorial.author %>
+</p>
+  </section>
+  
+  <section>
+    <h1>Content</h1>
+<p>    <%=raw @tutorial.content %>
+</p>
+  </section>
+  
+  <section>
+    <h1>Draft</h1>
+<p>    <%=raw @tutorial.draft %>
+</p>
+  </section>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+<aside>
+  <h2><%= t('.other') %></h2>
+  <ul id="tutorials">
+    <% @tutorials.each do |tutorial| %>
+      <li>
+        <%= link_to tutorial.title, tutorial_url(tutorial) %>
+      </li>
+    <% end %>
+  </ul>
+</aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
