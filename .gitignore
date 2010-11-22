@@ -35,6 +35,9 @@ index/**/*
 # Mac
 .DS_Store
 
+# Windows
+Thumbs.db
+
 # NetBeans
 nbproject
 
@@ -61,3 +64,10 @@ nbproject
 capybara-*html
 
 
+
+# sass
+.sass-cache
+.sass-cache/*
+
+#rvm
+.rvmrc

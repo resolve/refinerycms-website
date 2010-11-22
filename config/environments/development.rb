@@ -1,5 +1,5 @@
 Refinery::Application.configure do
-  # Settings specified here will take precedence over those in config/application.rb
+  # Settings specified here will take precedence over those in config/environment.rb
 
   # In the development environment your application's code is reloaded on
   # every request.  This slows down response time but is perfect for development
@@ -17,6 +17,9 @@ Refinery::Application.configure do
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
+  # Set the log level to the most chatty.
+  config.log_level = :debug
+
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -24,3 +27,5 @@ Refinery::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
+# Don't handle some exceptions with the 404 page.
+Refinery.rescue_not_found = false
