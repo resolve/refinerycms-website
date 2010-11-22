@@ -21,6 +21,14 @@ GIT
       rack
 
 GIT
+  remote: git://github.com/resolve/refinerycms-blog.git
+  revision: 9bff563c4f1de5cefb6b045c4b412f6a1b81268e
+  specs:
+    refinerycms-blog (1.0.rc16)
+      filters_spam (~> 0.2)
+      refinerycms (>= 0.9.7.13)
+
+GIT
   remote: git://github.com/resolve/refinerycms-generators.git
   revision: 6970944aded7dd91206c1ba4d75d38ca77935a42
   specs:
@@ -43,14 +51,8 @@ GIT
       truncate_html (= 0.4)
       will_paginate (~> 3.0.pre)
 
-PATH
-  remote: ~/Code/refinerycms-blog/
-  specs:
-    refinerycms-blog (1.0.rc16)
-      filters_spam (~> 0.2)
-      refinerycms (>= 0.9.7.13)
-
 GEM
+  remote: http://rubygems.org/
   specs:
     ZenTest (4.4.0)
     abstract (1.0.0)
@@ -131,6 +133,8 @@ GEM
     mime-types (1.16)
     moretea-awesome_nested_set (1.4.3.1)
       activerecord (~> 3.0.0)
+    mysql (2.8.1)
+    mysql2 (0.2.6)
     nokogiri (1.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -180,6 +184,7 @@ GEM
       json_pure
       rubyzip
     spork (0.8.4)
+    sqlite3-ruby (1.3.2)
     term-ansicolor (1.0.5)
     thor (0.14.6)
     treetop (1.4.9)
@@ -197,6 +202,7 @@ DEPENDENCIES
   autotest
   autotest-notification
   autotest-rails
+  bundler (~> 1.0.5)
   capybara!
   cucumber
   cucumber-rails
@@ -206,7 +212,10 @@ DEPENDENCIES
   gherkin
   json_pure (~> 1.4.6)
   launchy
+  mysql
+  mysql2
   rack-test (~> 0.5.6)
+  rails (~> 3.0.3)
   refinerycms!
   refinerycms-blog!
   refinerycms-generators (~> 0.9.9)!
@@ -215,3 +224,4 @@ DEPENDENCIES
   rspec-rails (~> 2.1)
   ruby-prof
   spork
+  sqlite3-ruby
