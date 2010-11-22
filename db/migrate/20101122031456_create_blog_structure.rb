@@ -33,10 +33,10 @@ class CreateBlogStructure < ActiveRecord::Migration
     create_table :blog_categories_blog_posts, :id => false do |t|
       t.integer :blog_category_id
       t.integer :blog_post_id
-      
+
     end
 
-    
+
     load(Rails.root.join('db', 'seeds', 'refinerycms_blog.rb').to_s)
   end
 
