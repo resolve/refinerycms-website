@@ -162,14 +162,10 @@ footer #right_footer_block {
   color: #ffe185;
 }
 
-ol, ol li {
+
+ul, ul li {
   padding-left: 0px;
   margin-left: 0px;
-}
-
-ol .drop_number {
-  margin-top: 15px;
-  width: 30px !important;
 }
 
 #body_content hr {
@@ -187,3 +183,48 @@ ol .drop_number {
   margin-bottom: -50px;
 }
 
+
+
+
+/* Browser Hacks */
+
+/* remove borders from images */
+
+a img {
+  border: 0px none;
+}
+
+/*
+Firefox Dotted Line Fix
+  - http://sonspring.com/journal/removing-dotted-links
+*/
+a:focus {
+  outline: none;
+}
+
+/*
+Clearfix docs
+ - Main docs: http://positioniseverything.net/easyclearing.html
+ - IE7 change: http://www.456bereastreet.com/archive/200603/new_clearing_method_needed_for_ie7/
+*/
+.clearfix:after, section:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix, section {
+  display: inline-block;
+}
+
+/* Hide from IE Mac \*/
+.clearfix, section {
+  display:block;
+}
+/* End hide from IE Mac */
+
+/*  
+  Override default refinery formatting below. 
+  Formatting applies to backend WYSIWYG editors and all frontend. 
+*/
