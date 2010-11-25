@@ -13,7 +13,7 @@ body {
   padding: 0;
 }
 
-#page, footer, header {
+#page, header {
   background: #404040;
   margin: 0px auto;
   width: 940px;
@@ -26,8 +26,10 @@ nav#menu {
 
 header {
   margin: 0px auto;
+  height: 150px;
   position: relative;
   background: url('/images/menu-shadow.png') no-repeat 0px 33px #404040;
+  border-bottom: 1px solid #1e1e1e;
 }
 
 header #logo a {
@@ -82,6 +84,9 @@ nav#menu, #site_bar_content {
 #body_content {
   border-top: 1px solid #535353;
   border-bottom: 1px solid #1e1e1e;
+}
+
+#body_content, footer {
   padding: 30px;
 }
 
@@ -89,6 +94,8 @@ footer {
   height: 207px;
   background: url('/images/footer-gradient.png') repeat-x;
   border-top: 1px solid #535353;
+  width: 880px;
+  margin: 0px auto;
 }
 
 footer p {
