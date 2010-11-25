@@ -169,7 +169,7 @@ ul, ul li {
   margin-left: 0px;
 }
 
-#body_content h2 {
+#body_content h2, #body_content h2 * {
   font-size: 16px;
   font-weight: normal;
 }
