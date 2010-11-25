@@ -169,6 +169,11 @@ ul, ul li {
   margin-left: 0px;
 }
 
+#body_content h2 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
 #body_content ul {
   padding-top: 20px;
   padding-bottom: 10px;
@@ -179,6 +184,7 @@ ul, ul li {
   padding-left: 50px;
   background: url('/images/bullet.png') no-repeat 0px 2px;
   margin-bottom: 15px;
+  min-height: 30px;
 }
 
 #body_content ul li strong {
@@ -203,8 +209,29 @@ ul, ul li {
   margin-bottom: -50px;
 }
 
+#left_content {
+  float: left;
+}
 
+#left_content h1 {
+  margin-top: 0px;
+}
 
+#left_content, #right_content {
+  width: 47%;
+}
+
+#right_content {
+  float: right;
+}
+
+#left_content hr {
+  margin-right: 0px;
+}
+
+#right_content hr {
+  margin-left: 0px;
+}
 
 /* Browser Hacks */
 
