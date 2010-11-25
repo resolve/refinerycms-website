@@ -81,6 +81,10 @@ nav#menu, #site_bar_content {
   width: 960px;
 }
 
+#site_bar_content {
+  margin: 0px auto;
+}
+
 #body_content {
   border-top: 1px solid #535353;
   border-bottom: 1px solid #1e1e1e;
