@@ -22,6 +22,7 @@ body {
 nav#menu {
   background: #22a7f2;
   margin-left: -10px;
+  padding-bottom: 2px;
 }
 
 header {
@@ -63,7 +64,7 @@ nav#menu ul {
 
 nav#menu ul li {
   float: left;
-  margin-right: 1px;
+  margin-right: 2px;
 }
 
 nav#menu ul li a {
@@ -166,6 +167,25 @@ footer #right_footer_block {
 ul, ul li {
   padding-left: 0px;
   margin-left: 0px;
+}
+
+#body_content ul {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+#body_content ul li {
+  list-style: none;
+  padding-left: 50px;
+  background: url('/images/bullet.png') no-repeat 0px 2px;
+  margin-bottom: 15px;
+}
+
+#body_content ul li strong {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  font-family: Georgia;
 }
 
 #body_content hr {
