@@ -1,15 +1,8 @@
 <%= jquery_include_tags :jquery_ui => false %>
-<%= javascript_include_tag 'jquery/jquery.corner.js'#, 'jquery.niceorderedlists.js' %>
+<%= javascript_include_tag 'jquery/jquery.corner.js' %>
 <script>
   $(document).ready(function() {
     $("nav#menu").corner('8px bottom');
     $("nav#menu ul li a").corner('5px');
   });
-  
-  /*$("#body_content ol").niceOrderedLists({
-  	numberColor: '#999999',
-  	numberFont: 'Georgia',
-  	numberSize: '60px',
-  	includePeriod: false
-  });*/
 </script>
