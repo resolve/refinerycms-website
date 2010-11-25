@@ -153,3 +153,11 @@ footer #right_footer_block {
   top: 30px;
   text-align: right;
 }
+
+#body_content a {
+  color: #f1a944;
+}
+
+#body_content a:visited {
+  color: #ffe185;
+}

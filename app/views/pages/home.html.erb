@@ -1,0 +1,17 @@
+<section id='body_content'>
+  <section id='feature_block'>
+    <%= image_tag("refinery-screenshot.png", :id => "screenshot") %>
+    <%= @page[:feature_block].to_s.html_safe %>
+  </section>
+  
+  <section>
+    <h1>
+      <%= page_title %>
+    </h1>
+    <%= @page[:middle].to_s.html_safe %>
+  </section>
+  <hr/>
+  <section>
+    <%= @page[:bottom].to_s.html_safe %>
+  </section>
+</section>
