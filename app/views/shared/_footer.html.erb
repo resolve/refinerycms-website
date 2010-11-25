@@ -1,10 +1,21 @@
-<p id='twitter'>
-  <%= link_to "Follow us", "http://twitter.com/refinerycms", :target => "_blank" %> on Twitter
-</p>
-<p>
-  <%= t('.copyright', :year => Time.now.year,
-                      :site_name => RefinerySetting.get(:site_name)) %>
-</p>
+<div id='left_footer_block'>
+  <p id='twitter'>
+    <%= link_to "Follow us", "http://twitter.com/refinerycms", :target => "_blank" %> on Twitter
+  </p>
+</div>
+<div id='right_footer_block'>
+  <%= render :partial => '/shared/menu',
+               :locals => {
+                 :hide_children => false,
+                 :dom_id => 'footer_menu',
+                 :extra_suffix => 'footer',
+                 :collection => @menu_pages.select {|p| p.depth.to_i == 0}.reverse
+               } %>
+  <p>
+    <%= t('.copyright', :year => Time.now.year,
+                        :site_name => RefinerySetting.get(:site_name)) %>
+  </p>
+</div>
 <% content_for :javascripts do %>
   <%= jquery_include_tags :jquery_ui => false %>
   <%= javascript_include_tag 'jquery/jquery.corner.js', 'jquery.niceorderedlists.js' %>

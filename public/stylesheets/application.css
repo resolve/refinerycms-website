@@ -96,6 +96,7 @@ footer {
   border-top: 1px solid #535353;
   width: 880px;
   margin: 0px auto;
+  position: relative;
 }
 
 footer p {
@@ -105,4 +106,46 @@ footer p {
 footer #twitter {
   background: url('/images/twitter-icon.png') no-repeat 0px 1px;
   padding-left: 22px;
+}
+
+nav#footer_menu {
+  margin-bottom: 30px;
+}
+
+nav#footer_menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav#footer_menu ul li {
+  float: right;
+  background: url('/images/footer-menu-bullet.png') no-repeat left;
+  margin-right: 8px;
+  padding-left: 8px;
+}
+
+
+nav#footer_menu ul li.last {
+  background: none;
+}
+
+nav#footer_menu ul li.first {
+  margin-right: 0px;
+}
+
+nav#footer_menu ul li a {
+  text-decoration: none;
+}
+
+footer #left_footer_block {
+  width: 28%;
+}
+
+footer #right_footer_block {
+  width: 70%;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  text-align: right;
 }
