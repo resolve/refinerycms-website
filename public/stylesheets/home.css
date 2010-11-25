@@ -91,21 +91,11 @@ header {
   line-height: 22px;
 }
 
-.csscolumns ul {
+.csscolumns #body_content ul {
   /* webkit bug https://bugs.webkit.org/show_bug.cgi?id=38835 */
   list-style-position: inside;
 	-moz-column-count: 2;
 	-webkit-columns: 2;
 	-o-columns: 2;
 	columns: 2;
-}
-
-.no-csscolumns ul {
-	float: left;
-	margin: 0 0 20px;
-}
-
-.no-csscolumns ul li {
-	float: left;
-	width: 180px;
 }
