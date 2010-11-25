@@ -30,3 +30,8 @@ header {
 #bottom_content {
   text-align: center;
 }
+
+#gears {
+  float: right;
+  padding-left: 20px;
+}

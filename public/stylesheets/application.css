@@ -161,3 +161,7 @@ footer #right_footer_block {
 #body_content a:visited {
   color: #ffe185;
 }
+
+ol .drop_number {
+  margin-top: 15px;
+}
