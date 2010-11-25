@@ -2,3 +2,95 @@
   Override default refinery application CSS below.
   Formatting applies to all frontend.
 */
+
+* {
+  color: #e3e3e3;
+}
+
+body {
+  background: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+#page, footer, header {
+  background: #404040;
+  margin: 0px auto;
+  width: 940px;
+}
+
+nav#menu {
+  background: #22a7f2;
+  margin-left: -10px;
+}
+
+header {
+  margin: 0px auto;
+  position: relative;
+  background: url('/images/menu-shadow.png') no-repeat 0px 33px #404040;
+}
+
+header #logo a {
+  background: url('/images/refinery-cms-logo.png') no-repeat;
+  width: 164px;
+  height: 49px;
+  text-indent: -9000em;
+  display: block;
+  margin-left: 40px;
+}
+
+header #tagline {
+  position: absolute;
+  right: 40px;
+  top: 70px;
+}
+
+header #tagline, header #tagline * {
+  font-family: Georgia;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+nav#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 3px 15px 0px 15px;
+  height: 29px;
+}
+
+nav#menu ul li {
+  float: left;
+  margin-right: 1px;
+}
+
+nav#menu ul li a {
+  display: block;
+  padding: 4px 9px;
+  text-decoration: none;
+  color: #bee8ff;
+}
+nav#menu ul li a:hover, nav#menu ul li.selected a {
+  background: #0788d1;
+  color: white;
+}
+
+nav#menu, #site_bar_content {
+  width: 960px;
+}
+
+#body_content {
+  border-top: 1px solid #535353;
+  border-bottom: 1px solid #1e1e1e;
+  padding: 30px;
+}
+
+footer {
+  height: 207px;
+  background: url('/images/footer-gradient.png') repeat-x;
+  border-top: 1px solid #535353;
+}
+
+footer p {
+  margin-top: 0px;
+}

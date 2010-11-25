@@ -2,3 +2,19 @@
   Override default refinery formatting below.
   Formatting applies to backend WYSIWYG editors and all frontend.
 */
+
+* {
+  font-family: Verdana;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+h1 {
+  font-family: Georgia;
+  font-size: 35px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 16px;
+}
