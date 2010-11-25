@@ -1,4 +1,14 @@
-  <p>
-    <%= t('.copyright', :year => Time.now.year,
-                        :site_name => RefinerySetting.get(:site_name)) %>
-  </p>
+<p>
+  <%= t('.copyright', :year => Time.now.year,
+                      :site_name => RefinerySetting.get(:site_name)) %>
+</p>
+<% content_for :javascripts do %>
+  <%= jquery_include_tags :jquery_ui => false %>
+  <%= javascript_include_tag 'jquery/jquery.corner.js', 'jquery.niceorderedlists.js' %>
+  <script>
+    $(document).ready(function() {
+      $("nav#menu").corner('8px bottom');
+      $("nav#menu ul li a").corner('5px');
+    });
+  </script>
+<% end %>
