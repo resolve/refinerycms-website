@@ -14,15 +14,15 @@ GIT
 
 GIT
   remote: git://github.com/refinerycms/dragonfly.git
-  revision: 5e60312df9d3d1e18cdff3a7397da1395539522a
+  revision: 9edda253b663dbdc72af2121e22179efdb594da9
   branch: master
   specs:
-    dragonfly (0.8.0)
+    dragonfly (0.8.1)
       rack
 
 GIT
   remote: git://github.com/resolve/refinerycms-blog.git
-  revision: 9bff563c4f1de5cefb6b045c4b412f6a1b81268e
+  revision: 9b7cc770a2b6df6d947af3386fe99b9d1a97d648
   specs:
     refinerycms-blog (1.0.rc16)
       filters_spam (~> 0.2)
@@ -36,13 +36,13 @@ GIT
 
 GIT
   remote: git://github.com/resolve/refinerycms.git
-  revision: d7dd7efc6a82b107cfbd23f2356f496565db9c80
+  revision: 81f2bc441c08a62ad3cd9009f7896f84212f9833
   specs:
     refinerycms (0.9.9.pre)
       acts_as_indexed (~> 0.6.6)
       authlogic (~> 2.1.6)
       bundler (~> 1.0.5)
-      dragonfly (~> 0.8)
+      dragonfly (~> 0.8.1)
       friendly_id (~> 3.1.6)
       moretea-awesome_nested_set (= 1.4.3.1)
       rack-cache (~> 0.5.2)
@@ -119,7 +119,7 @@ GEM
     ffi (0.6.3)
       rake (>= 0.8.7)
     filters_spam (0.3)
-    friendly_id (3.1.7)
+    friendly_id (3.1.8)
       babosa (~> 0.2.0)
     gherkin (2.2.9)
       json (~> 1.4.6)
@@ -139,7 +139,6 @@ GEM
     moretea-awesome_nested_set (1.4.3.1)
       activerecord (~> 3.0.0)
     mysql (2.8.1)
-    mysql2 (0.2.6)
     nokogiri (1.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -218,7 +217,6 @@ DEPENDENCIES
   json_pure (~> 1.4.6)
   launchy
   mysql
-  mysql2
   rack-test (~> 0.5.6)
   rails (~> 3.0.3)
   refinerycms!

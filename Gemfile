@@ -7,7 +7,7 @@ gem 'rails', '~> 3.0.3'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql'
-gem 'mysql2'
+#gem 'mysql2'
 
 # Use unicorn as the web server
 # gem 'unicorn'
