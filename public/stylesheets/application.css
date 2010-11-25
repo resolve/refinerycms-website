@@ -101,3 +101,8 @@ footer {
 footer p {
   margin-top: 0px;
 }
+
+footer #twitter {
+  background: url('/images/twitter-icon.png') no-repeat 0px 1px;
+  padding-left: 22px;
+}
