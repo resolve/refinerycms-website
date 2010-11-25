@@ -26,3 +26,7 @@ section#feature_block {
 header {
   border-bottom: 0px;
 }
+
+#bottom_content {
+  text-align: center;
+}

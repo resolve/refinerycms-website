@@ -16,13 +16,4 @@
                         :site_name => RefinerySetting.get(:site_name)) %>
   </p>
 </div>
-<% content_for :javascripts do %>
-  <%= jquery_include_tags :jquery_ui => false %>
-  <%= javascript_include_tag 'jquery/jquery.corner.js', 'jquery.niceorderedlists.js' %>
-  <script>
-    $(document).ready(function() {
-      $("nav#menu").corner('8px bottom');
-      $("nav#menu ul li a").corner('5px');
-    });
-  </script>
-<% end %>
+<% content_for :javascripts, render(:partial => "/shared/scripts") %>
