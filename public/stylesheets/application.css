@@ -162,8 +162,14 @@ footer #right_footer_block {
   color: #ffe185;
 }
 
+ol, ol li {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
 ol .drop_number {
   margin-top: 15px;
+  width: 30px !important;
 }
 
 #body_content hr {
