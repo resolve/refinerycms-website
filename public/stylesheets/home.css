@@ -35,3 +35,58 @@ header {
   float: right;
   padding-left: 20px;
 }
+
+#feature_content {
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+  width: 290px;
+}
+
+#feature_content a {
+  color: #4aace4 !important;
+}
+
+#feature_content, #feature_content * {
+  color: #404040;
+}
+
+#feature_content hr {
+  margin-left: 0px;
+  margin-right: 0px;
+  height: 0px;
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #ffffff;
+  border-right: 0px;
+  border-left: 0px;
+}
+
+#version .digit, #version .point {
+  height: 69px;
+  display: block;
+  font-size: 60px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #4c4c4c;
+  line-height: 70px;
+  text-align: center;
+  float: left;
+}
+
+#version .digit {
+  background: url('/images/digit-background.png') no-repeat;
+  width: 58px;
+
+}
+
+#demo {
+  margin-top: 31px;
+  text-align: center;
+}
+
+#feature_block_content, #feature_block_content * {
+  font-family: Georgia;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 22px;
+}

@@ -1,7 +1,35 @@
 <section id='body_content'>
   <section id='feature_block'>
     <%= image_tag("refinery-screenshot.png", :id => "screenshot") %>
-    <%=raw @page[:feature_block] %>
+    <div id='feature_content'>
+      <div id='feature_block_content'>
+        <%=raw @page[:feature_block] %>
+      </div>
+      <hr/>
+      <p>Latest stable gem version</p>
+      <p id='version' class='clearfix'>
+        <span class='digit'>0</span>
+        <span class='point'>.</span>
+        <span class='digit'>9</span>
+        <span class='point'>.</span>
+        <span class='digit'>8</span>
+      </p>  
+      <hr/>
+      <p>
+        Total downloads 53,000
+      </p>
+      <hr/>
+      <p>
+        Latest update <%= link_to "2 hours ago by parndt", "http://refinerycms.org" %>
+      </p>
+      <hr/>
+      <p>
+        600 followers on GitHub
+      </p>
+      <p id='demo'>
+        <%= link_to image_tag('try-the-demo-button.png', :alt => "Try the Demo"), "http://demo.refinerycms.com", :target => "_blank" %>
+      </p>
+    </div>
   </section>
   <section>
     <h1>

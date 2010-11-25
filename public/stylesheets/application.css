@@ -166,7 +166,7 @@ ol .drop_number {
   margin-top: 15px;
 }
 
-hr {
+#body_content hr {
   margin-left: -30px;
   margin-right: -30px;
   height: 0px;
@@ -175,3 +175,4 @@ hr {
   border-right: 0px;
   border-left: 0px;
 }
+
