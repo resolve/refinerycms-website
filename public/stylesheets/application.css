@@ -281,6 +281,10 @@ h2, h2 * {
   color: white;
 }
 
+input, textarea {
+  color: black;
+}
+
 
 /* Browser Hacks */
 
