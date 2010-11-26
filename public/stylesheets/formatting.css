@@ -9,15 +9,17 @@
   line-height: 20px;
 }
 
-h1 {
+h1, h1 * {
   font-family: Georgia;
   font-size: 35px;
   font-weight: normal;
   line-height: 40px;
   text-align: center;
+  color: white;
 }
 
-h2 {
+h2, h2 * {
   font-size: 16px;
+  color: white;
 }
 
