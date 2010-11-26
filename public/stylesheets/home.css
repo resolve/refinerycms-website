@@ -84,6 +84,12 @@ section#feature_block {
   text-align: center;
 }
 
+#demo_button {
+  position: absolute;
+  bottom: 23px;
+  right: 65px;
+}
+
 #feature_block_content, #feature_block_content * {
   font-family: Georgia;
   font-style: italic;

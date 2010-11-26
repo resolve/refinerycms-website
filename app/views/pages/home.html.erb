@@ -8,24 +8,26 @@
       <hr/>
       <p>Latest stable gem version</p>
       <p id='version' class='clearfix'>
-      <% latest_version.each_char do |char| %>
-        <span class='<%= char == ?. ? "point" : "digit" %>'><%= char %></span>
-      <% end %>
+      <% latest_version.split("").each do |char| -%>
+        <span class='<%= char == "." ? "point" : "digit" %>'><%= char %></span>
+      <% end -%>
       </p>  
       <hr/>
       <p>
-        Total downloads <%= rubygems_downloads %>
+        Total downloads <%= number_with_delimiter(rubygems_downloads) %>
       </p>
       <hr/>
       <p>
-        Latest update <%= link_to latest_update, "https://github.com/resolve/refinerycms" %>
+        Latest update
+        <%= link_to latest_update, "https://github.com/resolve/refinerycms" %>
       </p>
       <hr/>
       <p>
-        <%= github_watchers %> followers on GitHub
+        <%= link_to "#{number_with_delimiter(github_watchers)} followers",
+                    "https://github.com/resolve/refinerycms" %> on GitHub
       </p>
       <p id='demo'>
-        <%= link_to image_tag('try-the-demo-button.png', :alt => "Try the Demo"), "http://demo.refinerycms.com/refinery", :target => "_blank" %>
+        <%= link_to image_tag('try-the-demo-button.png', :alt => "Try the Demo"), "http://demo.refinerycms.com/refinery", :target => "_blank", :id => "demo_button" %>
       </p>
     </div>
   </section>
