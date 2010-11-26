@@ -8,23 +8,21 @@
       <hr/>
       <p>Latest stable gem version</p>
       <p id='version' class='clearfix'>
-        <span class='digit'>0</span>
-        <span class='point'>.</span>
-        <span class='digit'>9</span>
-        <span class='point'>.</span>
-        <span class='digit'>8</span>
+      <% latest_version.each_char do |char| %>
+        <span class='<%= char == ?. ? "point" : "digit" %>'><%= char %></span>
+      <% end %>
       </p>  
       <hr/>
       <p>
-        Total downloads 53,000
+        Total downloads <%= rubygems_downloads %>
       </p>
       <hr/>
       <p>
-        Latest update <%= link_to "2 hours ago by parndt", "http://refinerycms.org" %>
+        Latest update <%= link_to latest_update, "https://github.com/resolve/refinerycms" %>
       </p>
       <hr/>
       <p>
-        600 followers on GitHub
+        <%= github_watchers %> followers on GitHub
       </p>
       <p id='demo'>
         <%= link_to image_tag('try-the-demo-button.png', :alt => "Try the Demo"), "http://demo.refinerycms.com/refinery", :target => "_blank" %>
