@@ -6,6 +6,11 @@
   width: 28%;
 }
 
+.blog_post {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
 .blog_post h1 a {
   text-decoration: none;
 }
@@ -20,4 +25,5 @@
   font-family: Verdana;
   font-weight: normal;
   text-align: left;
+  line-height: 22px;
 }
