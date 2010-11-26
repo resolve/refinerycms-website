@@ -27,3 +27,19 @@
   text-align: left;
   line-height: 22px;
 }
+
+#new_blog_comment label {
+  display: block;
+  float: left;
+  width: 100px;
+  margin-top: 5px;
+}
+
+#new_blog_comment .field {
+  margin-bottom: 10px;
+}
+
+#blog_comment_submit {
+  margin-left: 100px;
+  color: black;
+}
