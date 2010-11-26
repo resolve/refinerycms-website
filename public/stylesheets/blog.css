@@ -5,3 +5,20 @@
 #body_content_right {
   width: 28%;
 }
+
+.blog_post h1 a {
+  text-decoration: none;
+}
+
+.blog_post h1, .blog_post h1 * {
+  font-size: 16px;
+  color: white;
+  font-family: Verdana;
+  font-weight: normal;
+  text-align: left;
+}
+
+#blog_posts .blog_post {
+  border-top: 1px solid #1e1e1e;
+  border-bottom: 1px solid #535353;
+}
