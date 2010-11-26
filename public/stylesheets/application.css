@@ -13,7 +13,7 @@ body {
   padding: 0;
 }
 
-#page, header {
+#page, #page_container > header {
   background: #404040;
   margin: 0px auto;
   width: 940px;
@@ -25,7 +25,7 @@ nav#menu {
   padding-bottom: 2px;
 }
 
-header {
+#page_container > header {
   margin: 0px auto;
   height: 150px;
   position: relative;
@@ -33,7 +33,7 @@ header {
   border-bottom: 1px solid #1e1e1e;
 }
 
-header #logo a {
+#page_container > header #logo a {
   background: url('/images/refinery-cms-logo.png') no-repeat;
   width: 164px;
   height: 49px;
@@ -42,13 +42,13 @@ header #logo a {
   margin-left: 40px;
 }
 
-header #tagline {
+#page_container > header #tagline {
   position: absolute;
   right: 40px;
   top: 70px;
 }
 
-header #tagline, header #tagline * {
+#page_container > header #tagline, #page_container > header #tagline * {
   font-family: Georgia;
   font-size: 20px;
   font-style: italic;
@@ -91,11 +91,11 @@ nav#menu, #site_bar_content {
   border-bottom: 1px solid #1e1e1e;
 }
 
-#body_content, footer {
+#body_content, #page_container > footer {
   padding: 30px;
 }
 
-footer {
+#page_container > footer {
   height: 207px;
   background: url('/images/footer-gradient.png') repeat-x;
   border-top: 1px solid #535353;
@@ -104,11 +104,11 @@ footer {
   position: relative;
 }
 
-footer p {
+#page_container > footer p {
   margin-top: 0px;
 }
 
-footer #twitter {
+#page_container > footer #twitter {
   background: url('/images/twitter-icon.png') no-repeat 0px 1px;
   padding-left: 22px;
 }
@@ -143,11 +143,11 @@ nav#footer_menu ul li a {
   text-decoration: none;
 }
 
-footer #left_footer_block {
+#page_container > footer #left_footer_block {
   width: 28%;
 }
 
-footer #right_footer_block {
+#page_container > footer #right_footer_block {
   width: 70%;
   position: absolute;
   right: 30px;
@@ -218,27 +218,28 @@ ul, ul li {
   margin-bottom: -50px;
 }
 
-#left_content {
+#body_content_left {
   float: left;
 }
 
-#left_content h1 {
+#body_content_left h1 {
   margin-top: 0px;
 }
 
-#left_content, #right_content {
+#body_content_left, #body_content_right {
   width: 47%;
 }
 
-#right_content {
+
+#body_content_right {
   float: right;
 }
 
-#left_content hr {
+#body_content_left hr {
   margin-right: 0px;
 }
 
-#right_content hr {
+#body_content_right hr {
   margin-left: 0px;
 }
 
