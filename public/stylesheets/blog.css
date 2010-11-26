@@ -6,23 +6,18 @@
   width: 28%;
 }
 
-#body_content h1 a {
+.blog_post h1 a {
   text-decoration: none;
 }
 
-#body_content h1 a:hover {
+.blog_post h1 a:hover {
   text-decoration: underline;
 }
 
-#body_content h1, #body_content h1 * {
+.blog_post h1, .blog_post h1 * {
   font-size: 16px;
   color: white;
   font-family: Verdana;
   font-weight: normal;
   text-align: left;
-}
-
-#blog_posts .blog_post {
-  border-top: 1px solid #1e1e1e;
-  border-bottom: 1px solid #535353;
 }

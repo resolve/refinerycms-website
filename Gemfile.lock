@@ -22,7 +22,7 @@ GIT
 
 GIT
   remote: git://github.com/resolve/refinerycms-blog.git
-  revision: 9b7cc770a2b6df6d947af3386fe99b9d1a97d648
+  revision: a30753a7a5691a39a6bc7a26563107dee249484d
   specs:
     refinerycms-blog (1.0.rc16)
       filters_spam (~> 0.2)
@@ -36,7 +36,7 @@ GIT
 
 GIT
   remote: git://github.com/resolve/refinerycms.git
-  revision: 81f2bc441c08a62ad3cd9009f7896f84212f9833
+  revision: 3e4f780787d772258a54910f6377f64d3ba58a58
   specs:
     refinerycms (0.9.9.pre)
       acts_as_indexed (~> 0.6.6)
