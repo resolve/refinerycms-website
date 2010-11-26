@@ -241,6 +241,17 @@ ul, ul li {
   margin-left: 0px;
 }
 
+pre {
+  display: block;
+  background: #BEE8FF;
+  padding: 7px 12px 7px 12px;
+}
+
+pre, pre * {
+  color: #0788D1;
+  font: Courier;
+}
+
 /* Browser Hacks */
 
 /* remove borders from images */
