@@ -257,6 +257,22 @@ pre, pre * {
   font: Courier;
 }
 
+#new_inquiry label {
+  display: block;
+  float: left;
+  width: 100px;
+  margin-top: 5px;
+}
+
+#new_inquiry .field {
+  margin-bottom: 10px;
+}
+
+#inquiry_submit {
+  margin-left: 100px;
+  color: black;
+}
+
 /* Browser Hacks */
 
 /* remove borders from images */
