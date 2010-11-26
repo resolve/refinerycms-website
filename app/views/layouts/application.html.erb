@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<%= render :partial => "/shared/html_tag" %>
+  <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
+  <% content_for :head do %>
+    <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+    <%= stylesheet_link_tag('blog') if is_blog? %>
+  <% end %>
+  <%= render :partial => "/shared/head" %>
+  <body>
+    <%= site_bar -%>
+    <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
+    <div id="page_container">
+      <header>
+        <%= render :partial => "/shared/header" -%>
+      </header>
+      <section id='page'>
+        <%= yield %>
+      </section>
+      <footer>
+        <%= render :partial => "/shared/footer" -%>
+      </footer>
+    </div>
+    <% content_for :javascripts do %>
+      <%= jquery_include_tags :jquery_ui => false %>
+      <%= javascript_include_tag 'jquery/jquery.corner.js' %>
+      <script>
+        $(document).ready(function() {
+          $("nav#menu").corner('8px bottom');
+          $("nav#menu ul li a").corner('5px');
+        });
+      </script>
+    <% end %>
+    <%= render :partial => "/shared/javascripts" %>
+    <%= render :partial => "/shared/chartbeat"%>
+  </body>
+</html>
