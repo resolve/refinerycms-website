@@ -1,0 +1,38 @@
+<div id='feature'>
+  <div class='wrapper'>
+    <h1><%=raw @page.title %></h1>
+    <%=raw @page[:body] %>
+    
+    <div id='subCol'>
+      <dl>
+        <dd class='warning'>
+          <%=raw @page[:warning].gsub("<p>", "").gsub("</p>", "") %>
+        </dd>
+        <dd class='ticket'>
+          <%=raw @page[:ticket].gsub("<p>", "").gsub("</p>", "") %>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<div id='container'>
+  <div class='wrapper'>
+    <div id='mainCol'>
+      <% Guide::CATEGORIES.each do |category_title| %>
+        <h3><%= category_title %></h3>
+        <dl>
+        <% Guide.where(:category => category_title).each do |guide| %>
+          <dt>
+            <%= link_to guide.title, guide_url(guide) %>
+          </dt>
+          <dd>
+            <% guide.description %>
+          </dd>
+        <% end %>
+        </dl>
+      <% end %>
+    </div>
+  </div>
+</div>
+

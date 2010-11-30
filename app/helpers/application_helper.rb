@@ -8,6 +8,10 @@ module ApplicationHelper
     request.path =~ /^\/blog.*$/
   end
   
+  def is_guides?
+    request.path =~ /^\/guides.*$/
+  end
+  
   def latest_version
     RefinerySetting['hp_latest_version'] ||= HTTParty.get("http://rubygems.org/api/v1/gems/refinerycms.json")['version']
   end

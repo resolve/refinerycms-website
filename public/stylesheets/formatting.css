@@ -3,13 +3,13 @@
   Formatting applies to backend WYSIWYG editors and all frontend.
 */
 
-* {
+body {
   font-family: Verdana;
   font-size: 12px;
   line-height: 20px;
 }
 
-h1, h1 * {
+#body_content h1, #body_content h1 * {
   font-family: Georgia;
   font-size: 35px;
   font-weight: normal;
@@ -17,7 +17,7 @@ h1, h1 * {
   text-align: center;
 }
 
-h2, h2 * {
+#body_content h2, #body_content h2 * {
   font-size: 16px;
 }
 

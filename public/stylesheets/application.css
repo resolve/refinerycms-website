@@ -3,14 +3,12 @@
   Formatting applies to all frontend.
 */
 
-* {
-  color: #c9c9c9;
-}
 
 body {
   background: #303030;
   margin: 0;
   padding: 0;
+  color: #c9c9c9;
 }
 
 #page, #page_container > header {
@@ -53,6 +51,7 @@ nav#menu {
   font-size: 20px;
   font-style: italic;
   font-weight: normal;
+  color: white;
 }
 
 nav#menu ul {
@@ -106,6 +105,10 @@ nav#menu, #site_bar_content {
 
 #page_container > footer p {
   margin-top: 0px;
+}
+
+#page_container > footer, #page_container > footer * {
+  color: #C9C9C9;
 }
 
 #page_container > footer #twitter {
@@ -243,7 +246,7 @@ ul, ul li {
   margin-left: 0px;
 }
 
-pre {
+#body_content pre {
   display: block;
   background: #BEE8FF;
   padding: 10px 15px 10px 15px;
@@ -252,7 +255,7 @@ pre {
   -webkit-box-shadow:inset 0 0 7px #1e81d9;
 }
 
-pre, pre * {
+#body_content pre, #body_content pre * {
   color: #0788D1;
   font: Courier;
 }
@@ -273,17 +276,18 @@ pre, pre * {
   color: black;
 }
 
-h1, h1 * {
+#body_content h1, #body_content h1 * {
   color: white;
 }
 
-h2, h2 * {
+#body_content h2, #body_content h2 * {
   color: white;
 }
 
 input, textarea {
   color: black;
 }
+
 
 
 /* Browser Hacks */

@@ -3,5 +3,42 @@
              :dom_id => 'menu',
              :css => 'menu'
            } -%>
-<h1 id='logo'><%= link_to RefinerySetting.get(:site_name), root_url(:only_path => true) %></h1>
-<h2 id='tagline'>Ruby on Rails <abbr title="Content Management System">CMS</abbr> that supports Rails 3</h2>
+
+<% if is_guides? %>
+  <div id='header'>
+    <div class="wrapper clearfix">
+      <h1 id='logo'><%= link_to RefinerySetting.get(:site_name), root_url(:only_path => true) %></h1>
+      <ul class='nav'>
+        <li><%= link_to "Home", guides_url %></li>
+        <li class='index'>
+          <%= link_to "Guides Index", guides_url, :id => "guidesMenu",
+                                      :onClick => "guideMenu(); return false;" %>
+          <div id='guides' class='clearfix' style='display: none'>
+            <hr/>
+            <dl class="L">
+              <% Guide::CATEGORIES.each do |category_title| %>
+                <dt><%= category_title %></dt>
+                <dl>
+                <% Guide.where(:category => category_title).each do |guide| %>
+                  <dd>
+                    <%= link_to guide.title, guide_url(guide) %>
+                  </dd>
+                <% end %>
+                </dl>
+              <% end %>
+            </dl>
+
+          </div>
+        </li>
+        <li>
+          <%= link_to "Contribute", guides_url %>
+        </li>
+      </ul>
+    </div>
+  </div>
+<% else %>
+  <h1 id='logo'><%= link_to RefinerySetting.get(:site_name), root_url(:only_path => true) %></h1>
+  <h2 id='tagline'>
+    Ruby on Rails <abbr title="Content Management System">CMS</abbr> that supports Rails 3
+  </h2>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101122091233) do
+ActiveRecord::Schema.define(:version => 20101130014302) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
@@ -48,6 +48,19 @@ ActiveRecord::Schema.define(:version => 20101122091233) do
   end
 
   add_index "blog_posts", ["id"], :name => "index_blog_posts_on_id"
+
+  create_table "guides", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "guide"
+    t.string   "author"
+    t.string   "category"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "guides", ["id"], :name => "index_guides_on_id"
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
@@ -170,19 +183,6 @@ ActiveRecord::Schema.define(:version => 20101122091233) do
 
   add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_name_and_sluggable_type_and_scope_and_sequence", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
-
-  create_table "tutorials", :force => true do |t|
-    t.string   "title"
-    t.string   "category"
-    t.string   "author"
-    t.text     "content"
-    t.boolean  "draft"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tutorials", ["id"], :name => "index_tutorials_on_id"
 
   create_table "user_plugins", :force => true do |t|
     t.integer "user_id"

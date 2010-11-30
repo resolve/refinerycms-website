@@ -1,0 +1,15 @@
+<% guide_view = generate_guide(@guide.guide) # yuck - I know. %>
+<div id='feature'>
+  <div class='wrapper'>
+    <%= guide_view.content_for(:header_section)%>
+    <%= guide_view.content_for(:index_section) %>
+  </div>
+</div>
+
+<div id='container'>
+  <div class='wrapper'>
+    <div id='mainCol'>
+      <%= guide_view.content_for(:body) %>
+    </div>
+  </div>
+</div>

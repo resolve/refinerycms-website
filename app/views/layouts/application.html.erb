@@ -3,8 +3,26 @@
   <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
   <% content_for :head do %>
     <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
-    <%= stylesheet_link_tag('blog') if is_blog? %>
   <% end %>
+  
+  <% content_for :stylesheets do %>
+    <%= stylesheet_link_tag('blog') if is_blog? %>
+  
+    <% if is_guides? %>
+      <%= stylesheet_link_tag 'style' %>
+      <%= stylesheet_link_tag 'print', :media => "print" %>
+      <%= stylesheet_link_tag 'syntaxhighlighter/shCore.css' %>
+      <%= stylesheet_link_tag 'syntaxhighlighter/shThemeRailsGuides.css' %>
+    <% end %>
+  <% end %>
+  
+  <% content_for :javascripts do %>
+    <%= javascript_include_tag 'guides.js', 'shCore.js', 'shBrushRuby.js', 'shBrushPlain.js' %>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+  <% end %>
+  
   <%= render :partial => "/shared/head" %>
   <body>
     <%= site_bar -%>

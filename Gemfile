@@ -87,6 +87,7 @@ end
 gem 'refinerycms-blog', :git => 'git://github.com/resolve/refinerycms-blog.git'
 # END USER DEFINED
 
-gem 'refinerycms-tutorials', '1.0', :path => 'vendor/engines', :require => 'tutorials'
-
 gem 'httparty'
+
+gem 'refinerycms-guides', '1.0', :path => 'vendor/engines', :require => 'guides'
+gem 'RedCloth', "= 4.2.2"
