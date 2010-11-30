@@ -14,13 +14,13 @@
 .hide {display: none;}
 
 li ul, li ol { margin:0 1.5em; }
-ul, ol { margin: 0 1.5em 1.5em 1.5em; }
+
 
 ul { list-style-type: disc; }
 ol { list-style-type: decimal; }
 
 dl { margin: 0 0 1.5em 0; }
-dl dt { font-weight: bold; }
+
 dd { margin-left: 1.5em;}
 
 pre,code { margin: 1.5em 0; overflow: auto; color: #222;}
@@ -76,9 +76,9 @@ table th {
 --------------------------------------- */
 
 body {
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 87.5%;
-	line-height: 1.5em;
+	font-family: Verdana, Arial, sans-serif;
+
+
 	background: #303030;
 	color: #999;
 	}
@@ -104,7 +104,6 @@ body {
 	
 #page_container > header {
   height: 125px;
-  background: #c52f24;
 }
 
 #feature {
@@ -120,7 +119,7 @@ body {
 	}
 
 #mainCol {
-	width: 45em;
+	width: 51em;
 	margin-left: 2em;
 	}
 
@@ -131,7 +130,7 @@ body {
 	right: 0;
 	background: #FFF;
 	padding: 1em 1.5em 1em 1.25em;
-	width: 17em;
+	width: 22em;
 	font-size: 0.9285em;
 	line-height: 1.3846em;
 	}
@@ -148,7 +147,7 @@ body {
 }
 
 #header .wrapper, #topNav .wrapper, #feature .wrapper {padding-left: 1em; }
-#feature .wrapper {width: 41em; padding-right: 23em; position: relative; z-index: 0;}
+#feature .wrapper {width: 41em; padding-right: 412px; position: relative; z-index: 0;}
 
 /* Links
 --------------------------------------- */
@@ -158,7 +157,7 @@ body {
 	text-decoration: underline;
 	}
 
-#mainCol a, #subCol a, #feature a {color: #980905;}
+#mainCol a, #subCol a, #feature a {color: #0788D1;}
 
 
 /* Navigation
@@ -182,13 +181,13 @@ body {
 	border-radius: 1em;
 	-webkit-border-radius: 1em;
 	-moz-border-radius: 1em;
-	background: #980905;
+	background: #22A7F2;
 	position: relative;
 }
 
 #header .nav .index a {
-	background: #980905 url(/images/nav_arrow.gif) no-repeat right top;
-	padding-right: 1em;
+	background: #22A7F2 url(/images/nav_arrow.gif) no-repeat right top;
+	padding-right: 1.2em;
 	position: relative;
 	z-index: 15;
 	padding-bottom: 0.125em;
@@ -198,13 +197,13 @@ body {
 #guides {
 	width: 27em;
 	display: block;
-	background: #980905;
+	background: #22A7F2;
 	border-radius: 1em;
 	-webkit-border-radius: 1em;
 	-moz-border-radius: 1em;
 	-webkit-box-shadow: 0.25em 0.25em 1em rgba(0,0,0,0.25);
 	-moz-box-shadow: rgba(0,0,0,0.25) 0.25em 0.25em 1em;
-	color: #f1938c;
+
 	padding: 1.5em 2em;
 	position: absolute;
 	z-index: 10;
@@ -219,6 +218,9 @@ body {
 	margin: 0;
 	padding: 0;
 }
+#guides dt {
+  font-weight: bold;
+}
 #guides dt {padding:0; margin: 0.5em 0 0;}
 #guides a {color: #FFF; background: none !important;}
 #guides .L, #guides .R {float: left; width: 50%; margin: 0; padding: 0;}
@@ -227,8 +229,8 @@ body {
 	display: block;
 	border: none;
 	height: 1px;
-	color: #f1938c;
-	background: #f1938c;
+	color: white;
+	background: white;
 }
 
 /* Headings
@@ -238,35 +240,35 @@ body {
 	font-size: 2.5em;
 	line-height: 1em;
 	margin: 0.6em 0 .2em;
-	font-weight: bold;
+	font-weight: normal;
 	}
 
 .wrapper h2 {
 	font-size: 2.1428em;
 	line-height: 1em;
 	margin: 0.7em 0 .2333em;
-	font-weight: bold;
+	font-weight: normal;
 	}
 
 .wrapper h3 {
 	font-size: 1.7142em;
 	line-height: 1.286em;
 	margin: 0.875em 0 0.2916em;
-	font-weight: bold;
+	font-weight: normal;
 	}
 
 .wrapper h4 {
 	font-size: 1.2857em;
 	line-height: 1.2em;
 	margin: 1.6667em 0 .3887em;
-	font-weight: bold;
+	font-weight: normal;
 	}
 
 .wrapper h5 {
 	font-size: 1em;
 	line-height: 1.5em;
 	margin: 1em 0 .5em;
-	font-weight: bold;
+	font-weight: normal;
 }
 
 .wrapper h6 {
@@ -307,7 +309,7 @@ body {
 }
 
 #feature p {
-	font-size: 1.2857em;
+
 	margin-bottom: 0.75em;
 }
 
@@ -315,9 +317,10 @@ body {
 #feature ul li {
 	list-style: none;
 	background: url(/images/check_bullet.gif) no-repeat left 0.5em;
-	padding: 0.5em 1.75em 0.5em 1.75em;
+	padding: 0.22em 2em 0.22em 2em;
 	font-size: 1.1428em;
-	font-weight: bold;
+	margin-bottom: 10px;
+
 }
 
 #mainCol dd, #subCol dd {
@@ -353,7 +356,7 @@ body {
 	margin-top: 0.25em;
 }
 
-#subCol .chapters {color: #980905;}
+
 #subCol .chapters a {font-weight: bold;}
 #subCol .chapters ul a {font-weight: normal;}
 #subCol .chapters li {margin-bottom: 0.75em;}
