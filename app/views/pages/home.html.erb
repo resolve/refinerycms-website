@@ -1,3 +1,6 @@
+<% # handles expiring the rubygems cache
+  expire_homepage_stats_caches! if (Time.now - 10.minutes) > RefinerySetting.find_or_set(:last_update, Time.now, :scoping => :statistics)
+%>
 <section id='body_content'>
   <section id='feature_block'>
     <%= image_tag("refinery-screenshot.png", :id => "screenshot") %>
@@ -11,7 +14,7 @@
       <% latest_version.split("").each do |char| -%>
         <span class='<%= char == "." ? "point" : "digit" %>'><%= char %></span>
       <% end -%>
-      </p>  
+      </p>
       <hr/>
       <p>
         Total downloads <%= number_with_delimiter(rubygems_downloads) %>
@@ -19,7 +22,7 @@
       <hr/>
       <p>
         Latest update
-        <%= link_to latest_update, "https://github.com/resolve/refinerycms" %>
+        <%= link_to latest_update, "https://github.com/resolve/refinerycms/commits" %>
       </p>
       <hr/>
       <p>
