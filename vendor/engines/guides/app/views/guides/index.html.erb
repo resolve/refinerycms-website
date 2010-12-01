@@ -27,7 +27,7 @@
             <%= link_to guide.title, guide_url(guide) %>
           </dt>
           <dd>
-            <% guide.description %>
+            By <%= guide.author %>. <%= guide.description %>
           </dd>
         <% end %>
         </dl>
