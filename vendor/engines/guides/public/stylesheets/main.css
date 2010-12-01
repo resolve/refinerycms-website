@@ -15,6 +15,10 @@
 
 li ul, li ol { margin:0 1.5em; }
 
+.author {
+  color: #ccc;
+  font-size: 12px;
+}
 
 #mainCol tt {
   background: #EEE;

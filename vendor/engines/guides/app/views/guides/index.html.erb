@@ -25,9 +25,10 @@
         <% Guide.where(:category => category_title).each do |guide| %>
           <dt>
             <%= link_to guide.title, guide_url(guide) %>
+            <span class='author'>By <%= guide.author %></span>
           </dt>
           <dd>
-            By <%= guide.author %>. <%=raw guide.description %>
+            <%=raw guide.description %>
           </dd>
         <% end %>
         </dl>
