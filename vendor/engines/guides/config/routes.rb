@@ -1,4 +1,4 @@
-Refinery::Application.routes.draw do
+RefinerycmsWebsite::Application.routes.draw do
   resources :guides
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do

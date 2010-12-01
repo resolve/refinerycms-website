@@ -1,21 +1,4 @@
-Refinery::Application.routes.draw do
-
-  # REFINERY CMS ================================================================
-
-  filter(:refinery_locales) if defined?(RoutingFilter::RefineryLocales) # optionally use i18n.
-
-  root :to => 'pages#home'
-
-  scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
-    root :to => 'dashboard#index'
-  end
-
-  match '/system/images/*dragonfly', :to => Dragonfly[:images]
-
-  # Marketable URLs should be appended to routes by the Pages Engine.
-  # Catch all routes should be appended to routes by the Core Engine.
-
-  # END REFINERY CMS ============================================================
+RefinerycmsWebsite::Application.routes.draw do
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

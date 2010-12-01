@@ -37,7 +37,7 @@ gem 'mysql2'
 java = (RUBY_PLATFORM == 'java')
 
 # Specify the Refinery CMS core:
-gem 'refinerycms',              :git => 'git://github.com/resolve/refinerycms.git'
+gem 'refinerycms',              :git => 'git://github.com/resolve/refinerycms.git', :branch => 'by_inclusion'
 
 # Specify additional Refinery CMS Engines here (all optional):
 gem 'refinerycms-inquiries',    '~> 0.9.9.5'
@@ -48,7 +48,7 @@ gem 'refinerycms-generators',   '~> 0.9.9', :git => 'git://github.com/resolve/re
 # gem 'refinerycms-search',     '~> 0.9.8'
 
 # Add i18n support (optional, you can remove this if you really want to).
-gem 'refinerycms-i18n',         '~> 0.9.8.11'
+gem 'refinerycms-i18n',         :git => 'git://github.com/resolve/refinerycms-i18n.git'#'~> 0.9.8.11'
 
 gem 'jruby-openssl' if java
 
