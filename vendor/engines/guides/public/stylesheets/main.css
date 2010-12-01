@@ -16,6 +16,10 @@
 li ul, li ol { margin:0 1.5em; }
 
 
+#mainCol tt {
+  background: #EEE;
+}
+
 ul { list-style-type: disc; }
 ol { list-style-type: decimal; }
 
