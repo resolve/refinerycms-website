@@ -1,7 +1,11 @@
 <% guide_view = generate_guide(@guide.guide) # yuck - I know. %>
 <div id='feature'>
   <div class='wrapper'>
-    <%= guide_view.content_for(:header_section).force_encoding('utf-8') %>
+    <% begin %>
+      <%= guide_view.content_for(:header_section).force_encoding('utf-8') %>
+    <% rescue %>
+      <!-- this guide doesn't have a prologue -->
+    <% end %>
     <%= guide_view.content_for(:index_section).force_encoding('utf-8') %>
   </div>
 </div>
