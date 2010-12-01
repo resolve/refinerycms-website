@@ -61,6 +61,11 @@ section#feature_block {
   border-left: 0px;
 }
 
+#feature_content p {
+  margin-top: 11px;
+  margin-bottom: 11px;
+}
+
 #version .digit, #version .point {
   height: 69px;
   display: block;
