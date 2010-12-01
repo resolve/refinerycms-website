@@ -84,7 +84,7 @@ end
 # END REFINERY CMS ============================================================
 
 # USER DEFINED
-gem 'refinerycms-blog', :git => 'git://github.com/resolve/refinerycms-blog.git'
+gem 'refinerycms-blog', '= 1.0.rc.17'
 # END USER DEFINED
 
 gem 'httparty'

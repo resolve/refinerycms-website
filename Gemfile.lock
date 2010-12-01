@@ -21,14 +21,6 @@ GIT
       rack
 
 GIT
-  remote: git://github.com/resolve/refinerycms-blog.git
-  revision: 572191db89167f162f5263605c250ae60f968790
-  specs:
-    refinerycms-blog (1.0.rc16)
-      filters_spam (~> 0.2)
-      refinerycms (>= 0.9.7.13)
-
-GIT
   remote: git://github.com/resolve/refinerycms-generators.git
   revision: 6970944aded7dd91206c1ba4d75d38ca77935a42
   specs:
@@ -168,6 +160,9 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     rdoc (2.5.11)
+    refinerycms-blog (1.0.rc.17)
+      filters_spam (~> 0.2)
+      refinerycms (>= 0.9.8)
     refinerycms-i18n (0.9.8.11)
       refinerycms (>= 0.9.8)
       routing-filter (~> 0.1.6)
@@ -229,7 +224,7 @@ DEPENDENCIES
   rack-test (~> 0.5.6)
   rails (~> 3.0.3)
   refinerycms!
-  refinerycms-blog!
+  refinerycms-blog (= 1.0.rc.17)
   refinerycms-generators (~> 0.9.9)!
   refinerycms-guides (= 1.0)!
   refinerycms-i18n (~> 0.9.8.11)
