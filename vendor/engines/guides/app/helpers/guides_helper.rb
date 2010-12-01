@@ -6,7 +6,7 @@ module GuidesHelper
     body = set_header_section(body, view)
     body = set_index(body, view)
     view.content_for(:body) { textile(body).html_safe }
-    
+
     view
   end
 
@@ -56,7 +56,7 @@ HTML
       code_blocks[$1.to_i]
     end
   end
-  
+
   # other sections
 
   def set_header_section(body, view)
@@ -104,7 +104,7 @@ HTML
 
     i.result
   end
-  
+
   def guide(name, url, options = {}, &block)
     link = content_tag(:a, :href => url) { name }
     result = content_tag(:dt, link)

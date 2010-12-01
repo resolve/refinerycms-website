@@ -3,32 +3,32 @@
     :object => @guide,
     :include_object_name => true
   } %>
-  
+
   <div class='field'>
     <%= f.label :title -%>
     <%= f.text_field :title, :class => 'larger widest' -%>
   </div>
-  
+
   <div class='field'>
     <%= f.label :description -%>
     <%= f.text_area :description, :rows => 10, :class => 'wymeditor widest' -%>
   </div>
-  
+
   <div class='field'>
     <%= f.label :guide -%>
     <%= f.text_area :guide, :rows => 40, :class => 'widest' -%>
   </div>
-  
+
   <div class='field'>
     <%= f.label :author -%>
     <%= f.text_field :author -%>
   </div>
-  
+
   <div class='field'>
     <%= f.label :category -%>
     <%= f.select :category, Guide::CATEGORIES -%>
   </div>
-  
+
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {
                 :f => f,

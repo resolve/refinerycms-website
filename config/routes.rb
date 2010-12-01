@@ -9,7 +9,7 @@ Refinery::Application.routes.draw do
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
     root :to => 'dashboard#index'
   end
-  
+
   match '/system/images/*dragonfly', :to => Dragonfly[:images]
 
   # Marketable URLs should be appended to routes by the Pages Engine.

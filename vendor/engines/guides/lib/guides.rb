@@ -12,10 +12,10 @@ module Refinery
           plugin.name = "guides"
           plugin.activity = {:class => Guide}
         end
-        
+
         require "rails_guides/textile_extensions"
         RedCloth.send(:include, RailsGuides::TextileExtensions)
-        
+
         require "rails_guides/indexer"
       end
     end

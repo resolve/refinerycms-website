@@ -1,7 +1,7 @@
 class AddGuides < ActiveRecord::Migration
   def self.up
     drop_table :tutorials
-    
+
     create_table "guides", :force => true do |t|
       t.string   "title"
       t.text     "description"
