@@ -7,6 +7,6 @@ class Guide < ActiveRecord::Base
   validates_presence_of :title
   validates_uniqueness_of :title
   
-  CATEGORIES = ['Getting Started', 'Customing your Site', 'Extending with Engines', 'Hosting & Maintenance']
+  CATEGORIES = ['Getting Started', 'Essentials', 'Customising your Design', 'Extending with Engines', 'Updating Refinery', 'Hosting', 'Translating', 'Tips and Tricks']
   
 end

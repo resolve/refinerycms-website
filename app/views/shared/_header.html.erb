@@ -16,7 +16,7 @@
           <div id='guides' class='clearfix' style='display: none'>
             <hr/>
             <dl class="L">
-              <% Guide::CATEGORIES.each do |category_title| %>
+              <% Guide::CATEGORIES[0..3].each do |category_title| %>
                 <dt><%= category_title %></dt>
                 <dl>
                 <% Guide.where(:category => category_title).each do |guide| %>
@@ -27,7 +27,18 @@
                 </dl>
               <% end %>
             </dl>
-
+            <dl class="R">
+              <% Guide::CATEGORIES[4..7].each do |category_title| %>
+                <dt><%= category_title %></dt>
+                <dl>
+                <% Guide.where(:category => category_title).each do |guide| %>
+                  <dd>
+                    <%= link_to guide.title, guide_url(guide) %>
+                  </dd>
+                <% end %>
+                </dl>
+              <% end %>
+            </dl>
           </div>
         </li>
         <li>
