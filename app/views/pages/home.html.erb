@@ -1,5 +1,5 @@
 <% # handles expiring the rubygems cache
-  expire_homepage_stats_caches! if (Time.now - 10.minutes) > RefinerySetting.find_or_set(:last_update, Time.now, :scoping => :statistics)
+  expire_statistics_caches! if (Time.now - 10.minutes) > RefinerySetting.find_or_set(:last_update, Time.now, :scoping => :statistics)
 %>
 <section id='body_content'>
   <section id='feature_block'>
