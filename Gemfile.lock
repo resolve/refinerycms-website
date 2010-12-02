@@ -239,7 +239,7 @@ DEPENDENCIES
   refinerycms-generators (~> 0.9.9)!
   refinerycms-guides (= 1.0)!
   refinerycms-i18n!
-  refinerycms-inquiries (~> 0.9.9.5)
+  refinerycms-inquiries (~> 0.9.9.7)
   rspec-rails (~> 2.1)
   ruby-prof
   spork
