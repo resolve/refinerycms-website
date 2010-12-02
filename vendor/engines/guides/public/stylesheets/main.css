@@ -24,6 +24,10 @@ li ul, li ol { margin:0 1.5em; }
   background: #EEE;
 }
 
+#mainCol .note tt {
+  background: #f9edb6;
+}
+
 ul { list-style-type: disc; }
 ol { list-style-type: decimal; }
 
