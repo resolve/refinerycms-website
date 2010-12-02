@@ -28,9 +28,9 @@ GIT
 
 GIT
   remote: git://github.com/resolve/refinerycms-i18n.git
-  revision: 5a3bb9d917301cdecf253b283cb3c30e2aedf215
+  revision: f42689d12b9a61f9f4bc4fa7b25fcc376f6bbda6
   specs:
-    refinerycms-i18n (0.9.8.11)
+    refinerycms-i18n (0.9.8.12)
       refinerycms (>= 0.9.8)
       routing-filter (~> 0.1.6)
 
@@ -61,7 +61,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     RedCloth (4.2.2)
-    ZenTest (4.4.0)
+    ZenTest (4.4.1)
     abstract (1.0.0)
     actionmailer (3.0.3)
       actionpack (= 3.0.3)
@@ -93,7 +93,8 @@ GEM
     arel (2.0.6)
     authlogic (2.1.6)
       activesupport
-    autotest (4.4.5)
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
     autotest-notification (2.3.1)
       autotest (~> 4.3)
     autotest-rails (4.1.0)
@@ -172,7 +173,7 @@ GEM
     refinerycms-blog (1.0.rc.17)
       filters_spam (~> 0.2)
       refinerycms (>= 0.9.8)
-    refinerycms-inquiries (0.9.9.6)
+    refinerycms-inquiries (0.9.9.7)
       filters_spam (~> 0.2)
     routing-filter (0.1.7)
       actionpack
@@ -184,9 +185,11 @@ GEM
     rspec-expectations (2.2.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.2.0)
-    rspec-rails (2.2.0)
-      rails (~> 3.0.0)
-      rspec (~> 2.2)
+    rspec-rails (2.2.1)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
+      rspec (~> 2.2.0)
     ruby-prof (0.9.2)
     rubyzip (0.9.4)
     selenium-webdriver (0.1.1)
@@ -234,7 +237,7 @@ DEPENDENCIES
   refinerycms-generators (~> 0.9.9)!
   refinerycms-guides (= 1.0)!
   refinerycms-i18n!
-  refinerycms-inquiries (~> 0.9.9.5)
+  refinerycms-inquiries (~> 0.9.9.7)
   rspec-rails (~> 2.1)
   ruby-prof
   spork
