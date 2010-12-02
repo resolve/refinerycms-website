@@ -36,7 +36,7 @@ GIT
 
 GIT
   remote: git://github.com/resolve/refinerycms.git
-  revision: 5861e903aa92414b663f630ff40e1460d3dafee7
+  revision: 5677fc1fa065778c21cf307319c9ffde6ba210a3
   branch: by_inclusion
   specs:
     refinerycms (0.9.9.pre)
@@ -90,7 +90,7 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     acts_as_indexed (0.6.6)
-    arel (2.0.5)
+    arel (2.0.6)
     authlogic (2.1.6)
       activesupport
     autotest (4.4.5)
