@@ -25,11 +25,11 @@ li ul, li ol { margin:0 1.5em; }
 }
 
 #mainCol .note tt {
-  background: #bfdcef;
+  background: #f9edb6;
 }
 
 #mainCol .info tt {
-  background: #7fc6ea;
+  background: #bfdcef;
 }
 
 ul { list-style-type: disc; }
