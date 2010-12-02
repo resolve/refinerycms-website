@@ -234,6 +234,12 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
+#guides dd {
+  padding-left: 10px;
+  background: url('/images/white-bullet.png') no-repeat 0px 9px;
+}
+
 #guides dt {
   font-weight: bold;
 }
