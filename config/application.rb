@@ -67,7 +67,7 @@ module RefinerycmsWebsite
       r301 "/contact-page","/contact"
       
       # more generic ones.
-      r301 %r{/blog/tag/*},"/blog"
+      r301 %r{/blog/tag/.*},"/blog"
       r301 %r{/blog/author/.*},"/blog"
     end
   end
