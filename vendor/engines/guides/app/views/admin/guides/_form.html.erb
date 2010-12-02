@@ -32,7 +32,7 @@
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {
                 :f => f,
-                :continue_editing => false,
+                :continue_editing => true,
                 :delete_title => t('admin.guides.guide.delete'),
                 :delete_confirmation => t('shared.admin.delete.message', :title => @guide.title)
               } %>
