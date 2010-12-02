@@ -43,3 +43,18 @@
   margin-left: 100px;
   color: black;
 }
+
+#body_content_right ul {
+  padding-top: 0px;
+}
+
+#body_content_right ul li {
+    list-style: square;
+    padding-left: 0px;
+    margin-left: 15px;
+    background: none;
+    min-height: 100% !important;
+    margin-bottom: 3px;
+    padding-bottom: 0px;
+  }
+}
