@@ -15,9 +15,11 @@
   <% end %>
 
   <% content_for :javascripts do %>
-    <%= javascript_include_tag 'guides.js', 'shCore.js', 'shBrushRuby.js', 'shBrushPlain.js' %>
+    <%= javascript_include_tag 'guides.js', 'syntaxhighlighter/shCore.js',
+                               'syntaxhighlighter/shBrushRuby.js', 'syntaxhighlighter/shBrushPlain.js',
+                               :cache => ("cache/syntaxhighlighting" if RefinerySetting.find_or_set(:use_resource_caching, Rails.root.writable?))%>
     <script>SyntaxHighlighter.all();</script>
-  <% end %>
+  <% end if is_guides? %>
 
   <%= render :partial => "/shared/head" %>
   <body>
