@@ -72,6 +72,7 @@ module RefinerycmsWebsite
       
       # tutorial site redirects
       r301 "/tutorials","http://refinerycms.com/guides"
+      r301 "/tutorials/","http://refinerycms.com/guides"
       r301 "/tutorials/tagged/installation","http://refinerycms.com/download"
       r301 "/tutorials/how-to-test-refinery","http://refinerycms.com/guides/how-to-test-refinery"
       r301 "/tutorials/how-to-install-refinery","http://refinerycms.com/download"
