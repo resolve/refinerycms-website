@@ -28,15 +28,15 @@ GIT
 
 GIT
   remote: git://github.com/resolve/refinerycms-i18n.git
-  revision: f42689d12b9a61f9f4bc4fa7b25fcc376f6bbda6
+  revision: 2c5d8fc1b716be9257ffd18327aa8f4faa329b21
   specs:
     refinerycms-i18n (0.9.8.12)
       refinerycms (>= 0.9.8)
-      routing-filter (~> 0.1.6)
+      routing-filter (~> 0.1)
 
 GIT
   remote: git://github.com/resolve/refinerycms.git
-  revision: 178cf64a549c2594024b7a587b50f3147a84be94
+  revision: 53fe22e58640da9e3c84b36e8fb8da25973daab3
   branch: by_inclusion
   specs:
     refinerycms (0.9.9.pre)
@@ -136,9 +136,9 @@ GEM
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
-    mail (2.2.11)
+    mail (2.2.12)
       activesupport (>= 2.3.6)
-      i18n (~> 0.5.0)
+      i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
@@ -176,7 +176,7 @@ GEM
       refinerycms (>= 0.9.8)
     refinerycms-inquiries (0.9.9.7)
       filters_spam (~> 0.2)
-    routing-filter (0.1.7)
+    routing-filter (0.2.0)
       actionpack
     rspec (2.2.0)
       rspec-core (~> 2.2)
