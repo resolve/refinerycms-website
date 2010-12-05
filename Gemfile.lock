@@ -36,7 +36,7 @@ GIT
 
 GIT
   remote: git://github.com/resolve/refinerycms.git
-  revision: 53fe22e58640da9e3c84b36e8fb8da25973daab3
+  revision: 383b2cfbab063d4d4394d172dbdf63f3ad1cae68
   branch: by_inclusion
   specs:
     refinerycms (0.9.9.pre)
