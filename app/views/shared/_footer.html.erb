@@ -12,7 +12,7 @@
                  :collection => @menu_pages.select {|p| p.depth.to_i == 0}.reverse
                } %>
   <p>
-    <%= t('.copyright', :year => Time.now.year,
-                        :site_name => "Resolve Digital") %>
+    Copyright &copy; <%= Time.now.year %>
+    <%= link_to "Resolve Digital", "http://resolvedigital.com", :title => "Ruby on Rails Refinery CMS Development" %> - Creators of Refinery CMS.
   </p>
 </div>
