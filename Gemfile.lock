@@ -36,7 +36,7 @@ GIT
 
 GIT
   remote: git://github.com/resolve/refinerycms.git
-  revision: 383b2cfbab063d4d4394d172dbdf63f3ad1cae68
+  revision: c99e59e8b5367e5896191a5c0bb47c27addf6fed
   branch: by_inclusion
   specs:
     refinerycms (0.9.9.pre)
@@ -101,15 +101,15 @@ GEM
       ZenTest
     babosa (0.2.0)
     builder (2.1.2)
-    celerity (0.8.4)
+    celerity (0.8.5)
     childprocess (0.1.4)
       ffi (~> 0.6.3)
     configuration (1.2.0)
     crack (0.1.8)
-    cucumber (0.9.4)
-      builder (~> 2.1.2)
+    cucumber (0.10.0)
+      builder (>= 2.1.2)
       diff-lcs (~> 1.1.2)
-      gherkin (~> 2.2.9)
+      gherkin (~> 2.3.2)
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
     cucumber-rails (0.3.2)
@@ -125,7 +125,7 @@ GEM
     filters_spam (0.3)
     friendly_id (3.1.8)
       babosa (~> 0.2.0)
-    gherkin (2.2.9)
+    gherkin (2.3.2)
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
     httparty (0.6.1)
