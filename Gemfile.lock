@@ -22,13 +22,13 @@ GIT
 
 GIT
   remote: git://github.com/resolve/refinerycms-generators.git
-  revision: ebc3f44464a93fe1d32c62c8f9ae2b059781b6e6
+  revision: a371beb0d667acef943672b1b9fae88149d2c74b
   specs:
     refinerycms-generators (0.9.9)
 
 GIT
   remote: git://github.com/resolve/refinerycms-i18n.git
-  revision: 2c5d8fc1b716be9257ffd18327aa8f4faa329b21
+  revision: 3b9a9ce3a3135cafee83e38da89987b4cd628cc7
   specs:
     refinerycms-i18n (0.9.8.12)
       refinerycms (>= 0.9.8)
@@ -36,15 +36,15 @@ GIT
 
 GIT
   remote: git://github.com/resolve/refinerycms.git
-  revision: a48d1d5c3b04dd74ac3d67cd281bed1fab3c9b7d
+  revision: 3bcb980ce09c7d13983d62bb8d5108f3ea7adadf
   branch: by_inclusion
   specs:
-    refinerycms (0.9.9.pre)
+    refinerycms (0.9.9)
       acts_as_indexed (~> 0.6.6)
       authlogic (~> 2.1.6)
       bundler (~> 1.0.5)
       dragonfly (~> 0.8.1)
-      friendly_id (~> 3.1.6)
+      friendly_id (~> 3.1.8)
       moretea-awesome_nested_set (= 1.4.3.1)
       rack-cache (~> 0.5.2)
       rails (~> 3.0.3)
@@ -101,7 +101,7 @@ GEM
       ZenTest
     babosa (0.2.0)
     builder (2.1.2)
-    celerity (0.8.5)
+    celerity (0.8.6)
     childprocess (0.1.4)
       ffi (~> 0.6.3)
     configuration (1.2.0)
@@ -182,11 +182,11 @@ GEM
       rspec-core (~> 2.3.0)
       rspec-expectations (~> 2.3.0)
       rspec-mocks (~> 2.3.0)
-    rspec-core (2.3.0)
+    rspec-core (2.3.1)
     rspec-expectations (2.3.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.3.0)
-    rspec-rails (2.3.0)
+    rspec-rails (2.3.1)
       actionpack (~> 3.0)
       activesupport (~> 3.0)
       railties (~> 3.0)
