@@ -42,9 +42,9 @@ gem 'refinerycms',              :git => 'git://github.com/resolve/refinerycms.gi
 gem 'friendly_id',              :git => 'git://github.com/parndt/friendly_id', :branch => 'globalize3'
 
 # Specify additional Refinery CMS Engines here (all optional):
-gem 'refinerycms-inquiries',    :path => '/code/refinerycms-inquiries'#'~> 0.9.9.7'
-gem 'refinerycms-generators',   :path => '/code/refinerycms-generators'#'~> 0.9.9', :git => 'git://github.com/resolve/refinerycms-generators.git'
-gem 'refinerycms-news',       :path => '/code/refinerycms-news'#'~> 0.9.9.6'
+gem 'refinerycms-inquiries',    '~> 0.9.9.9'
+gem 'refinerycms-generators',   '~> 0.9.9', :git => 'git://github.com/resolve/refinerycms-generators.git'
+# gem 'refinerycms-news',       '~> 0.9.9.6'
 # gem 'refinerycms-portfolio',  '~> 0.9.9'
 # gem 'refinerycms-theming',    '~> 0.9.8.2'
 # gem 'refinerycms-search',     '~> 0.9.8'
@@ -79,10 +79,7 @@ end
 
 # END REFINERY CMS ============================================================
 
-# USER DEFINED
 gem 'refinerycms-blog', '~> 1.1'
-# END USER DEFINED
-
 gem 'httparty'
 
 gem 'refinerycms-guides', '1.0', :path => 'vendor/engines', :require => 'guides'

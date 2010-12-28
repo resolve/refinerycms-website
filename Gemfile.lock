@@ -28,6 +28,12 @@ GIT
       babosa (~> 0.2.0)
 
 GIT
+  remote: git://github.com/resolve/refinerycms-generators.git
+  revision: 5863cd94ec37fc97bd36dbf2f9f5330c61f8e3fe
+  specs:
+    refinerycms-generators (0.9.9)
+
+GIT
   remote: git://github.com/resolve/refinerycms-i18n.git
   revision: 9291626998da4c20703fd1fffcd2ea6e47f8cbfc
   specs:
@@ -35,8 +41,10 @@ GIT
       refinerycms (>= 0.9.8)
       routing-filter (~> 0.1)
 
-PATH
-  remote: /code/Refinery
+GIT
+  remote: git://github.com/resolve/refinerycms.git
+  revision: 002da7378563f107dd1d207a465987ef8716c262
+  branch: master
   specs:
     refinerycms (0.9.9)
       acts_as_indexed (~> 0.6.6)
@@ -51,23 +59,6 @@ PATH
       rdoc (>= 2.5.11)
       truncate_html (= 0.4)
       will_paginate (~> 3.0.pre)
-
-PATH
-  remote: /code/refinerycms-generators
-  specs:
-    refinerycms-generators (0.9.9)
-
-PATH
-  remote: /code/refinerycms-inquiries
-  specs:
-    refinerycms-inquiries (0.9.9.7)
-      filters_spam (~> 0.2)
-
-PATH
-  remote: /code/refinerycms-news
-  specs:
-    refinerycms-news (0.9.9.6)
-      refinerycms (~> 0.9.8)
 
 PATH
   remote: vendor/engines
@@ -188,6 +179,8 @@ GEM
     refinerycms-blog (1.1)
       filters_spam (~> 0.2)
       refinerycms (>= 0.9.8)
+    refinerycms-inquiries (0.9.9.9)
+      filters_spam (~> 0.2)
     routing-filter (0.2.2)
       actionpack
     rspec (2.3.0)
@@ -245,11 +238,10 @@ DEPENDENCIES
   rails (~> 3.0.3)
   refinerycms!
   refinerycms-blog (~> 1.1)
-  refinerycms-generators!
+  refinerycms-generators (~> 0.9.9)!
   refinerycms-guides (= 1.0)!
   refinerycms-i18n!
-  refinerycms-inquiries!
-  refinerycms-news!
+  refinerycms-inquiries (~> 0.9.9.9)
   rspec-rails (~> 2.3)
   ruby-prof
   spork
