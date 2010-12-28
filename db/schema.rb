@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101202043139) do
+ActiveRecord::Schema.define(:version => 20101217113424) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
@@ -96,6 +96,16 @@ ActiveRecord::Schema.define(:version => 20101202043139) do
     t.datetime "updated_at"
   end
 
+  create_table "page_part_translations", :force => true do |t|
+    t.integer  "page_part_id"
+    t.string   "locale"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "page_part_translations", ["page_part_id"], :name => "index_page_part_translations_on_page_part_id"
+
   create_table "page_parts", :force => true do |t|
     t.integer  "page_id"
     t.string   "title"
@@ -107,6 +117,19 @@ ActiveRecord::Schema.define(:version => 20101202043139) do
 
   add_index "page_parts", ["id"], :name => "index_page_parts_on_id"
   add_index "page_parts", ["page_id"], :name => "index_page_parts_on_page_id"
+
+  create_table "page_translations", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "locale"
+    t.string   "title"
+    t.string   "meta_keywords"
+    t.text     "meta_description"
+    t.string   "browser_title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "page_translations", ["page_id"], :name => "index_page_translations_on_page_id"
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -129,7 +152,6 @@ ActiveRecord::Schema.define(:version => 20101202043139) do
     t.integer  "lft"
     t.integer  "rgt"
     t.integer  "depth"
-    t.string   "cached_slug"
   end
 
   add_index "pages", ["depth"], :name => "index_pages_on_depth"
@@ -181,8 +203,10 @@ ActiveRecord::Schema.define(:version => 20101202043139) do
     t.string   "sluggable_type", :limit => 40
     t.string   "scope",          :limit => 40
     t.datetime "created_at"
+    t.string   "locale"
   end
 
+  add_index "slugs", ["locale"], :name => "index_slugs_on_locale"
   add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_name_and_sluggable_type_and_scope_and_sequence", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
