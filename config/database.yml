@@ -10,5 +10,5 @@ development:
   <<: *login
 
 test:
-  database: refinerycms-website
+  database: refinerycms-website_test
   <<: *login
