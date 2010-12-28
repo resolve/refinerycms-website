@@ -1,9 +1,9 @@
 # Local database setup
 login: &login
-  adapter: mysql
+  adapter: mysql2
   host: localhost
   username: root
-  password: 
+  password:
 
 development:
   database: refinerycms-website
