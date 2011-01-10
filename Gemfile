@@ -79,9 +79,13 @@ end
 
 # END REFINERY CMS ============================================================
 
+# USER DEFINED
+
 gem 'refinerycms-blog', '~> 1.1'
 gem 'httparty'
 
 gem 'refinerycms-guides', '1.0', :path => 'vendor/engines', :require => 'guides'
 gem 'RedCloth', '= 4.2.2'
 gem 'rack-rewrite', '~> 1.0.2'
+
+# END USER DEFINED
