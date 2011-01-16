@@ -40,13 +40,12 @@ java = (RUBY_PLATFORM == 'java')
 gem 'refinerycms',              :git => 'git://github.com/resolve/refinerycms', :branch => 'master'
 
 gem 'friendly_id',              :git => 'git://github.com/parndt/friendly_id', :branch => 'globalize3'
-gem 'globalize3',               :git => 'git://github.com/refinerycms/globalize3'
 
 group :development, :test do
   # RSpec
   gem 'rspec-rails',            '= 2.3'
   # Cucumber
-  gem 'capybara',               :git => 'git://github.com/parndt/capybara'
+  gem 'capybara',               '>= 0.4.1.rc'
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'launchy'
@@ -83,7 +82,7 @@ gem 'refinerycms-generators',   '~> 0.9.9', :git => 'git://github.com/resolve/re
 # gem 'refinerycms-search',     '~> 0.9.8'
 
 # Add i18n support (optional, you can remove this if you really want to).
-gem 'refinerycms-i18n',         :git => 'git://github.com/resolve/refinerycms-i18n.git'#'~> 0.9.8.11'
+gem 'refinerycms-i18n',         '>= 0.9.9'
 
 gem 'jruby-openssl' if java
 
