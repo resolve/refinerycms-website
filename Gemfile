@@ -68,7 +68,8 @@ end
 
 # END REFINERY CMS ============================================================
 
-# USER DEFINEDgem 'refinerycms-blog', '~> 1.1'
+# USER DEFINED
+gem 'refinerycms-blog', '~> 1.1'
 gem 'httparty'
 
 gem 'refinerycms-guides', '1.0', :path => 'vendor/engines', :require => 'guides'

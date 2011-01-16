@@ -187,6 +187,9 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     rdoc (3.4)
+    refinerycms-blog (1.1)
+      filters_spam (~> 0.2)
+      refinerycms (>= 0.9.8)
     refinerycms-inquiries (0.9.9.9)
       filters_spam (~> 0.2)
     routing-filter (0.2.2)
@@ -250,6 +253,7 @@ DEPENDENCIES
   rack-test (~> 0.5.6)
   rails (~> 3.0.3)
   refinerycms!
+  refinerycms-blog (~> 1.1)
   refinerycms-generators (~> 0.9.9)!
   refinerycms-guides (= 1.0)!
   refinerycms-i18n!
