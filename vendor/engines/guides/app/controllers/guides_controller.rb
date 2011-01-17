@@ -8,8 +8,15 @@ class GuidesController < ApplicationController
     # by swapping @page for @guide in the line below:
     present(@page)
     respond_to do |format|
-      format.json { render :json => @guides.to_json }
-      format.all { render :action => 'index' }
+      format.json {
+        render :json => @guides.to_json({
+          :only => [:author, :title, :description],
+          :methods => :url
+        })
+      }
+      format.all {
+        render :action => 'index'
+      }
     end
   end
 

@@ -7,6 +7,19 @@ class Guide < ActiveRecord::Base
   validates_presence_of :title
   validates_uniqueness_of :title
 
-  CATEGORIES = ['Getting Started', 'Essentials', 'Customising your Design', 'Extending with Engines', 'Updating Refinery', 'Hosting', 'Translating', 'Tips and Tricks']
+  CATEGORIES = [
+    'Getting Started',
+    'Essentials',
+    'Customising your Design',
+    'Extending with Engines',
+    'Updating Refinery',
+    'Hosting',
+    'Translating',
+    'Tips and Tricks'
+  ]
+
+  def url
+    "http://refinerycms.com/guides/#{self.to_param}"
+  end
 
 end
