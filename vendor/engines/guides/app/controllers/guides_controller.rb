@@ -7,6 +7,10 @@ class GuidesController < ApplicationController
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @guide in the line below:
     present(@page)
+    respond_to do |format|
+      format.json { render :json => @guides.to_json }
+      format.all { render :action => 'index' }
+    end
   end
 
   def show
