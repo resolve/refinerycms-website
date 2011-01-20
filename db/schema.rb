@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110106184757) do
+ActiveRecord::Schema.define(:version => 20110117053357) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
