@@ -3,6 +3,8 @@
 
 en:
   hello: "Hello world"
+  # TODO Temporary fix
   blog:
     posts:
-      filed_in: Filed in:
+      post:
+        filed_in: Filed in:
