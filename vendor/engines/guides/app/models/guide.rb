@@ -9,6 +9,7 @@ class Guide < ActiveRecord::Base
 
   CATEGORIES = [
     'Getting Started',
+    'Documentation',
     'Essentials',
     'Customising your Design',
     'Extending with Engines',
