@@ -37,9 +37,7 @@ gem 'mysql2'
 java = (RUBY_PLATFORM == 'java')
 
 # Specify the Refinery CMS core:
-gem 'refinerycms',              :git => 'git://github.com/resolve/refinerycms', :branch => 'master'
-
-gem 'friendly_id',              :git => 'git://github.com/parndt/friendly_id', :branch => 'globalize3'
+gem 'refinerycms',              '= 0.9.9'
 
 group :development, :test do
   # RSpec
@@ -52,8 +50,7 @@ group :development, :test do
   gem 'gherkin'
   gem 'spork' unless Bundler::WINDOWS
   gem 'rack-test',              '~> 0.5.6'
-  # FIXME: Update json_pure to 1.4.7 when it is released
-  gem 'json_pure', "1.4.6a", :git => "git://github.com/flori/json", :ref => "2c0f8d"
+  gem 'json_pure'
   # Factory Girl
   gem 'factory_girl'
   gem "#{'j' if java}ruby-prof" unless defined?(RUBY_ENGINE) and RUBY_ENGINE == 'rbx'
@@ -61,8 +58,6 @@ group :development, :test do
   gem 'autotest'
   gem 'autotest-rails'
   gem 'autotest-notification'
-  # FIXME: Replace when new babosa gem is released
-  gem 'babosa', '0.2.0',        :git => 'git://github.com/stevenheidel/babosa' if java
 end
 
 # END REFINERY CMS ============================================================
@@ -75,7 +70,7 @@ gem 'refinerycms-guides', '1.0', :path => 'vendor/engines', :require => 'guides'
 gem 'RedCloth', '= 4.2.2'
 gem 'rack-rewrite', '~> 1.0.2'# Specify additional Refinery CMS Engines here (all optional):
 gem 'refinerycms-inquiries',    '~> 0.9.9.9'
-gem 'refinerycms-generators',   '~> 0.9.9', :git => 'git://github.com/resolve/refinerycms-generators.git'
+gem 'refinerycms-generators',   '~> 0.9.9'
 # gem 'refinerycms-news',       '~> 0.9.9.6'
 # gem 'refinerycms-portfolio',  '~> 0.9.9'
 # gem 'refinerycms-theming',    '~> 0.9.8.2'
@@ -83,7 +78,5 @@ gem 'refinerycms-generators',   '~> 0.9.9', :git => 'git://github.com/resolve/re
 
 # Add i18n support (optional, you can remove this if you really want to).
 gem 'refinerycms-i18n',         '>= 0.9.9'
-
-gem 'jruby-openssl' if java
 
 # END USER DEFINED

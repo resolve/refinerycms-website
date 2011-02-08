@@ -1,43 +1,3 @@
-GIT
-  remote: git://github.com/flori/json
-  revision: 2c0f8d2c9b15a33b8d10ffcb1959aef54d320b57
-  ref: 2c0f8d
-  specs:
-    json_pure (1.4.6a)
-
-GIT
-  remote: git://github.com/parndt/friendly_id
-  revision: 26f1716f0a3ae1ad2b217bc4a0801bb1fbfa215f
-  branch: globalize3
-  specs:
-    friendly_id (3.2.0.rc1)
-      babosa (~> 0.2.1)
-
-GIT
-  remote: git://github.com/resolve/refinerycms
-  revision: f3f21a5035d308efad0849a96cca3abb264ec173
-  branch: master
-  specs:
-    refinerycms (0.9.9)
-      acts_as_indexed (~> 0.6.6)
-      bundler (~> 1.0.5)
-      devise (~> 1.1)
-      dragonfly (~> 0.8.2)
-      friendly_id (~> 3.2.0)
-      globalize3 (>= 0.1.0.beta)
-      moretea-awesome_nested_set (= 1.4.3.1)
-      rack-cache (~> 0.5.2)
-      rails (~> 3.0.3)
-      rdoc (>= 2.5.11)
-      truncate_html (= 0.4)
-      will_paginate (~> 3.0.pre)
-
-GIT
-  remote: git://github.com/resolve/refinerycms-generators.git
-  revision: ec29a1ab3e2df3de60cb4a3f4e1df82aa6b172bb
-  specs:
-    refinerycms-generators (0.9.9)
-
 PATH
   remote: vendor/engines
   specs:
@@ -75,7 +35,7 @@ GEM
       activemodel (= 3.0.3)
       activesupport (= 3.0.3)
     activesupport (3.0.3)
-    acts_as_indexed (0.6.6)
+    acts_as_indexed (0.6.7)
     arel (2.0.7)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
@@ -83,10 +43,10 @@ GEM
       autotest (~> 4.3)
     autotest-rails (4.1.0)
       ZenTest
-    babosa (0.2.1)
+    babosa (0.2.2)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
-    capybara (0.4.1.rc)
+    capybara (0.4.1.1)
       celerity (>= 0.7.9)
       culerity (>= 0.2.4)
       mime-types (>= 1.16)
@@ -94,7 +54,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       selenium-webdriver (>= 0.0.27)
-      xpath (~> 0.1.2)
+      xpath (~> 0.1.3)
     celerity (0.8.7)
     childprocess (0.1.6)
       ffi (~> 0.6.3)
@@ -108,9 +68,8 @@ GEM
       term-ansicolor (~> 1.0.5)
     cucumber-rails (0.3.2)
       cucumber (>= 0.8.0)
-    culerity (0.2.14)
-    daemons (1.0.10)
-    database_cleaner (0.6.0)
+    culerity (0.2.15)
+    database_cleaner (0.6.2)
     devise (1.1.5)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.2)
@@ -123,31 +82,27 @@ GEM
     ffi (0.6.3)
       rake (>= 0.8.7)
     filters_spam (0.3)
-    gem_plugin (0.2.3)
+    friendly_id_globalize3 (3.2.1)
+      babosa (~> 0.2.1)
     gherkin (2.3.3)
       json (~> 1.4.6)
     globalize3 (0.1.0.beta)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
-    httparty (0.7.1)
+    httparty (0.7.3)
       crack (= 0.1.8)
-      crack (= 0.1.8)
-      httparty
-      mongrel (= 1.2.0.pre2)
     i18n (0.5.0)
     json (1.4.6)
+    json_pure (1.5.1)
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
-    mail (2.2.14)
+    mail (2.2.15)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mongrel (1.2.0.pre2)
-      daemons (~> 1.0.10)
-      gem_plugin (~> 0.2.3)
     moretea-awesome_nested_set (1.4.3.1)
       activerecord (~> 3.0.0)
     mysql (2.8.1)
@@ -176,16 +131,30 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
-    rdoc (3.4)
+    rdoc (3.5.3)
+    refinerycms (0.9.9)
+      acts_as_indexed (~> 0.6.6)
+      bundler (~> 1.0.5)
+      devise (~> 1.1)
+      dragonfly (~> 0.8.2)
+      friendly_id_globalize3 (~> 3.2.0)
+      globalize3 (>= 0.1.0.beta)
+      moretea-awesome_nested_set (= 1.4.3.1)
+      rack-cache (~> 0.5.2)
+      rails (~> 3.0.3)
+      rdoc (>= 2.5.11)
+      truncate_html (~> 0.5)
+      will_paginate (~> 3.0.pre)
     refinerycms-blog (1.1)
       filters_spam (~> 0.2)
       refinerycms (>= 0.9.8)
-    refinerycms-i18n (0.9.9.3)
+    refinerycms-generators (0.9.9.3)
+    refinerycms-i18n (0.9.9.7)
       refinerycms (>= 0.9.8)
-      routing-filter (~> 0.1)
+      routing-filter (>= 0.2.3)
     refinerycms-inquiries (0.9.9.9)
       filters_spam (~> 0.2)
-    routing-filter (0.2.2)
+    routing-filter (0.2.3)
       actionpack
     rspec (2.3.0)
       rspec-core (~> 2.3.0)
@@ -215,7 +184,7 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    truncate_html (0.4.0)
+    truncate_html (0.5.0)
     tzinfo (0.3.24)
     warden (1.0.3)
       rack (>= 1.0.0)
@@ -236,19 +205,18 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   factory_girl
-  friendly_id!
   gherkin
   httparty
-  json_pure (= 1.4.6a)!
+  json_pure
   launchy
   mysql
   mysql2
   rack-rewrite (~> 1.0.2)
   rack-test (~> 0.5.6)
   rails (~> 3.0.3)
-  refinerycms!
+  refinerycms (= 0.9.9)
   refinerycms-blog (~> 1.1)
-  refinerycms-generators (~> 0.9.9)!
+  refinerycms-generators (~> 0.9.9)
   refinerycms-guides (= 1.0)!
   refinerycms-i18n (>= 0.9.9)
   refinerycms-inquiries (~> 0.9.9.9)
