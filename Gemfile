@@ -33,31 +33,12 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 # REFINERY CMS ================================================================
+# Anything you put in here will be overridden when the app gets updated.
 
-java = (RUBY_PLATFORM == 'java')
-
-# Specify the Refinery CMS core:
-gem 'refinerycms',              '= 0.9.9'
+gem 'refinerycms',              '= 0.9.9.1'
 
 group :development, :test do
-  # RSpec
-  gem 'rspec-rails',            '= 2.3'
-  # Cucumber
-  gem 'capybara',               '>= 0.4.1.rc'
-  gem 'database_cleaner'
-  gem 'cucumber-rails'
-  gem 'launchy'
-  gem 'gherkin'
-  gem 'spork' unless Bundler::WINDOWS
-  gem 'rack-test',              '~> 0.5.6'
-  gem 'json_pure'
-  # Factory Girl
-  gem 'factory_girl'
-  gem "#{'j' if java}ruby-prof" unless defined?(RUBY_ENGINE) and RUBY_ENGINE == 'rbx'
-  # Autotest
-  gem 'autotest'
-  gem 'autotest-rails'
-  gem 'autotest-notification'
+  # gem 'refinerycms-testing',    '~> 0.9.9.1'
 end
 
 # END REFINERY CMS ============================================================
