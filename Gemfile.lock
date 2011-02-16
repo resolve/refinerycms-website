@@ -105,8 +105,6 @@ GEM
     mime-types (1.16)
     moretea-awesome_nested_set (1.4.3.1)
       activerecord (~> 3.0.0)
-    mysql (2.8.1)
-    mysql2 (0.2.6)
     nokogiri (1.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -209,8 +207,6 @@ DEPENDENCIES
   httparty
   json_pure
   launchy
-  mysql
-  mysql2
   rack-rewrite (~> 1.0.2)
   rack-test (~> 0.5.6)
   rails (~> 3.0.3)
