@@ -9,53 +9,60 @@ class Guide < ActiveRecord::Base
 
   def self.categories
     if (categories = RefinerySetting.get(:categories, :scoping => :guides)).blank?
-      self.refresh_github
+      self.refresh_github!
       categories = RefinerySetting.get(:categories, :scoping => :guides)
     end
 
     categories
   end
 
-  # TREE is the SHA identifier of the tree at REPO and in folder LOCATION on the master branch
   # TODO: Find this out automatically
-  TREE = "070c69dc9f99ea09ccdeb6242fbd8e77a9359941"
   REPO = "stevenheidel/refinerycms"
-  LOCATION = "doc/guides"
 
-  def self.refresh_github
-    categories = []
+  def self.refresh_github!
+    blobs = HTTParty.get('http://github.com/api/v2/json/blob/full/stevenheidel/refinerycms/master')['blobs']
+    blobs.reject!{|b| b['name'] !~ %r{^doc/guides/}}
+
     guides = []
+    blobs.each do |blob|
+      folder_name = blob['name'].to_s.split('/')[-2]
 
-    HTTParty.get("http://github.com/api/v2/json/tree/show/#{REPO}/#{TREE}")['tree'].each do |folder|
-      category = folder['name']
-      categories << category
-
-      HTTParty.get("http://github.com/api/v2/json/tree/show/#{REPO}/#{folder['sha']}")['tree'].each do |file|
-        title = file['name'].to_s
-        guide = HTTParty.get("http://github.com/api/v2/json/blob/show/#{REPO}/#{file['sha']}")
-
-        authors = []
-        HTTParty.get("http://github.com/api/v2/json/commits/list/#{REPO}/master/#{LOCATION}/#{folder['name'].gsub(" ", "%20")}/#{file['name'].gsub(" ", "%20")}")['commits'].each do |commit|
-          authors << commit['author']['name']
-        end
-        author = authors.uniq.join(", ")
-
-        guides << Guide.new({
-          :title => title.split(' - ').last.split('.textile').first,
-          :description => (guide.scan(/^(.*)endprologue\./m).flatten.first.split("\n\n")[1..-1].join("\n\n") rescue nil),
-          :guide => guide,
-          :author => author,
-          :category => category,
-          :position => (title.split(' - ').first.to_i rescue Guide.maximum(:position))
-        })
+      authors = []
+      blob_url = "http://github.com/api/v2/json/commits/list/#{REPO}/master/#{blob['name'].to_s.gsub(" ", "%20")}"
+      HTTParty.get(blob_url)['commits'].each do |commit|
+        authors << commit['author']['name']
       end
+      author = authors.uniq.join(", ")
+
+      title = blob['name'].to_s.split('/').last
+      guide = HTTParty.get("http://github.com/api/v2/json/blob/show/#{REPO}/#{blob['sha']}")
+      guides << Guide.new({
+        :title => title.split(' - ').last.split('.textile').first,
+        :description => (guide.scan(/^(.*)endprologue\./m).flatten.first.split("\n\n")[1..-1].join("\n\n") rescue nil),
+        :guide => guide,
+        :author => author,
+        :category => folder_name,
+        :position => (title.split(' - ').first.to_i rescue Guide.maximum(:position))
+      })
     end
 
-    RefinerySetting.set(:categories, {:value => categories, :scoping => :guides})
+    # All save, or none save.
+    ActiveRecord::Base.transaction do
+      RefinerySetting.set(:categories, {
+        :value => blobs.map{|b| b['name'].split('/')[-2]}.uniq,
+        :scoping => :guides
+      })
 
-    Guide.delete_all
-    Slug.delete_all(:sluggable_type => 'Guide')
-    guides.map {|guide| guide.save}
+      # Delete all existing guides and their slugs
+      Guide.delete_all
+      Slug.delete_all(:sluggable_type => 'Guide')
+
+      # Now, save all the guides and return their titles so we can visually see.
+      guides.map do |guide|
+        guide.save
+        guide.title
+      end
+    end
   end
 
   def url

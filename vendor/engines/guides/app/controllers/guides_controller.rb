@@ -35,8 +35,8 @@ class GuidesController < ApplicationController
     if request.post? and params.keys.map(&:to_sym).include?(:payload)
       #push = JSON.parse(params[:payload])
 
-      Guide.refresh_github
-      
+      Guide.refresh_github!
+
       render :nothing => true
     end
   end
