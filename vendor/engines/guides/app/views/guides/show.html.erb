@@ -5,8 +5,7 @@
     <%= @guide_body.content_for(:header_section) %>
     <%= @guide_body.content_for(:index_section) %>
     <strong> <%# TODO: Make this look prettier and more prominent %>
-      <%= link_to "Edit this guide on Github",
-        "http://github.com/#{Guide::REPO}/blob/master/doc/guides/#{@guide.category.gsub(' ', '%20')}/#{@guide.position} - #{@guide.title.gsub(' ', '%20')}.textile" %>
+      <%= link_to "Edit this guide on Github", "https://github.com/#{Guide::REPO}#{@guide.github_url}" %>
     </strong>
   </div>
 </div>

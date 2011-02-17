@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110117053357) do
+ActiveRecord::Schema.define(:version => 20110217222024) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20110117053357) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "github_url"
   end
 
   add_index "guides", ["id"], :name => "index_guides_on_id"
