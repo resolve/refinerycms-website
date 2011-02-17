@@ -29,7 +29,7 @@ class GuidesController < ApplicationController
   end
   
   def hook
-    if request.post?
+    if request.post? and params.keys.map(&:to_sym).include?(:payload)
       push = JSON.parse(params[:payload])
       
       Guide.refresh_github
