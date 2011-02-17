@@ -1,4 +1,4 @@
-RefinerycmsWebsite::Application.routes.draw do
+RefinerycmsWebsite::Application.routes.draw do  
   resources :guides
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
@@ -8,4 +8,7 @@ RefinerycmsWebsite::Application.routes.draw do
       end
     end
   end
+    
+  # Github post-receive hook
+  post '/guides/hook', :to => 'guides#hook'
 end

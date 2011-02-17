@@ -27,6 +27,14 @@ class GuidesController < ApplicationController
     # by swapping @page for @guide in the line below:
     present(@page)
   end
+  
+  def hook
+    if request.post?
+      push = JSON.parse(params[:payload])
+      
+      Guide.refresh_github
+    end
+  end
 
 protected
 
