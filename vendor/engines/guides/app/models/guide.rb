@@ -15,20 +15,26 @@ class Guide < ActiveRecord::Base
     categories
   end
 
+  # TREE is the SHA identifier of the tree at REPO and in folder LOCATION on the master branch
+  # TODO: Find this out automatically
+  TREE = "070c69dc9f99ea09ccdeb6242fbd8e77a9359941"
+  REPO = "stevenheidel/refinerycms"
+  LOCATION = "doc/guides"
+  
   def self.refresh_github
     categories = []
     guides = []
 
-    HTTParty.get('http://github.com/api/v2/json/tree/show/stevenheidel/refinerycms/070c69dc9f99ea09ccdeb6242fbd8e77a9359941')['tree'].each do |folder|
+    HTTParty.get("http://github.com/api/v2/json/tree/show/#{REPO}/#{TREE}")['tree'].each do |folder|
       category = folder['name']
       categories << category
 
-      HTTParty.get("http://github.com/api/v2/json/tree/show/stevenheidel/refinerycms/#{folder['sha']}")['tree'].each do |file|
+      HTTParty.get("http://github.com/api/v2/json/tree/show/#{REPO}/#{folder['sha']}")['tree'].each do |file|
         title = file['name'].to_s
-        guide = HTTParty.get("http://github.com/api/v2/json/blob/show/stevenheidel/refinerycms/#{file['sha']}")
+        guide = HTTParty.get("http://github.com/api/v2/json/blob/show/#{REPO}/#{file['sha']}")
 
         authors = []
-        HTTParty.get("http://github.com/api/v2/json/commits/list/stevenheidel/refinerycms/master/doc/guides/#{folder['name'].gsub(" ", "%20")}/#{file['name'].gsub(" ", "%20")}")['commits'].each do |commit|
+        HTTParty.get("http://github.com/api/v2/json/commits/list/#{REPO}/master/#{LOCATION}/#{folder['name'].gsub(" ", "%20")}/#{file['name'].gsub(" ", "%20")}")['commits'].each do |commit|
           authors << commit['author']['name']
         end
         author = authors.uniq.join(", ")
