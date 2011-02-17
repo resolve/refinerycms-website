@@ -25,10 +25,9 @@
         <% Guide.where(:category => category_title).each do |guide| %>
           <dt>
             <%= link_to guide.title, guide_url(guide) %>
-            <span class='author'>By <%= guide.author %></span>
           </dt>
           <dd>
-            <%=raw guide.description %>
+            <%= raw textilize(guide.description) %>
           </dd>
         <% end %>
         </dl>

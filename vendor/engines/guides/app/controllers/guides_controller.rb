@@ -1,4 +1,6 @@
+require File.expand_path('../../helpers/guides_helper', __FILE__)
 class GuidesController < ApplicationController
+  include GuidesHelper
 
   before_filter :find_all_guides
   before_filter :find_page
@@ -22,16 +24,17 @@ class GuidesController < ApplicationController
 
   def show
     @guide = Guide.find(params[:id])
+    @guide_body = generate_guide(::YAML::load(@guide.guide))
 
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @guide in the line below:
     present(@page)
   end
-  
+
   def hook
     if request.post? and params.keys.map(&:to_sym).include?(:payload)
       push = JSON.parse(params[:payload])
-      
+
       Guide.refresh_github
     end
   end
