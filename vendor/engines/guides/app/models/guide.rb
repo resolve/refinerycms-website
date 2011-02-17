@@ -8,20 +8,20 @@ class Guide < ActiveRecord::Base
   validates_uniqueness_of :title
 
   def self.categories
-    categories = []
-
-    HTTParty.get('http://github.com/api/v2/json/tree/show/stevenheidel/refinerycms/070c69dc9f99ea09ccdeb6242fbd8e77a9359941')['tree'].each do |folder|
-      categories << folder['name']
+    if (categories = RefinerySetting.get(:categories, :scoping => :guides)).blank?
+      self.refresh_github
     end
-
+    
     categories
   end
 
   def self.refresh_github
-    Guide.delete_all
+    categories = []
+    guides = []
 
     HTTParty.get('http://github.com/api/v2/json/tree/show/stevenheidel/refinerycms/070c69dc9f99ea09ccdeb6242fbd8e77a9359941')['tree'].each do |folder|
       category = folder['name']
+      categories << category
 
       HTTParty.get("http://github.com/api/v2/json/tree/show/stevenheidel/refinerycms/#{folder['sha']}")['tree'].each do |file|
         title = file['name'].to_s
@@ -33,7 +33,7 @@ class Guide < ActiveRecord::Base
         end
         author = authors.uniq.join(", ")
 
-        Guide.create({
+        guides << Guide.new({
           :title => title.split(' - ').last.split('.textile').first,
           :description => (guide.scan(/^(.*)endprologue\./m).flatten.first.split("\n\n")[1..-1].join("\n\n") rescue nil),
           :guide => guide,
@@ -43,6 +43,11 @@ class Guide < ActiveRecord::Base
         })
       end
     end
+    
+    RefinerySetting.set(:categories, {:value => categories, :scoping => :guides})
+    
+    Guide.delete_all
+    guides.map {|guide| guide.save}
   end
 
   def url
