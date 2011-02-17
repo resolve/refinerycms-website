@@ -1,5 +1,3 @@
-<% Guide.refresh_github # TODO: delete after testing %>
-
 <div id='feature'>
   <div class='wrapper'>
     <h1><%=raw @page.title %></h1>
@@ -22,7 +20,7 @@
   <div class='wrapper'>
     <div id='mainCol'>
       <% Guide.categories.each do |category_title| %>
-        <h3><%= category_title %></h3>
+        <h3><%= category_title.to_s.split(/^\d+\ \-\ /).last %></h3>
         <dl>
         <% Guide.where(:category => category_title).each do |guide| %>
           <dt>

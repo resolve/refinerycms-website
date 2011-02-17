@@ -7,7 +7,7 @@ gem 'rails', '~> 3.0.3'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 #gem 'mysql'
-#gem 'mysql2'
+gem 'mysql2'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -38,7 +38,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'refinerycms',              '= 0.9.9.1'
 
 group :development, :test do
-  # gem 'refinerycms-testing',    '~> 0.9.9.1'
+  gem 'refinerycms-testing',    '~> 0.9.9.1'
 end
 
 # END REFINERY CMS ============================================================
