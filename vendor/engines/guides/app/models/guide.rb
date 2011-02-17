@@ -12,7 +12,7 @@ class Guide < ActiveRecord::Base
       self.refresh_github
       categories = RefinerySetting.get(:categories, :scoping => :guides)
     end
-    
+
     categories
   end
 
@@ -21,7 +21,7 @@ class Guide < ActiveRecord::Base
   TREE = "070c69dc9f99ea09ccdeb6242fbd8e77a9359941"
   REPO = "stevenheidel/refinerycms"
   LOCATION = "doc/guides"
-  
+
   def self.refresh_github
     categories = []
     guides = []
@@ -50,10 +50,11 @@ class Guide < ActiveRecord::Base
         })
       end
     end
-    
+
     RefinerySetting.set(:categories, {:value => categories, :scoping => :guides})
-    
+
     Guide.delete_all
+    Slug.delete_all(:sluggable_type => 'Guide')
     guides.map {|guide| guide.save}
   end
 
