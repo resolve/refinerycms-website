@@ -10,6 +10,7 @@ class Guide < ActiveRecord::Base
   def self.categories
     if (categories = RefinerySetting.get(:categories, :scoping => :guides)).blank?
       self.refresh_github
+      categories = RefinerySetting.get(:categories, :scoping => :guides)
     end
     
     categories
