@@ -16,7 +16,7 @@
           <div id='guides' class='clearfix' style='display: none'>
             <hr/>
             <dl class="L">
-              <% Guide::CATEGORIES[0..3].each do |category_title| %>
+              <% Guide.categories[0..3].each do |category_title| %>
                 <dt><%= category_title %></dt>
                 <dl>
                 <% Guide.where(:category => category_title).each do |guide| %>
@@ -28,7 +28,7 @@
               <% end %>
             </dl>
             <dl class="R">
-              <% Guide::CATEGORIES[4..7].each do |category_title| %>
+              <% Guide.categories[4..7].each do |category_title| %>
                 <dt><%= category_title %></dt>
                 <dl>
                 <% Guide.where(:category => category_title).each do |guide| %>
@@ -37,7 +37,7 @@
                   </dd>
                 <% end %>
                 </dl>
-              <% end %>
+              <% end if Guide.categories[4..7] %>
             </dl>
           </div>
         </li>

@@ -7,7 +7,7 @@ class Guide < ActiveRecord::Base
   validates_presence_of :title
   validates_uniqueness_of :title
 
-  def categories
+  def self.categories
     categories = []
     
     HTTParty.get('http://github.com/api/v2/json/tree/show/stevenheidel/refinerycms/070c69dc9f99ea09ccdeb6242fbd8e77a9359941')['tree'].each do |folder|
@@ -17,7 +17,7 @@ class Guide < ActiveRecord::Base
     categories
   end
   
-  def refresh_github
+  def self.refresh_github
     Guide.delete_all
     
     HTTParty.get('http://github.com/api/v2/json/tree/show/stevenheidel/refinerycms/070c69dc9f99ea09ccdeb6242fbd8e77a9359941')['tree'].each do |folder|
