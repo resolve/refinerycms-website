@@ -33,6 +33,8 @@ class Guide < ActiveRecord::Base
         end
         author = authors.uniq.join(", ")
 
+        require 'yaml'
+        guide = YAML::load(guide)
         Guide.create({
           :title => title.split(' - ').last.split('.textile').first,
           :description => [guide.to_s.match(/(.*)endprologue\./m), ''].flatten[0].to_s.split("\n")[1..-1],
