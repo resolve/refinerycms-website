@@ -17,10 +17,10 @@ class Guide < ActiveRecord::Base
   end
 
   # TODO: Find this out automatically
-  REPO = "stevenheidel/refinerycms"
+  REPO = "resolve/refinerycms"
 
   def self.refresh_github!
-    blobs = HTTParty.get('http://github.com/api/v2/json/blob/full/stevenheidel/refinerycms/master')['blobs']
+    blobs = HTTParty.get("http://github.com/api/v2/json/blob/full/#{REPO}/master")['blobs']
     blobs.reject!{|b| b['name'] !~ %r{^doc/guides/}}
 
     guides = []
