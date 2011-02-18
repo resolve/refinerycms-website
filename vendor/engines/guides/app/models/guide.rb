@@ -36,7 +36,7 @@ class Guide < ActiveRecord::Base
 
       title = blob['name'].to_s.split('/').last
       guide = HTTParty.get("http://github.com/api/v2/json/blob/show/#{REPO}/#{blob['sha']}")
-      github_url = "/blob/master/doc/guides/#{blob['name'].to_s.gsub(' ', '%20')}"
+      github_url = "/blob/master/#{blob['name'].to_s.gsub(' ', '%20')}"
       guides << Guide.new({
         :title => title.split(' - ').last.split('.textile').first,
         :description => (guide.scan(/^(.*)endprologue\./m).flatten.first.split("\n\n")[1..-1].join("\n\n") rescue nil),
