@@ -5,48 +5,7 @@
            } -%>
 
 <% if is_guides? %>
-  <div id='header'>
-    <div class="wrapper clearfix">
-      <h1 id='logo'><%= link_to RefinerySetting.get(:site_name), root_url(:only_path => true) %></h1>
-      <ul class='nav'>
-        <li><%= link_to "Home", guides_url %></li>
-        <li class='index'>
-          <%= link_to "Guides Index", guides_url, :id => "guidesMenu",
-                                      :onClick => "guideMenu(); return false;" %>
-          <div id='guides' class='clearfix' style='display: none'>
-            <hr/>
-            <dl class="L">
-              <% Guide.categories[0..3].each do |category_title| %>
-                <dt><%= category_title %></dt>
-                <dl>
-                <% Guide.where(:category => category_title).each do |guide| %>
-                  <dd>
-                    <%= link_to guide.title, guide_url(guide) %>
-                  </dd>
-                <% end %>
-                </dl>
-              <% end %>
-            </dl>
-            <dl class="R">
-              <% Guide.categories[4..7].each do |category_title| %>
-                <dt><%= category_title %></dt>
-                <dl>
-                <% Guide.where(:category => category_title).each do |guide| %>
-                  <dd>
-                    <%= link_to guide.title, guide_url(guide) %>
-                  </dd>
-                <% end %>
-                </dl>
-              <% end if Guide.categories[4..7] %>
-            </dl>
-          </div>
-        </li>
-        <li>
-          <%= link_to "Contribute", "/guides/how-to-contribute-to-refinery-development" %>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <%= render :partial => "/guides/header" %>
 <% else %>
   <h1 id='logo'><%= link_to RefinerySetting.get(:site_name), root_url(:only_path => true) %></h1>
   <h2 id='tagline'>
