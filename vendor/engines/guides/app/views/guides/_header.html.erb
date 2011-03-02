@@ -10,7 +10,7 @@
           <hr/>
           <dl class="L">
             <% Guide.categories[0..3].each do |category_title| %>
-            <dt><%= category_title %></dt>
+            <dt><%= category_title.to_s.split(/^\d+\ \-\ /).last %></dt>
               <dl>
                 <% Guide.where(:category => category_title).each do |guide| %>
                 <dd>
@@ -22,7 +22,7 @@
             </dl>
           <dl class="R">
             <% Guide.categories[4..7].each do |category_title| %>
-            <dt><%= category_title %></dt>
+            <dt><%= category_title.to_s.split(/^\d+\ \-\ /).last %></dt>
               <dl>
                 <% Guide.where(:category => category_title).each do |guide| %>
                 <dd>
