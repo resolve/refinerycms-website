@@ -6,10 +6,10 @@
     <div id='subCol'>
       <dl>
         <dd class='warning'>
-          <%=raw @page[:warning].gsub("<p>", "").gsub("</p>", "") %>
+          <%=raw @page[:warning].gsub("<p>", "").gsub("</p>", "") if @page[:warning] %>
         </dd>
         <dd class='ticket'>
-          <%=raw @page[:ticket].gsub("<p>", "").gsub("</p>", "") %>
+          <%=raw @page[:ticket].gsub("<p>", "").gsub("</p>", "") if @page[:ticket] %>
         </dd>
       </dl>
     </div>
