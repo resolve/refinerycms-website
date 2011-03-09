@@ -60,7 +60,6 @@ module RefinerycmsWebsite
       r301 "/blog/tag/Rails3","/blog/refinery-cms-now-supports-rails-3"
       r301 "/developers","/"
       r301 "/examples","/showcase"
-      r301 "/testimonials","/community"
       r301 "/blog/an-overview-of-refinery-cms-rails-magazine","/blog/rails-magazine-article-an-overview-of-refinery"
       r301 "/overview","/"
       r301 "/blog/refinery-turns-you-into-a-web-design-super-hero","/"
