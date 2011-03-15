@@ -9,10 +9,10 @@ gem 'mysql2'
 # REFINERY CMS ================================================================
 # Anything you put in here will be overridden when the app gets updated.
 
-gem 'refinerycms',              '= 0.9.9.3'
+gem 'refinerycms',              '= 0.9.9.9'
 
 group :development, :test do
-  gem 'refinerycms-testing',    '~> 0.9.9.3'
+  gem 'refinerycms-testing',    '~> 0.9.9.9'
 end
 
 # END REFINERY CMS ============================================================
@@ -25,7 +25,6 @@ gem 'refinerycms-guides', '1.0', :path => 'vendor/engines', :require => 'guides'
 gem 'RedCloth', '= 4.2.2'
 gem 'rack-rewrite', '~> 1.0.2'# Specify additional Refinery CMS Engines here (all optional):
 gem 'refinerycms-inquiries',    '~> 0.9.9.9'
-gem 'refinerycms-generators',   '~> 0.9.9'
 # gem 'refinerycms-news',       '~> 0.9.9.6'
 # gem 'refinerycms-portfolio',  '~> 0.9.9'
 # gem 'refinerycms-theming',    '~> 0.9.8.2'

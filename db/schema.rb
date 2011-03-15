@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110217222024) do
+ActiveRecord::Schema.define(:version => 20110315061337) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
@@ -126,27 +126,23 @@ ActiveRecord::Schema.define(:version => 20110217222024) do
     t.string   "browser_title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "custom_title"
   end
 
   add_index "page_translations", ["page_id"], :name => "index_page_translations_on_page_id"
 
   create_table "pages", :force => true do |t|
-    t.string   "title"
     t.integer  "parent_id"
     t.integer  "position"
     t.string   "path"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "meta_keywords"
-    t.text     "meta_description"
     t.boolean  "show_in_menu",        :default => true
     t.string   "link_url"
     t.string   "menu_match"
     t.boolean  "deletable",           :default => true
-    t.string   "custom_title"
     t.string   "custom_title_type",   :default => "none"
     t.boolean  "draft",               :default => false
-    t.string   "browser_title"
     t.boolean  "skip_to_first_child", :default => false
     t.integer  "lft"
     t.integer  "rgt"

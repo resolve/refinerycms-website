@@ -147,11 +147,11 @@ nav#footer_menu ul li a {
 }
 
 #page_container > footer #left_footer_block {
-  width: 28%;
+  width: 23%;
 }
 
 #page_container > footer #right_footer_block {
-  width: 70%;
+  width: 75%;
   position: absolute;
   right: 30px;
   top: 30px;
@@ -250,7 +250,7 @@ ul, ul li {
   display: block;
   background: #BEE8FF;
   padding: 10px 15px 10px 15px;
-  box-shadow: inset 0 0 7px #1e81d9; 
+  box-shadow: inset 0 0 7px #1e81d9;
   -moz-box-shadow:inset 0 0 7px #1e81d9;
   -webkit-box-shadow:inset 0 0 7px #1e81d9;
 }
@@ -328,7 +328,7 @@ Clearfix docs
 }
 /* End hide from IE Mac */
 
-/*  
-  Override default refinery formatting below. 
-  Formatting applies to backend WYSIWYG editors and all frontend. 
+/*
+  Override default refinery formatting below.
+  Formatting applies to backend WYSIWYG editors and all frontend.
 */
