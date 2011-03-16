@@ -11,8 +11,11 @@
       <hr/>
       <p>Latest stable gem version</p>
       <p id='version' class='clearfix'>
-      <% latest_version.split("").each do |char| -%>
-        <span class='<%= char == "." ? "point" : "digit" %>'><%= char %></span>
+      <% (digit_parts = latest_version.split(".")).each_with_index do |digits, index| %>
+        <span class="digit"><%= digits %></span>
+        <% if (index < (digit_parts.length - 1)) %>
+          <span class='point'>.</span>
+        <% end %>
       <% end -%>
       </p>
       <hr/>
