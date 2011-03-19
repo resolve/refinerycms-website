@@ -22,6 +22,9 @@
   <body>
     <%= site_bar -%>
     <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
+    
+    <%= render :partial => "/shared/japan" %>
+    
     <div id="page_container">
       <header>
         <%= render :partial => "/shared/header" -%>
