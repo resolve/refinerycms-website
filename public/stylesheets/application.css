@@ -332,3 +332,10 @@ Clearfix docs
   Override default refinery formatting below.
   Formatting applies to backend WYSIWYG editors and all frontend.
 */
+
+#japan {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 100;
+}

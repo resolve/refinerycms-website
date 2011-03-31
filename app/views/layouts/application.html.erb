@@ -18,13 +18,13 @@
     <%= javascript_include_tag 'guides.js' %>
   <% end if is_guides? %>
 
-  <% japan = render(:partial => '/shared/japan')%>
   <%= render :partial => "/shared/head" %>
   <body>
     <%= site_bar -%>
     <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
 
-    <%= japan %>
+    <%= link_to image_tag('rubysistsforjapan-badge.png'), "http://rubyistsforjapan.com",
+                :id => "japan", :target => "_blank" %>
 
     <div id="page_container">
       <header>
