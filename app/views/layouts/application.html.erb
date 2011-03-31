@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <%= render :partial => "/shared/html_tag" %>
   <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
+  <% content_for :meta do %>
+    <script>var _sf_startpt=(new Date()).getTime();</script>
+  <% end %>
   <% content_for :stylesheets do %>
     <%= stylesheet_link_tag('blog') if is_blog? %>
 
@@ -10,20 +13,14 @@
       <%# stylesheet_link_tag 'syntaxhighlighter/shCore.css' %>
       <%# stylesheet_link_tag 'syntaxhighlighter/shThemeRailsGuides.css' %>
     <% end %>
-
-    <script>var _sf_startpt=(new Date()).getTime();</script>
   <% end %>
-
-  <% content_for :javascripts do %>
-    <%= javascript_include_tag 'guides.js' %>
-  <% end if is_guides? %>
-
   <%= render :partial => "/shared/head" %>
   <body>
     <%= site_bar -%>
     <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
 
-    <%= link_to image_tag('rubysistsforjapan-badge.png'), "http://rubyistsforjapan.com",
+    <%= link_to image_tag('rubysistsforjapan-badge.png', :alt => "Support Rubyists for Japan - GO THERE NOW!"),
+                "http://rubyistsforjapan.com",
                 :id => "japan", :target => "_blank" %>
 
     <div id="page_container">
@@ -37,15 +34,13 @@
         <%= render :partial => "/shared/footer" -%>
       </footer>
     </div>
+    <% content_for :javascript_libraries do %>
+      <%= jquery_include_tags(:jquery_ui => false) %>
+      <%= javascript_include_tag('jquery/jquery.corner.js') %>
+    <% end %>
     <% content_for :javascripts do %>
-      <%= jquery_include_tags :jquery_ui => false %>
-      <%= javascript_include_tag 'jquery/jquery.corner.js' %>
-      <script>
-        $(document).ready(function() {
-          $("nav#menu").corner('8px bottom');
-          $("nav#menu ul li a").corner('5px');
-        });
-      </script>
+      <%= javascript_include_tag('application').gsub('">', '" async>') %>
+      <%= javascript_include_tag('guides').gsub('">', '" async >') if is_guides? %>
     <% end %>
     <%= render :partial => "/shared/javascripts" %>
     <%= render :partial => "/shared/chartbeat"%>
