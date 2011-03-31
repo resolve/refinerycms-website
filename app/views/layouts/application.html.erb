@@ -39,8 +39,8 @@
       <%= javascript_include_tag('jquery/jquery.corner.js') %>
     <% end %>
     <% content_for :javascripts do %>
-      <%= javascript_include_tag('application').gsub('">', '" async>') %>
-      <%= javascript_include_tag('guides').gsub('">', '" async >') if is_guides? %>
+      <%= javascript_include_tag('application') %>
+      <%= javascript_include_tag('guides') if is_guides? %>
     <% end %>
     <%= render :partial => "/shared/javascripts" %>
     <%= render :partial => "/shared/chartbeat"%>
