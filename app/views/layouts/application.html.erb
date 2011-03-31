@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <%= render :partial => "/shared/html_tag" %>
-  <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
   <% content_for :meta do %>
     <script>var _sf_startpt=(new Date()).getTime();</script>
   <% end %>
@@ -16,7 +15,7 @@
   <% end %>
   <%= render :partial => "/shared/head" %>
   <body>
-    <%= site_bar -%>
+    <%= render :partial => "/shared/site_bar" %>
     <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
 
     <%= link_to image_tag('rubysistsforjapan-badge.png', :alt => "Support Rubyists for Japan - GO THERE NOW!"),
