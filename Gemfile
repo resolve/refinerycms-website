@@ -1,18 +1,16 @@
 source 'http://rubygems.org'
-gem 'bundler', '~> 1.0.5'
-gem 'rails', '= 3.0.5'
 
 gem 'sqlite3'
 #gem 'mysql'
-gem 'mysql2'
+gem 'mysql2', '~> 0.2.7'
 
 # REFINERY CMS ================================================================
 # Anything you put in here will be overridden when the app gets updated.
 
-gem 'refinerycms',              '= 0.9.9.15'
+gem 'refinerycms',              '= 0.9.9.21'
 
 group :development, :test do
-  gem 'refinerycms-testing',    '= 0.9.9.15'
+  gem 'refinerycms-testing',    '= 0.9.9.21'
 end
 
 # END REFINERY CMS ============================================================
@@ -31,6 +29,6 @@ gem 'refinerycms-inquiries',    '~> 0.9.9.9'
 # gem 'refinerycms-search',     '~> 0.9.8'
 
 # Add i18n support (optional, you can remove this if you really want to).
-gem 'refinerycms-i18n',         '>= 0.9.9'
+gem 'refinerycms-i18n',         '~> 1.0.0'
 
 # END USER DEFINED
