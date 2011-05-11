@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/resolve/refinerycms.git
-  revision: 4beff8e899b9406208ef5ef1776788cac36f3ca8
+  revision: c56724b3e7be92e9b4a9c90477001aba9b515597
   specs:
     refinerycms (0.9.9.21)
       bundler (~> 1.0)
@@ -73,7 +73,7 @@ GEM
       autotest (~> 4.3)
     autotest-rails (4.1.0)
       ZenTest
-    babosa (0.3.3)
+    babosa (0.3.4)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     capybara (0.4.1.2)
