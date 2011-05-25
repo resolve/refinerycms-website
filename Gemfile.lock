@@ -206,8 +206,6 @@ GEM
     refinerycms-i18n (1.0.0)
       refinerycms-core (>= 0.9.9.12)
       routing-filter (>= 0.2.3)
-    refinerycms-inquiries (1.0.0)
-      filters_spam (~> 0.2)
     routing-filter (0.2.3)
       actionpack
     rspec (2.6.0)
@@ -256,6 +254,5 @@ DEPENDENCIES
   refinerycms-blog (~> 1.1)
   refinerycms-guides (= 1.0)!
   refinerycms-i18n (~> 1.0.0)
-  refinerycms-inquiries (~> 1.0.0)
   refinerycms-testing!
   sqlite3
