@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/resolve/refinerycms.git
-  revision: 158183bb6c4f912c22e0ddf33ffe8ec805a2727e
+  revision: 8d2e9c7a167f93604951da5611e26b6c4c494bf6
   specs:
     refinerycms (1.0.0)
       bundler (~> 1.0)
