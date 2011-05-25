@@ -9,7 +9,7 @@
                  :hide_children => false,
                  :dom_id => 'footer_menu',
                  :extra_suffix => 'footer',
-                 :collection => @menu_pages.select {|p| p.depth.to_i == 0}.reverse
+                 :roots => @menu_pages.roots.reverse
                } %>
   <p>
     Copyright &copy; <%= Time.now.year %>

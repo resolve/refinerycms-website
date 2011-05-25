@@ -1,15 +1,15 @@
 <section id='body_content'>
   <h1><%= page_title %></h1>
-  <% unless @page[:side_body].blank? %>
+  <% unless @page.content_for(:side_body).blank? %>
     <section id='body_content_left'>
-      <%=raw @page[:body] %>
+      <%=raw @page.content_for(:body) %>
     </section>
     <section id='body_content_right'>
-      <%=raw @page[:side_body] %>
+      <%=raw @page.content_for(:side_body) %>
     </section>
   <% else %>
     <section id='content'>
-      <%=raw @page[:body] %>
+      <%=raw @page.content_for(:body) %>
     </section>
   <% end %>
 </section>
