@@ -5,6 +5,7 @@ class GuidesController < ApplicationController
   before_filter :find_all_guides
   before_filter :find_page
 
+  caches_action :index, :cache_path => Proc.new { |c| "#{Refinery.base_cache_key}/guides/index" }
   caches_action :show,
                 :cache_path => Proc.new { |c| "#{Refinery.base_cache_key}/guides/#{c.params[:id]}" }
 
