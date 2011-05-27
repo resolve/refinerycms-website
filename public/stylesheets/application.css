@@ -304,7 +304,8 @@ blockquote {
 	min-height: 50px;
 	margin-bottom: 20px;
 	background: #555 url('/images/quote.png') no-repeat;
-	padding: 40px 40px 40px 60px;
+	background-position: 15px 15px;
+	padding: 16px 40px 15px 75px;
 	-webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
