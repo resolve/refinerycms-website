@@ -348,3 +348,6 @@ Clearfix docs
   top: 0px;
   z-index: 100;
 }
+footer.blog_comment_author {
+  border-bottom: 1px solid #F1A944;
+}
