@@ -5,6 +5,9 @@ class GuidesController < ApplicationController
   before_filter :find_all_guides
   before_filter :find_page
 
+  caches_action :show,
+                :cache_path => Proc.new { |c| "#{Refinery.base_cache_key}/guides/#{c.params[:id]}" }
+
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @guide in the line below:

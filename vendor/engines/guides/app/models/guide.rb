@@ -65,6 +65,8 @@ class Guide < ActiveRecord::Base
         guide.title
       end
     end
+
+    Rails.cache.delete_matched(/.*guides.*/)
   end
 
   def url
