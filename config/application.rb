@@ -43,7 +43,7 @@ module RefinerycmsWebsite
     require 'rack/rewrite'
 
     config.after_initialize do
-      ::Blog::Comment.module_eval do
+      ::BlogComment.module_eval do
         def avatar_url
           require 'digest/md5'
           "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(comment.email.to_s.strip.downcase)}"
