@@ -5,8 +5,8 @@ class GuidesController < ApplicationController
   before_filter :find_all_guides
   before_filter :find_page
 
-  caches_page :index, :unless => proc {|c| c.user_signed_in?}
-  caches_page :show, :unless => proc {|c| c.user_signed_in?}
+  caches_page :index, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
+  caches_page :show, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
 
   def index
     # you can use meta fields from your model instead (e.g. browser_title)

@@ -44,13 +44,13 @@ module RefinerycmsWebsite
 
     config.after_initialize do
       ::PagesController.module_eval do
-        caches_page :show, :unless => proc {|c| c.user_signed_in?}
-        caches_page :home, :unless => proc {|c| c.user_signed_in?}
+        caches_page :show, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
+        caches_page :home, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
       end
       ::Blog::PostsController.module_eval do
         # Can't cache blog index because it uses paging :(
-        #caches_page :index, :unless => proc {|c| c.user_signed_in?}
-        caches_page :show, :unless => proc {|c| c.user_signed_in?}
+        #caches_page :index, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
+        caches_page :show, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
       end
     end
 
