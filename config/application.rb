@@ -44,7 +44,7 @@ module RefinerycmsWebsite
 
     config.after_initialize do
       ::PagesController.module_eval do
-        caches_page :show, :unless => proc {|c| c.logged_in?}
+        caches_page :show, :unless => {|c| c.logged_in?}
       end
       ::Page.module_eval do
         expire_page(:controller => 'pages', :action => 'home')
