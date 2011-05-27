@@ -310,7 +310,7 @@ blockquote {
   border-radius: 8px;
 }
 
-.subCol {
+#subCol {
   -webkit-border-top-left-radius: 8px;
   -webkit-border-top-right-radius: 8px;
   -webkit-border-bottom-right-radius: 0px;
