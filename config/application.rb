@@ -46,7 +46,7 @@ module RefinerycmsWebsite
       ::BlogComment.module_eval do
         def avatar_url
           require 'digest/md5'
-          "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(comment.email.to_s.strip.downcase)}"
+          "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(self.email.to_s.strip.downcase)}"
         end
       end
       ::PagesController.module_eval do
