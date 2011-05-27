@@ -42,6 +42,12 @@ module RefinerycmsWebsite
     
     require 'rack/rewrite'
  
+    config.after_initialize do
+      ::PagesController.module_eval do
+        caches_page :show
+      end
+    end
+ 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
       r301 "/inquiries/new","/contact"
       r301 "/blog/author/Barry Harrison","/blog"
