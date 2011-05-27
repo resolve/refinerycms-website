@@ -42,15 +42,6 @@ module RefinerycmsWebsite
 
     require 'rack/rewrite'
 
-    config.to_prepare do
-      ::BlogComment.module_eval do
-        def avatar_url
-          require 'digest/md5'
-          "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(self.email.to_s.strip.downcase)}?s=60.jpg"
-        end
-      end
-    end
-
     config.after_initialize do
       ::PagesController.module_eval do
         caches_page :show, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
