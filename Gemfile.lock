@@ -64,15 +64,6 @@ GIT
       rspec-rails (~> 2.6)
 
 PATH
-  remote: /code/refinerycms/refinerycms-blog
-  specs:
-    refinerycms-blog (1.5.0)
-      acts-as-taggable-on
-      filters_spam (~> 0.2)
-      refinerycms-core (~> 1.0.0)
-      seo_meta (~> 1.1.0)
-
-PATH
   remote: vendor/engines
   specs:
     refinerycms-guides (1.0)
@@ -212,6 +203,11 @@ GEM
       thor (~> 0.14.4)
     rake (0.9.0)
     rcov (0.9.9)
+    refinerycms-blog (1.5.0)
+      acts-as-taggable-on
+      filters_spam (~> 0.2)
+      refinerycms-core (~> 1.0.0)
+      seo_meta (~> 1.1.0)
     refinerycms-generators (1.0.1)
     refinerycms-i18n (1.0.0)
       refinerycms-core (>= 0.9.9.12)
@@ -261,8 +257,8 @@ DEPENDENCIES
   mysql2 (~> 0.2.7)
   rack-rewrite (~> 1.0.2)
   refinerycms!
-  refinerycms-blog (~> 1.5)!
-  refinerycms-guides (= 1.0)!
+  refinerycms-blog (~> 1.5)
+  refinerycms-guides!
   refinerycms-i18n (~> 1.0.0)
   refinerycms-testing!
   sqlite3
