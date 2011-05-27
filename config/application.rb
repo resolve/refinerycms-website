@@ -38,16 +38,17 @@ module RefinerycmsWebsite
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    
-    
+
+
     require 'rack/rewrite'
- 
+
     config.after_initialize do
       ::PagesController.module_eval do
         caches_page :show
+        caches_page :home
       end
     end
- 
+
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
       r301 "/inquiries/new","/contact"
       r301 "/blog/author/Barry Harrison","/blog"
@@ -70,19 +71,19 @@ module RefinerycmsWebsite
       r301 "/overview","/"
       r301 "/blog/refinery-turns-you-into-a-web-design-super-hero","/"
       r301 "/contact-page","/contact"
-      
+
       # more generic ones.
       r301 %r{/blog/tag/.*},"/blog"
       r301 %r{/blog/author/.*},"/blog"
-      
+
       # tutorial site redirects
       r301 "/tutorials","http://refinerycms.com/guides"
       r301 "/tutorials/","http://refinerycms.com/guides"
       r301 "/tutorials/tagged/installation","http://refinerycms.com/download"
       r301 "/tutorials/how-to-test-refinery","http://refinerycms.com/guides/how-to-test-refinery"
       r301 "/tutorials/how-to-install-refinery","http://refinerycms.com/download"
-      r301 "/tutorials/translate-refinery-into-your-language","http://refinerycms.com/guides/translate-refinery-into-your-language" 
-      
+      r301 "/tutorials/translate-refinery-into-your-language","http://refinerycms.com/guides/translate-refinery-into-your-language"
+
       r301 "/tutorials/how-to-override-a-view","http://refinerycms.com/guides/how-to-override-a-view"
       r301 "/tutorials/using-sass-in-your-themes","http://refinerycms.com/guides/using-sass-in-your-views"
       r301 "/tutorials/how-to-install-refinery-on-heroku","http://refinerycms.com/guides/how-to-install-refinery-on-heroku"
@@ -97,7 +98,7 @@ module RefinerycmsWebsite
       r301 "/tutorials/tagged/testing","http://refinerycms.com/guides/how-to-test-refinery"
       r301 "/tutorials/tagged/update","http://refinerycms.com/guides/how-to-update-refinery-to-the-latest-stable-version"
       r301 "/tutorials/tagged/help","http://refinerycms.com/guides/how-to-get-help-with-refinery"
-      
+
       # generic tagged routes
       r301 %r{/tutorials/tagged/.*},"http://refinerycms.com/guides"
     end
