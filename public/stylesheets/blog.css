@@ -77,6 +77,10 @@
   border-radius: 8px;
 }
 
+.filed_in {
+  display: none;
+}
+
 .comment_icon {
   vertical-align: middle;
 }
