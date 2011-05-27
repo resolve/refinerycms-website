@@ -48,7 +48,8 @@ module RefinerycmsWebsite
         caches_page :home, :unless => proc {|c| c.user_signed_in?}
       end
       ::Blog::PostsController.module_eval do
-        caches_page :index, :unless => proc {|c| c.user_signed_in?}
+        # Can't cache blog index because it uses paging :(
+        #caches_page :index, :unless => proc {|c| c.user_signed_in?}
         caches_page :show, :unless => proc {|c| c.user_signed_in?}
       end
     end
