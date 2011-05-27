@@ -298,6 +298,12 @@ input, textarea {
 }
 
 
+blockquote {
+	padding-left: 60px;
+	margin: 0px;
+	background: transparent url('/images/quote.png') no-repeat; }
+}
+
 
 /* Browser Hacks */
 

@@ -1,13 +1,13 @@
 #body_content_left {
-  width: 67%;
+  width: 78%;
 }
 
 #body_content_right {
-  width: 28%;
+  width: 17%;
 }
 
 .blog_post {
-  padding-top: 20px;
+  padding-top: 30px;
   padding-bottom: 10px;
 }
 
@@ -15,8 +15,16 @@
   text-decoration: none;
 }
 
+.blog_post .posted_at {
+  margin-top: -15px;
+}
+
 .blog_post h1 a:hover {
   text-decoration: underline;
+}
+
+#body_content h1, #body_content h1 * {
+  text-align: left;
 }
 
 .blog_post h1, .blog_post h1 * {
