@@ -77,6 +77,10 @@
   border-radius: 8px;
 }
 
+.comment_icon {
+  vertical-align: middle;
+}
+
 .blog_comment_message p:first-child {
   margin-top: 0px;
 }

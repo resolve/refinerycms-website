@@ -14,11 +14,11 @@
     <footer>
       <p>
         <%= link_to t('blog.shared.posts.read_more'), blog_post_url(post) %>
-        
+        - <%= image_tag 'comment.png', :class => "comment_icon" %>
         <% if post.comments.any? %>
-           (<%= pluralize(post.comments.approved.count, t('blog.shared.comments.singular')) %>)
+            <%= pluralize(post.comments.approved.count, t('blog.shared.comments.singular')) %>
         <% else %>
-          (<%= t('blog.shared.comments.none') %>)
+          <%= t('blog.shared.comments.none') %>
         <% end %>
 
       </p>
