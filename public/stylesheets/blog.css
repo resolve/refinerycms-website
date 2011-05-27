@@ -68,7 +68,7 @@
 
 .blog_comment_message {
 	margin: 0px;
-	min-height: 50px;
+	min-height: 60px;
 	margin-bottom: 15px;
 	background: #555 ;
 	padding: 15px;
@@ -81,9 +81,15 @@
   vertical-align: middle;
 }
 
-.blog_comment_message p:first-child {
+.avatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.blog_comment_message p {
   margin-top: 0px;
 }
+
 
 .blog_comment_message p:last-child {
   margin-bottom: 0px;
