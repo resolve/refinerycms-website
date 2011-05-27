@@ -301,6 +301,8 @@ input, textarea {
 blockquote {
 	padding-left: 60px;
 	margin: 0px;
+	min-height: 50px;
+	margin-bottom: 20px;
 	background: transparent url('/images/quote.png') no-repeat; }
 }
 
