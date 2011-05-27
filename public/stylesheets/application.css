@@ -299,7 +299,6 @@ input, textarea {
 
 
 blockquote {
-	padding-left: 60px;
 	margin: 0px;
 	min-height: 50px;
 	margin-bottom: 20px;
@@ -360,7 +359,4 @@ Clearfix docs
   right: 0px;
   top: 0px;
   z-index: 100;
-}
-footer.blog_comment_author {
-  border-bottom: 1px solid #F1A944;
 }

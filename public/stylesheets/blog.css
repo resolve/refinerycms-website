@@ -64,5 +64,27 @@
     min-height: 100% !important;
     margin-bottom: 3px;
     padding-bottom: 0px;
-  }
+}
+
+.blog_comment_message {
+	margin: 0px;
+	min-height: 50px;
+	margin-bottom: 15px;
+	background: #555 ;
+	padding: 15px;
+	-webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.blog_comment_message p:first-child {
+  margin-top: 0px;
+}
+
+.blog_comment_message p:last-child {
+  margin-bottom: 0px;
+}
+
+.blog_comment_author {
+  color: #A5A5A5;
 }
