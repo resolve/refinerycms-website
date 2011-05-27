@@ -47,6 +47,10 @@ module RefinerycmsWebsite
         caches_page :show
         caches_page :home
       end
+      ::Blog::PostsController.module_eval do
+        caches_page :index
+        caches_page :show
+      end
     end
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
