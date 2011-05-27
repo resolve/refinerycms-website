@@ -303,7 +303,11 @@ blockquote {
 	margin: 0px;
 	min-height: 50px;
 	margin-bottom: 20px;
-	background: transparent url('/images/quote.png') no-repeat; }
+	background: #555 url('/images/quote.png') no-repeat;
+	padding: 40px 40px 40px 60px;
+	-webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
 }
 
 
