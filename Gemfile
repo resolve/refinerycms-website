@@ -18,7 +18,7 @@ end
 # END REFINERY CMS ============================================================
 
 # USER DEFINED
-gem 'refinerycms-blog', '~> 1.1'
+gem 'refinerycms-blog',   '~> 1.5', :git => 'git://github.com/resolve/refinerycms-blog.git'
 gem 'httparty'
 
 gem 'refinerycms-guides', '1.0', :path => 'vendor/engines', :require => 'guides'
