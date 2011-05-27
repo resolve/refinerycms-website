@@ -5,7 +5,7 @@ class GuidesController < ApplicationController
   before_filter :find_all_guides
   before_filter :find_page
 
-  caches_page :index, :show, :unless => {|c| c.logged_in?}
+  caches_page :index, :show, :unless => proc {|c| c.logged_in?}
 
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
