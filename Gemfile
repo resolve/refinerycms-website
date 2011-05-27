@@ -18,12 +18,14 @@ end
 # END REFINERY CMS ============================================================
 
 # USER DEFINED
-gem 'refinerycms-blog',   '~> 1.5', :git => 'git://github.com/resolve/refinerycms-blog.git'
+gem 'refinerycms-blog',         '~> 1.5'
 gem 'httparty'
 
-gem 'refinerycms-guides', '1.0', :path => 'vendor/engines', :require => 'guides'
-gem 'RedCloth', '= 4.2.2'
-gem 'rack-rewrite', '~> 1.0.2'# Specify additional Refinery CMS Engines here (all optional):
+gem 'refinerycms-guides',       :path => 'vendor/engines', :require => 'guides'
+gem 'RedCloth',                 '= 4.2.2'
+gem 'rack-rewrite',             '~> 1.0.2'
+
+# Specify additional Refinery CMS Engines here (all optional):
 # gem 'refinerycms-inquiries',    '~> 1.0.0'
 # gem 'refinerycms-news',       '~> 0.9.9.6'
 # gem 'refinerycms-portfolio',  '~> 0.9.9'

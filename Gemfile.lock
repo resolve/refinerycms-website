@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/resolve/refinerycms-blog.git
-  revision: 3a5d3f56f3446704e1e5c1564011d88e257af97c
-  specs:
-    refinerycms-blog (1.5.2)
-      acts-as-taggable-on
-      filters_spam (~> 0.2)
-      refinerycms-core (~> 1.0.0)
-      seo_meta (~> 1.1.0)
-
-GIT
   remote: git://github.com/resolve/refinerycms.git
   revision: 39dbf85347f06f1fd7a587908d71e6111a88db55
   specs:
@@ -181,6 +171,11 @@ GEM
       friendly_id_globalize3 (~> 3.2.1)
       refinerycms-core (= 1.0.0)
     refinerycms-base (1.0.0)
+    refinerycms-blog (1.5.2)
+      acts-as-taggable-on
+      filters_spam (~> 0.2)
+      refinerycms-core (~> 1.0.0)
+      seo_meta (~> 1.1.0)
     refinerycms-core (1.0.0)
       acts_as_indexed (~> 0.7)
       awesome_nested_set (~> 2.0)
@@ -259,8 +254,8 @@ DEPENDENCIES
   mysql2 (~> 0.2.7)
   rack-rewrite (~> 1.0.2)
   refinerycms!
-  refinerycms-blog (~> 1.5)!
-  refinerycms-guides (= 1.0)!
+  refinerycms-blog (~> 1.5)
+  refinerycms-guides!
   refinerycms-i18n (~> 1.0.0)
   refinerycms-testing!
   sqlite3
