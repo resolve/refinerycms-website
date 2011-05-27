@@ -67,8 +67,6 @@ class Guide < ActiveRecord::Base
     end
 
     Rails.cache.delete_matched(/.*guides.*/)
-    expire_page(:controller => 'guides', :action => 'index')
-    expire_page(:controller => 'guides', :action => 'show')
   end
 
   def url
