@@ -18,9 +18,10 @@ class Guide < ActiveRecord::Base
 
   # TODO: Find this out automatically
   REPO = "resolve/refinerycms"
+  BRANCH = "1-0-stable"
 
   def self.refresh_github!
-    blobs = HTTParty.get("http://github.com/api/v2/json/blob/full/#{REPO}/master")['blobs']
+    blobs = HTTParty.get("http://github.com/api/v2/json/blob/full/#{REPO}/#{BRANCH}")['blobs']
     blobs.reject!{|b| b['name'] !~ %r{^doc/guides/}}
 
     guides = []
@@ -28,7 +29,7 @@ class Guide < ActiveRecord::Base
       folder_name = blob['name'].to_s.split('/')[-2]
 
       authors = []
-      blob_url = "http://github.com/api/v2/json/commits/list/#{REPO}/master/#{blob['name'].to_s.gsub(" ", "%20")}"
+      blob_url = "http://github.com/api/v2/json/commits/list/#{REPO}/#{BRANCH}/#{blob['name'].to_s.gsub(" ", "%20")}"
       HTTParty.get(blob_url)['commits'].each do |commit|
         authors << commit['author']['name']
       end
@@ -36,7 +37,7 @@ class Guide < ActiveRecord::Base
 
       title = blob['name'].to_s.split('/').last
       guide = HTTParty.get("http://github.com/api/v2/json/blob/show/#{REPO}/#{blob['sha']}")
-      github_url = "/blob/master/#{blob['name'].to_s.gsub(' ', '%20')}"
+      github_url = "/blob/#{BRANCH}/#{blob['name'].to_s.gsub(' ', '%20')}"
       guides << Guide.new({
         :title => title.split(' - ').last.split('.textile').first,
         :description => (guide.scan(/^(.*)endprologue\./m).flatten.first.split("\n\n")[1..-1].join("\n\n") rescue nil),
