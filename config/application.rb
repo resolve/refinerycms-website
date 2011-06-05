@@ -74,7 +74,7 @@ module RefinerycmsWebsite
           after_destroy :clear_static_caching!
 
           def clear_static_caching!
-            if (blog_dir = Rails.root.join('public', 'blog')).dir?
+            if (blog_dir = Rails.root.join('public', 'blog')).directory?
               $stdout.puts "Clearing cached blog directory #{blog_dir}"
               Rails.root.join('public', 'blog').rmdir
             end
