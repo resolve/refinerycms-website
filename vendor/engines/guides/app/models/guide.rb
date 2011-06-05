@@ -76,6 +76,10 @@ class Guide < ActiveRecord::Base
       $stdout.puts "Clearing cached #{guides_file.split.last}"
       guides_file.delete
     end
+    if (homepage = Rails.root.join('public', 'index.html')).file?
+      $stdout.puts "Clearing the homepage due to Github push."
+      homepage.delete
+    end
   end
 
   def url
