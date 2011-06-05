@@ -80,8 +80,8 @@ module RefinerycmsWebsite
             end
           end
           protected :clear_static_caching!
-        end
-      end if defined?(blog_model)
+        end if defined?(blog_model)
+      end
     end
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
