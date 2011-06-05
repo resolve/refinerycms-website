@@ -68,6 +68,9 @@ class Guide < ActiveRecord::Base
     end
 
     Rails.cache.delete_matched(/.*guides.*/)
+    if (guides_dir = Rails.root.join('public', 'guides')).directory?
+      guides_dir.rmdir
+    end
   end
 
   def url
