@@ -69,10 +69,12 @@ class Guide < ActiveRecord::Base
 
     Rails.cache.delete_matched(/.*guides.*/)
     if (guides_dir = Rails.root.join('public', 'guides')).directory?
+      $stdout.puts "Clearing cached guides directory #{guides_dir}"
       guides_dir.rmdir
     end
     if (guides_file = Rails.root.join('public', 'guides.html')).file?
-      guides_file.rm
+      $stdout.puts "Clearing cached #{guides_file.split.last}"
+      guides_file.delete
     end
   end
 

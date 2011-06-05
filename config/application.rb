@@ -47,11 +47,41 @@ module RefinerycmsWebsite
         caches_page :show, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
         caches_page :home, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
       end
+      ::Page.module_eval do
+        after_save :clear_static_caching!
+        after_destroy :clear_static_caching!
+
+        def clear_static_caching!
+          Page.all.map(&:url).map{|u|
+            [(u if u.is_a?(String)), (u[:path] if u.respond_to?(:keys))].compact
+          }.flatten.map{ |u| [(u.split('/').last || 'index'), 'html'].join('.')}.each do |page|
+            if (static_file = Rails.root.join('public', page)).file?
+              $stdout.puts "Clearing cached page #{static_file.split.last}"
+              static_file.delete
+            end
+          end
+        end
+        protected :clear_static_caching!
+      end
       ::Blog::PostsController.module_eval do
         # Can't cache blog index because it uses paging :(
         #caches_page :index, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
-        #caches_page :show, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
+        caches_page :show, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
       end
+      [::BlogPost, ::BlogComment, ::BlogCategory].each do |blog_model|
+        blog_model.module_eval do
+          after_save :clear_static_caching!
+          after_destroy :clear_static_caching!
+
+          def clear_static_caching!
+            if (blog_dir = Rails.root.join('public', 'blog')).dir?
+              $stdout.puts "Clearing cached blog directory #{blog_dir}"
+              Rails.root.join('public', 'blog').rmdir
+            end
+          end
+          protected :clear_static_caching!
+        end
+      end if defined?(blog_model)
     end
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do

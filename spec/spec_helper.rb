@@ -1,4 +1,7 @@
 require 'rbconfig'
+require 'factory_girl'
+require File.expand_path('../support/refinery/controller_macros', __FILE__)
+
 def setup_environment
   # This file is copied to ~/spec when you run 'rails generate rspec'
   # from the project root directory.
@@ -27,6 +30,9 @@ def setup_environment
     # instead of true.
     config.use_transactional_fixtures = true
     config.use_instantiated_fixtures  = false
+
+    config.include ::Devise::TestHelpers, :type => :controller
+    config.extend ::Refinery::ControllerMacros, :type => :controller
   end
 end
 
