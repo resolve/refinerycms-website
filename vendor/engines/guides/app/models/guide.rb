@@ -71,6 +71,9 @@ class Guide < ActiveRecord::Base
     if (guides_dir = Rails.root.join('public', 'guides')).directory?
       guides_dir.rmdir
     end
+    if (guides_file = Rails.root.join('public', 'guides.html')).file?
+      guides_file.rm
+    end
   end
 
   def url
