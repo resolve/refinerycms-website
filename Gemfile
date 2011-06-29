@@ -20,7 +20,7 @@ gem 'refinerycms-blog',         '~> 1.6.2'
 gem 'httparty'
 
 gem 'refinerycms-guides',       :path => 'vendor/engines', :require => 'guides'
-gem 'RedCloth',                 '= 4.2.2'
+gem 'RedCloth',                 '= 4.2.7'
 gem 'rack-rewrite',             '~> 1.0.2'
 
 # Specify additional Refinery CMS Engines here (all optional):
