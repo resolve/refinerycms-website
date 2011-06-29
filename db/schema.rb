@@ -10,12 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110527100930) do
+ActiveRecord::Schema.define(:version => 20110629034235) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cached_slug"
   end
 
   add_index "blog_categories", ["id"], :name => "index_blog_categories_on_id"
@@ -46,6 +47,9 @@ ActiveRecord::Schema.define(:version => 20110527100930) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "cached_slug"
+    t.string   "custom_url"
+    t.text     "custom_teaser"
   end
 
   add_index "blog_posts", ["id"], :name => "index_blog_posts_on_id"
