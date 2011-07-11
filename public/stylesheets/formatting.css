@@ -21,6 +21,6 @@ body {
   font-size: 16px;
 }
 
-#body_content .blog_post header h1 {
+#body_content .blog_post header h1, #body_content #blog_post header h1 {
   margin-bottom: 0px;
 }
