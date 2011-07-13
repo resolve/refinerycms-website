@@ -27,7 +27,7 @@ module ApplicationHelper
                })
     end
 
-    (version.present? ? version : '1.0.3').to_s
+    version.to_s
   end
 
   def rubygems_downloads
@@ -38,7 +38,7 @@ module ApplicationHelper
                })
     end
 
-    (downloads.present? ? downloads : '93000').to_s
+    downloads
   end
 
   def latest_update
