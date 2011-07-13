@@ -27,7 +27,7 @@ module ApplicationHelper
                })
     end
 
-    version
+    version.to_s
   end
 
   def rubygems_downloads
