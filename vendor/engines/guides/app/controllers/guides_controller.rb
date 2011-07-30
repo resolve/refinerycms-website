@@ -37,7 +37,7 @@ class GuidesController < ApplicationController
   def hook
     if request.post? and params.keys.map(&:to_sym).include?(:payload)
       if (push = JSON.parse(params[:payload])).present? && push['ref'] =~ Regexp.new(Guide::BRANCH)
-        if push['commits'].any? {|c| [c['added'], c['modified'], c['removed']].flatten.any{|m| m =~ /guides/ }}
+        if push['commits'].any? {|c| [c['added'], c['modified'], c['removed']].flatten.any? {|m| m =~ /guides/ }}
           Guide.refresh_github!
 
           render :nothing => true and return
