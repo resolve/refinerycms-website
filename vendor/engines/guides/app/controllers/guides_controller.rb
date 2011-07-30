@@ -45,8 +45,9 @@ class GuidesController < ApplicationController
       end
     end
 
-    logger.warn "Nothing to update for payload:"
-    logger.warn params[:payload].inspect
+    logger.warn "**"
+    logger.warn "Nothing to update for payload."
+    logger.warn "**"
 
     render :nothing => true and return
   end
