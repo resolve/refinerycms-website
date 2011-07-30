@@ -47,6 +47,8 @@ class GuidesController < ApplicationController
 
     $stdout.puts "Nothing to update for payload:"
     $stdout.puts params[:payload].inspect
+
+    render :nothing => true and return
   end
 
 protected
