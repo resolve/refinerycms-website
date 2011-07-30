@@ -36,13 +36,17 @@ class GuidesController < ApplicationController
 
   def hook
     if request.post? and params.keys.map(&:to_sym).include?(:payload)
-      push = JSON.parse(params[:payload])
-      $stdout.puts push.inspect
+      if (push = JSON.parse(params[:payload])).present? && push['ref'] =~ Regexp.new(Guide::BRANCH)
+        if push['commits'].any? {|c| [c['added'], c['modified'], c['removed']].flatten.any{|m| m =~ /guides/ }}
+          Guide.refresh_github!
 
-      Guide.refresh_github!
-
-      render :nothing => true
+          render :nothing => true and return
+        end
+      end
     end
+
+    $stdout.puts "Nothing to update for payload:"
+    $stdout.puts params[:payload].inspect
   end
 
 protected
