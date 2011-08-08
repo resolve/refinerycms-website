@@ -47,6 +47,10 @@ class GuidesController < ApplicationController
 
     logger.warn "**"
     logger.warn "Nothing to update for payload."
+    if (homepage = Rails.root.join('public', 'index.html')).file?
+      $stdout.puts "However, I'm clearing the homepage due to a Github push."
+      homepage.delete
+    end
     logger.warn "**"
 
     render :nothing => true and return
