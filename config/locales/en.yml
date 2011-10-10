@@ -7,4 +7,4 @@ en:
   blog:
     posts:
       post:
-        filed_in: Filed in:
+        filed_in: "Filed in:"

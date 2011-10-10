@@ -36,9 +36,9 @@ class GuidesController < ApplicationController
 
   def hook
     if request.post? and params.keys.map(&:to_sym).include?(:payload)
-      if (push = JSON.parse(params[:payload])).present? && push['ref'] =~ Regexp.new(Guide::BRANCH)
+      if (push = JSON.parse(params[:payload])).present? && push['ref'] =~ Regexp.new(Guide::BRANCHES.join("|"))
         if push['commits'].any? {|c| [c['added'], c['modified'], c['removed']].flatten.any? {|m| m =~ /guides/ }}
-          Guide.refresh_github!
+          Guide.refresh_github!(:branch => push['ref'])
 
           render :nothing => true and return
         end
@@ -59,11 +59,12 @@ class GuidesController < ApplicationController
 protected
 
   def find_all_guides
-    @guides = Guide.find(:all, :order => "position ASC")
+    branch = Guide::BRANCHES.include?(params[:branch]) ? params[:branch] : Guide::BRANCH
+    @guides = Guide.order('position ASC').where(:branch => branch)
   end
 
   def find_page
-    @page = Page.find_by_link_url("/guides")
+    @page = Page.where(:link_url => "/#{"edge-" if params[:branch] == 'master'}guides").first
   end
 
 end
