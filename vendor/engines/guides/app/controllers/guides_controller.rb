@@ -26,7 +26,7 @@ class GuidesController < ApplicationController
   end
 
   def show
-    @guide = Guide.find(params[:id])
+    @guide = Guide.find(params[:id], :scope => params[:branch] || Guide::BRANCH)
     @guide_body = generate_guide(::YAML::load(@guide.guide))
 
     # you can use meta fields from your model instead (e.g. browser_title)
