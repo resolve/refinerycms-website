@@ -26,7 +26,7 @@ class GuidesController < ApplicationController
   end
 
   def show
-    slug = Slug.where(:name => params[:id]).where(:scope => params[:branch] || Guide::BRANCH)
+    slug = Slug.where(:name => params[:id]).where(:scope => params[:branch] || Guide::BRANCH).first
     @guide = slug ? slug.sluggable : Guide.find(params[:id])
     @guide_body = generate_guide(::YAML::load(@guide.guide))
 
