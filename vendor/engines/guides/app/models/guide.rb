@@ -9,8 +9,9 @@ class Guide < ActiveRecord::Base
   # validates_uniqueness_of :title
 
   def self.categories(branch)
+    branch ||= Guide::BRANCH
     if (categories = RefinerySetting.get(:"categories_for_#{branch.to_s.underscore}", :scoping => :guides)).blank?
-      refresh_github!(branch)
+      refresh_github!(:branch => branch)
       categories = RefinerySetting.get(:"categories_for_#{branch.to_s.underscore}", :scoping => :guides)
     end
 
