@@ -9,9 +9,9 @@ class Guide < ActiveRecord::Base
   # validates_uniqueness_of :title
 
   def self.categories(branch)
-    if (categories = RefinerySetting.get(:"categories_for_#{branch}", :scoping => :guides)).blank?
-      self.refresh_github!
-      categories = RefinerySetting.get(:"categories_for_#{branch}", :scoping => :guides)
+    if (categories = RefinerySetting.get(:"categories_for_#{branch.to_s.underscore}", :scoping => :guides)).blank?
+      refresh_github!(branch)
+      categories = RefinerySetting.get(:"categories_for_#{branch.to_s.underscore}", :scoping => :guides)
     end
 
     categories
@@ -56,7 +56,7 @@ class Guide < ActiveRecord::Base
 
     # All save, or none save.
     ActiveRecord::Base.transaction do
-      RefinerySetting.set(:"categories_for_#{options[:branch]}", {
+      RefinerySetting.set(:"categories_for_#{options[:branch].to_s.underscore}", {
         :value => blobs.map{|b| b['name'].split('/')[-2]}.uniq,
         :scoping => :guides
       })
