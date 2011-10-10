@@ -8,10 +8,10 @@ class Guide < ActiveRecord::Base
   # Guides can have the same title on different branches.
   # validates_uniqueness_of :title
 
-  def self.categories
-    if (categories = RefinerySetting.get(:categories, :scoping => :guides)).blank?
+  def self.categories(branch)
+    if (categories = RefinerySetting.get(:"categories_for_#{branch}", :scoping => :guides)).blank?
       self.refresh_github!
-      categories = RefinerySetting.get(:categories, :scoping => :guides)
+      categories = RefinerySetting.get(:"categories_for_#{branch}", :scoping => :guides)
     end
 
     categories

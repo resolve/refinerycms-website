@@ -19,10 +19,10 @@
 <div id='container'>
   <div class='wrapper'>
     <div id='mainCol'>
-      <% Guide.categories.each do |category_title| %>
+      <% Guide.categories(params[:branch]).each do |category_title| %>
         <h3><%= category_title.to_s.split(/^\d+\ \-\ /).last %></h3>
         <dl>
-        <% Guide.where(:category => category_title).each do |guide| %>
+        <% Guide.where(:category => category_title, :branch => params[:branch]).each do |guide| %>
           <dt>
             <%= link_to guide.title, (guide.branch == Guide::BRANCH ? guide_path(guide) : edge_guide_path(guide)) %>
           </dt>

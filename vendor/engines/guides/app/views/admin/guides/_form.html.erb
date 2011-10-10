@@ -26,7 +26,7 @@
 
   <div class='field'>
     <%= f.label :category -%>
-    <%= f.select :category, Guide.categories -%>
+    <%= f.select :category, Guide.categories(Guide::BRANCH) -%>
   </div>
 
   <%= render :partial => "/shared/admin/form_actions",
