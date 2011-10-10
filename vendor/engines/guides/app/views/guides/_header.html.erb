@@ -12,7 +12,7 @@
             <% Guide.categories(params[:branch])[0..3].each do |category_title| %>
             <dt><%= category_title.to_s.split(/^\d+\ \-\ /).last %></dt>
               <dl>
-                <% Guide.where(:category => category_title, :branch => params[:branch]).each do |guide| %>
+                <% Guide.where(:category => category_title, :branch => params[:branch] || Guide::BRANCH).each do |guide| %>
                 <dd>
                   <%= link_to guide.title, (guide.branch == Guide::BRANCH ? guide_path(guide) : edge_guide_path(guide)) %>
                 </dd>
@@ -24,7 +24,7 @@
             <% Guide.categories(params[:branch])[4..7].each do |category_title| %>
             <dt><%= category_title.to_s.split(/^\d+\ \-\ /).last %></dt>
               <dl>
-                <% Guide.where(:category => category_title, :branch => params[:branch]).each do |guide| %>
+                <% Guide.where(:category => category_title, :branch => params[:branch] || Guide::BRANCH).each do |guide| %>
                 <dd>
                   <%= link_to guide.title, (guide.branch == Guide::BRANCH ? guide_path(guide) : edge_guide_path(guide)) %>
                 </dd>
