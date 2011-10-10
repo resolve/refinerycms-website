@@ -24,7 +24,7 @@
         <dl>
         <% Guide.where(:category => category_title).each do |guide| %>
           <dt>
-            <%= link_to guide.title, guide_url(guide) %>
+            <%= link_to guide.title, (guide.branch == Guide::BRANCH ? guide_path(guide) : edge_guide_path(guide)) %>
           </dt>
           <dd>
             <%= raw textilize(guide.description) %>

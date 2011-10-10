@@ -14,7 +14,7 @@
               <dl>
                 <% Guide.where(:category => category_title).each do |guide| %>
                 <dd>
-                  <%= link_to guide.title, guide_url(guide) %>
+                  <%= link_to guide.title, (guide.branch == Guide::BRANCH ? guide_path(guide) : edge_guide_path(guide)) %>
                 </dd>
                 <% end %>
               </dl>
@@ -26,7 +26,7 @@
               <dl>
                 <% Guide.where(:category => category_title).each do |guide| %>
                 <dd>
-                  <%= link_to guide.title, guide_url(guide) %>
+                  <%= link_to guide.title, (guide.branch == Guide::BRANCH ? guide_path(guide) : edge_guide_path(guide)) %>
                 </dd>
                 <% end %>
               </dl>

@@ -33,7 +33,7 @@
                   } %>
     </li>
     <li>
-      <%= link_to t('.create_new'), new_admin_guide_url,
+      <%= link_to t('.create_new'), new_admin_guide_path,
                    :class => "add_icon" %>
     </li>
   <% if !searching? and Guide.count > 1 %>
