@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def is_guides?
-    request.path =~ /^\/guides.*$/
+    request.path =~ /^\/(edge-)?guides.*$/
   end
 
   def expire_statistics_caches!
