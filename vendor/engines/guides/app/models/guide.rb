@@ -94,7 +94,7 @@ class Guide < ActiveRecord::Base
   end
 
   def url
-    "//refinerycms.com/#{"edge-" if self.branch == 'master'}guides/#{self.to_param}"
+    "http://refinerycms.com/#{"edge-" if self.branch == 'master'}guides/#{self.to_param}"
   end
 
 end
