@@ -6,7 +6,7 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    RedCloth (4.2.7)
+    RedCloth (4.2.9)
     abstract (1.0.0)
     actionmailer (3.0.10)
       actionpack (= 3.0.10)
@@ -245,7 +245,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  RedCloth (= 4.2.7)
+  RedCloth (= 4.2.9)
   httparty
   mysql2 (~> 0.2.7)
   rack-rewrite (~> 1.0.2)
