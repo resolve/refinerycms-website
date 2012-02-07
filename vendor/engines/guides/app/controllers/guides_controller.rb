@@ -36,6 +36,8 @@ class GuidesController < ApplicationController
   end
 
   def hook
+    Rails.root.join('tmp', 'templates').rmtree if Rails.root.join('tmp', 'templates').directory?
+
     if request.post? and params.keys.map(&:to_sym).include?(:payload)
       if (push = JSON.parse(params[:payload])).present? && push['ref'] =~ Regexp.new(Guide::BRANCHES.join("|"))
         if push['commits'].any? {|c| [c['added'], c['modified'], c['removed']].flatten.any? {|m| m =~ /guides/ }}
