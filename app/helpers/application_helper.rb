@@ -42,7 +42,7 @@ module ApplicationHelper
                     :scoping => :statistics
                  })
       rescue
-        downloads = 'unavailable'
+        downloads = 'info is currently unavailable.'
       end
     end
 
