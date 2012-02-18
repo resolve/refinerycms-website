@@ -36,10 +36,14 @@ module ApplicationHelper
 
   def rubygems_downloads
     if (downloads = RefinerySetting.get(:downloads, :scoping => :statistics)).blank?
-      downloads = RefinerySetting.set(:downloads, {
-                  :value => HTTParty.get("http://rubygems.org/api/v1/gems/refinerycms.json")['downloads'],
-                  :scoping => :statistics
-               })
+      begin
+        downloads = RefinerySetting.set(:downloads, {
+                    :value => HTTParty.get("http://rubygems.org/api/v1/gems/refinerycms.json")['downloads'],
+                    :scoping => :statistics
+                 })
+      rescue
+        downloads = 'unavailable'
+      end
     end
 
     downloads
