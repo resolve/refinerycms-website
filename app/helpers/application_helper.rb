@@ -21,10 +21,14 @@ module ApplicationHelper
 
   def latest_version
     if (version = RefinerySetting.get(:version, :scoping => :statistics)).blank?
-      version = RefinerySetting.set(:version, {
-                  :value => HTTParty.get("http://rubygems.org/api/v1/gems/refinerycms.json")['version'],
-                  :scoping => :statistics
-               })
+      begin
+        version = RefinerySetting.set(:version, {
+                    :value => HTTParty.get("http://rubygems.org/api/v1/gems/refinerycms.json")['version'],
+                    :scoping => :statistics
+                 })
+      rescue
+        version = Refinery.version
+      end
     end
 
     version.to_s
