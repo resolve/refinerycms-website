@@ -1,6 +1,6 @@
 RefinerycmsWebsite::Application.routes.draw do
 
-  get '/t/:tag', :to => 'templates#show'
+  get '/t/:major(.:minor)(.:patch)', :to => 'templates#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
