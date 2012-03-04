@@ -20,8 +20,8 @@ class Guide < ActiveRecord::Base
 
   # TODO: Find this out automatically
   REPO = "resolve/refinerycms"
-  BRANCH = "1-0-stable"
-  BRANCHES = %w(1-0-stable master)
+  BRANCH = "2-0-stable"
+  BRANCHES = %w(2-0-stable 1-0-stable master)
 
   def self.refresh_github!(options = {})
     options = {:branch => BRANCH, :repo => REPO}.merge(options)
