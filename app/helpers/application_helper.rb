@@ -53,7 +53,7 @@ module ApplicationHelper
     if (commit = RefinerySetting.get(:commit, :scoping => :statistics)).blank?
       latest_commit = HTTParty.get("http://github.com/api/v2/json/commits/list/resolve/refinerycms/master")['commits'].first
       commit = RefinerySetting.set(:commit, {
-        :value => distance_of_time_in_words(Time.now, latest_commit['committed_date']) + " ago by " + latest_commit['author']['name'],
+        :value => distance_of_time_in_words(Time.now - DateTime.parse(latest_commit['committed_date'])) + " ago by " + latest_commit['author']['name'],
         :scoping => :statistics
       })
     end
