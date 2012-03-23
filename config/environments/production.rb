@@ -36,6 +36,7 @@ RefinerycmsWebsite::Application.configure do
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
   config.action_controller.asset_host = "http://d2prewpsu45gft.cloudfront.net"
+  config.static_cache_control = "public, max-age=3600"
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
