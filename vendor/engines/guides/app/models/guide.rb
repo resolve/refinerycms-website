@@ -25,28 +25,32 @@ class Guide < ActiveRecord::Base
 
   def self.refresh_github!(options = {})
     options = {:branch => BRANCH, :repo => REPO}.merge(options)
-    blobs = HTTParty.get("http://github.com/api/v2/json/blob/full/#{options[:repo]}/#{options[:branch]}")['blobs']
-    blobs.reject!{|b| b['name'] !~ %r{^doc/guides/}}
+    trees = HTTParty.get("https://api.github.com/repos/#{options[:repo]}/git/trees/#{options[:branch]}?recursive=true")['tree']
+    trees.reject!{|b| b['path'] !~ %r{^doc/guides/}}
+    trees.reject!{|b| b['path'] !~ %r{.textile$}}
 
     guides = []
-    blobs.each do |blob|
-      folder_name = blob['name'].to_s.split('/')[-2]
+    trees.each do |blob|
+      name = blob['path']
+      folder_name = name.to_s.split('/')[-2]
 
-      authors = []
-      blob_url = "http://github.com/api/v2/json/commits/list/#{options[:repo]}/#{options[:branch]}/#{blob['name'].to_s.gsub(" ", "%20")}"
-      HTTParty.get(blob_url)['commits'].each do |commit|
-        authors << commit['author']['name']
-      end
-      author = authors.uniq.join(", ")
+      # authors = []
+      # blob_url = "https://api.github.com/repos/#{options[:repo]}/commits/#{options[:branch]}/#{name.to_s.gsub(" ", "%20")}"
+      # HTTParty.get(blob_url)['commits'].each do |commit|
+      #   authors << commit['author']['name']
+      # end
+      # author = authors.uniq.join(", ")
 
-      title = blob['name'].to_s.split('/').last
-      guide = HTTParty.get("http://github.com/api/v2/json/blob/show/#{options[:repo]}/#{blob['sha']}")
-      github_url = "/blob/#{options[:branch]}/#{blob['name'].to_s.gsub(' ', '%20')}"
+      title = name.to_s.split('/').last
+      guide = Base64::decode64(
+        HTTParty.get("https://api.github.com/repos/#{options[:repo]}/git/blobs/#{blob['sha']}")['content']
+      )
+      github_url = "/blob/#{options[:branch]}/#{name.to_s.gsub(' ', '%20')}"
       guides << Guide.new({
         :title => title.split(' - ').last.split('.textile').first,
         :description => (guide.scan(/^(.*)endprologue\./m).flatten.first.split("\n\n")[1..-1].join("\n\n") rescue nil),
         :guide => guide,
-        :author => author,
+#        :author => author,
         :category => folder_name,
         :position => (title.split(' - ').first.to_i rescue Guide.maximum(:position)),
         :github_url => github_url,
@@ -58,14 +62,14 @@ class Guide < ActiveRecord::Base
     # All save, or none save.
     ActiveRecord::Base.transaction do
       RefinerySetting.set(:"categories_for_#{options[:branch].to_s.underscore}", {
-        :value => blobs.map{|b| b['name'].split('/')[-2]}.uniq,
+        :value => trees.map{|b| b['path'].split('/')[-2]}.uniq,
         :scoping => :guides
       })
 
       # Delete all existing guides and their slugs
       guide_ids = Guide.where(:branch => options[:branch]).select('id')
       Guide.delete_all(:branch => options[:branch])
-      Slug.delete_all(:sluggable_type => 'Guide', :sluggable_id => guide_ids)
+      Slug.delete_all(:sluggable_type => 'Guide', :scope => options[:branch])
 
       # Now, save all the guides and return their titles so we can visually see.
       guides.map do |guide|
@@ -91,6 +95,8 @@ class Guide < ActiveRecord::Base
       $stdout.puts "Clearing the homepage due to Github push."
       homepage.delete
     end
+
+    guides
   end
 
   def url
