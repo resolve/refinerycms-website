@@ -42,7 +42,7 @@ class GuidesController < ApplicationController
     if request.post? and params.keys.map(&:to_sym).include?(:payload)
       if (push = JSON.parse(params[:payload])).present? && push['ref'] =~ Regexp.new(Guide::BRANCHES.join("|"))
         if push['commits'].any? {|c| [c['added'], c['modified'], c['removed']].flatten.any? {|m| m =~ /guides/ }}
-          Guide.refresh_github!(:branch => push['ref'])
+          Guide.refresh_github! :branch => push['ref'].to_s.gsub('refs/heads/', '')
 
           render :nothing => true and return
         end
