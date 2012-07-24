@@ -28,7 +28,7 @@ class GuidesController < ApplicationController
   def show
     slug = Slug.where(:name => params[:id]).where(:scope => params[:branch] || Guide::BRANCH).first
     @guide = slug ? slug.sluggable : Guide.find(params[:id])
-    guide_content = @guide.guide =~ /^\-\-\-/ ? ::YAML::load(@guide.guide) : @guide.guide
+    guide_content = @guide.guide.starts_with?('---') ? ::YAML::load(@guide.guide) : @guide.guide
     @guide_body = generate_guide(guide_content)
 
     # you can use meta fields from your model instead (e.g. browser_title)
