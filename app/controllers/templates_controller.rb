@@ -10,7 +10,7 @@ class TemplatesController < ActionController::Metal
       edge_template = template_directory.join('edge.rb')
       unless edge_template.file?
         Net::HTTP.start("raw.github.com", :use_ssl => true) do |http|
-          resp = http.get("/resolve/refinerycms/master/templates/refinery/edge.rb")
+          resp = http.get("/refinery/refinerycms/master/templates/refinery/edge.rb")
           open(edge_template, "wb") do |file|
             file.write(resp.body)
           end
@@ -20,7 +20,7 @@ class TemplatesController < ActionController::Metal
     elsif version.present?
       unless (version_template = template_directory.join("#{version}.rb")).file?
         Net::HTTP.start("raw.github.com", :use_ssl => true) do |http|
-          url = "/resolve/refinerycms/#{version}/templates/refinery/installer.rb"
+          url = "/refinery/refinerycms/#{version}/templates/refinery/installer.rb"
           Rails.logger.info "Querying '#{url}'"
           resp = http.get(url)
           if resp.is_a?(Net::HTTPOK)

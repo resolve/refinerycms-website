@@ -51,7 +51,7 @@ module ApplicationHelper
 
   def latest_update
     if (commit = RefinerySetting.get(:commit, :scoping => :statistics)).blank?
-      latest_commit = HTTParty.get("https://api.github.com/repos/resolve/refinerycms/commits").parsed_response.first["commit"]["committer"]
+      latest_commit = HTTParty.get("https://api.github.com/repos/refinery/refinerycms/commits").parsed_response.first["commit"]["committer"]
       commit = RefinerySetting.set(:commit, {
         :value => distance_of_time_in_words(Time.now.utc - Time.parse(latest_commit["date"]).utc) + " ago by " + latest_commit['name'],
         :scoping => :statistics
@@ -63,7 +63,7 @@ module ApplicationHelper
   def github_watchers
     if (watchers = RefinerySetting.get(:watchers, :scoping => :statistics)).blank?
       watchers = RefinerySetting.set(:watchers, {
-        :value => HTTParty.get("https://api.github.com/repos/resolve/refinerycms").parsed_response['watchers'],
+        :value => HTTParty.get("https://api.github.com/repos/refinery/refinerycms").parsed_response['watchers'],
         :scoping => :statistics
       })
     end

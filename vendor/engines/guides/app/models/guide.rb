@@ -19,7 +19,7 @@ class Guide < ActiveRecord::Base
   end
 
   # TODO: Find this out automatically
-  REPO = "resolve/refinerycms"
+  REPO = "refinery/refinerycms"
   BRANCH = "2-0-stable"
   BRANCHES = %w(2-0-stable 1-0-stable master)
 
