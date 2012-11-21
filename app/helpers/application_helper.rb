@@ -50,25 +50,33 @@ module ApplicationHelper
   end
 
   def latest_update
-    if (commit = RefinerySetting.get(:commit, :scoping => :statistics)).blank?
-      latest_commit = HTTParty.get("https://api.github.com/repos/refinery/refinerycms/commits").parsed_response.first["commit"]["committer"]
-      commit = RefinerySetting.set(:commit, {
-        :value => distance_of_time_in_words(Time.now.utc - Time.parse(latest_commit["date"]).utc) + " ago by " + latest_commit['name'],
-        :scoping => :statistics
-      })
+    begin
+      if (commit = RefinerySetting.get(:commit, :scoping => :statistics)).blank?
+        latest_commit = HTTParty.get("https://api.github.com/repos/refinery/refinerycms/commits").parsed_response.first["commit"]["committer"]
+        commit = RefinerySetting.set(:commit, {
+          :value => distance_of_time_in_words(Time.now.utc - Time.parse(latest_commit["date"]).utc) + " ago by " + latest_commit['name'],
+          :scoping => :statistics
+        })
+      end
+      commit
+    rescue Exception
+      ""
     end
-    commit
   end
 
   def github_watchers
-    if (watchers = RefinerySetting.get(:watchers, :scoping => :statistics)).blank?
-      watchers = RefinerySetting.set(:watchers, {
-        :value => HTTParty.get("https://api.github.com/repos/refinery/refinerycms").parsed_response['watchers'],
-        :scoping => :statistics
-      })
-    end
+    begin
+      if (watchers = RefinerySetting.get(:watchers, :scoping => :statistics)).blank?
+        watchers = RefinerySetting.set(:watchers, {
+          :value => HTTParty.get("https://api.github.com/repos/refinery/refinerycms").parsed_response['watchers'],
+          :scoping => :statistics
+        })
+      end
 
-    watchers
+      watchers
+    rescue Exception
+      ""
+    end
   end
 
 end

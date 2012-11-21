@@ -22,16 +22,20 @@
       <p>
         Total downloads <%= number_with_delimiter(rubygems_downloads) %>
       </p>
-      <hr/>
-      <p>
-        Updated
-        <%= link_to latest_update, "https://github.com/refinery/refinerycms/commits" %>
-      </p>
-      <hr/>
-      <p>
-        <%= link_to "#{number_with_delimiter(github_watchers)} watchers",
-                    "https://github.com/refinery/refinerycms" %> on GitHub
-      </p>
+      <% if (last_updated = latest_update).present? %>
+        <hr/>
+        <p>
+          Updated
+          <%= link_to latest_update, "https://github.com/refinery/refinerycms/commits" %>
+        </p>
+      <% end %>
+      <% if (watchers_count = github_watchers).present? %>
+        <hr/>
+        <p>
+          <%= link_to "#{number_with_delimiter(github_watchers)} watchers",
+                      "https://github.com/refinery/refinerycms" %> on GitHub
+        </p>
+      <% end %>
       <p id='demo'>
         <%= link_to image_tag('try-the-demo-button.png', :alt => "Try the Demo"), "http://demo.refinerycms.com/refinery", :target => "_blank", :id => "demo_button" %>
       </p>
