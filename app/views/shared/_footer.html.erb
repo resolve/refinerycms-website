@@ -1,6 +1,6 @@
 <div id='left_footer_block'>
   <p id='twitter'>
-    <%= link_to "Follow us", "http://twitter.com/refinerycms", :target => "_blank" %> on Twitter
+    <%= link_to "Follow us", "https://twitter.com/refinerycms", :target => "_blank" %> on Twitter
   </p>
 </div>
 <div id='right_footer_block'>
@@ -12,7 +12,8 @@
                  :roots => @menu_pages.roots.reverse
                } %>
   <p>
-    Copyright &copy; <%= Time.now.year %>
-    <%= link_to "Resolve Digital", "http://resolvedigital.com", :title => "Ruby on Rails Refinery CMS Development" %> - Creators of Refinery CMS.
+    Refinery CMS is copyright <%= Time.now.year %>
+    <%= link_to "Resolve Digital", "http://resolvedigital.com", :title => "Ruby on Rails Refinery CMS Development", :target => '_blank' %>, provided under <%= link_to "an MIT license", "https://github.com/refinery/refinerycms/blob/master/license.md#readme", :target => '_blank' %>. <br/>
+    The Refinery CMS Logo is a trademark of <%= link_to "Resolve Digital", "http://resolvedigital.com", :target => '_blank' %>.
   </p>
 </div>
