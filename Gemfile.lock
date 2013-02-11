@@ -1,13 +1,8 @@
-PATH
-  remote: vendor/engines
+GIT
+  remote: git://github.com/rails/rails.git
+  revision: 182d4e37191d0243ed95aea6a7670d4025b6d4b0
+  branch: 3-0-stable
   specs:
-    refinerycms-guides (1.0)
-
-GEM
-  remote: http://rubygems.org/
-  specs:
-    RedCloth (4.2.9)
-    abstract (1.0.0)
     actionmailer (3.0.20)
       actionpack (= 3.0.20)
       mail (~> 2.2.19)
@@ -34,6 +29,31 @@ GEM
       activemodel (= 3.0.20)
       activesupport (= 3.0.20)
     activesupport (3.0.20)
+    rails (3.0.20)
+      actionmailer (= 3.0.20)
+      actionpack (= 3.0.20)
+      activerecord (= 3.0.20)
+      activeresource (= 3.0.20)
+      activesupport (= 3.0.20)
+      bundler (~> 1.0)
+      railties (= 3.0.20)
+    railties (3.0.20)
+      actionpack (= 3.0.20)
+      activesupport (= 3.0.20)
+      rake (>= 0.8.7)
+      rdoc (~> 3.4)
+      thor (~> 0.14.4)
+
+PATH
+  remote: vendor/engines
+  specs:
+    refinerycms-guides (1.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RedCloth (4.2.9)
+    abstract (1.0.0)
     acts-as-taggable-on (2.2.2)
       rails (~> 3.0)
     acts_as_indexed (0.7.7)
@@ -94,7 +114,7 @@ GEM
       multi_json (~> 1.0)
       multi_xml
     i18n (0.5.0)
-    json (1.7.6)
+    json (1.7.7)
     json_pure (1.6.5)
     launchy (2.0.5)
       addressable (~> 2.2.6)
@@ -103,7 +123,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.19)
+    mime-types (1.21)
     multi_json (1.5.0)
     multi_xml (0.5.2)
     mysql2 (0.2.18)
@@ -112,7 +132,7 @@ GEM
     paper_trail (2.6.0)
       rails (~> 3)
     polyglot (0.3.3)
-    rack (1.2.7)
+    rack (1.2.8)
     rack-cache (1.2)
       rack (>= 0.4)
     rack-mount (0.6.14)
@@ -120,22 +140,8 @@ GEM
     rack-rewrite (1.0.2)
     rack-test (0.5.7)
       rack (>= 1.0)
-    rails (3.0.20)
-      actionmailer (= 3.0.20)
-      actionpack (= 3.0.20)
-      activerecord (= 3.0.20)
-      activeresource (= 3.0.20)
-      activesupport (= 3.0.20)
-      bundler (~> 1.0)
-      railties (= 3.0.20)
-    railties (3.0.20)
-      actionpack (= 3.0.20)
-      activesupport (= 3.0.20)
-      rake (>= 0.8.7)
-      rdoc (~> 3.4)
-      thor (~> 0.14.4)
     rake (10.0.3)
-    rdoc (3.12)
+    rdoc (3.12.1)
       json (~> 1.4)
     refinerycms (1.0.10)
       bundler (~> 1.0)
@@ -253,6 +259,7 @@ DEPENDENCIES
   httparty
   mysql2 (~> 0.2.7)
   rack-rewrite (~> 1.0.2)
+  rails!
   refinerycms (~> 1.0.10)
   refinerycms-blog (~> 1.6.2)
   refinerycms-guides!
