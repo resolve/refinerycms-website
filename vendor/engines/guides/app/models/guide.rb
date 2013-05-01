@@ -22,10 +22,12 @@ class Guide < ActiveRecord::Base
   REPO = "refinery/refinerycms"
   BRANCH = "2-0-stable"
   BRANCHES = %w(2-0-stable 1-0-stable master)
+  HEADERS = {:headers => {'User-Agent' => 'HTTParty'}}
 
   def self.refresh_github!(options = {})
     options = {:branch => BRANCH, :repo => REPO}.merge(options)
-    trees = HTTParty.get("https://api.github.com/repos/#{options[:repo]}/git/trees/#{options[:branch]}?recursive=true")['tree']
+    tree_url = "https://api.github.com/repos/#{options[:repo]}/git/trees/#{options[:branch]}?recursive=true"
+    trees = HTTParty.get(tree_url, HEADERS)['tree']
     trees.reject!{|b| b['path'] !~ %r{^doc/guides/}}
     trees.reject!{|b| b['path'] !~ %r{.textile$}}
 
@@ -36,14 +38,15 @@ class Guide < ActiveRecord::Base
 
       # authors = []
       # blob_url = "https://api.github.com/repos/#{options[:repo]}/commits/#{options[:branch]}/#{name.to_s.gsub(" ", "%20")}"
-      # HTTParty.get(blob_url)['commits'].each do |commit|
+      # HTTParty.get(blob_url, HEADERS)['commits'].each do |commit|
       #   authors << commit['author']['name']
       # end
       # author = authors.uniq.join(", ")
 
       title = name.to_s.split('/').last
+      content_url = "https://api.github.com/repos/#{options[:repo]}/git/blobs/#{blob['sha']}"
       guide = Base64::decode64(
-        HTTParty.get("https://api.github.com/repos/#{options[:repo]}/git/blobs/#{blob['sha']}")['content']
+        HTTParty.get(content_url, HEADERS)['content']
       )
       github_url = "/blob/#{options[:branch]}/#{name.to_s.gsub(' ', '%20')}"
       guides << Guide.new({
