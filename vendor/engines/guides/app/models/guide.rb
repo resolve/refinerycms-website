@@ -20,8 +20,8 @@ class Guide < ActiveRecord::Base
 
   # TODO: Find this out automatically
   REPO = "refinery/refinerycms"
-  BRANCH = "2-0-stable"
-  BRANCHES = %w(2-0-stable 1-0-stable master)
+  BRANCH = "2-1-stable"
+  BRANCHES = %w(2-1-stable 2-0-stable 1-0-stable master)
   HEADERS = {:headers => {'User-Agent' => 'HTTParty'}}
 
   def self.refresh_github!(options = {})
