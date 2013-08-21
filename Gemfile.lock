@@ -126,6 +126,7 @@ GEM
     multi_json (1.7.2)
     multi_xml (0.5.3)
     mysql2 (0.2.18)
+    newrelic_rpm (3.6.6.147)
     nokogiri (1.5.7)
     orm_adapter (0.0.7)
     paper_trail (2.7.1)
@@ -260,6 +261,7 @@ DEPENDENCIES
   RedCloth (= 4.2.9)
   httparty
   mysql2 (~> 0.2.7)
+  newrelic_rpm
   rack-rewrite (~> 1.0.2)
   rails!
   refinerycms (~> 1.0.10)
