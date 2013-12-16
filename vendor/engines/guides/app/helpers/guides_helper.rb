@@ -26,7 +26,7 @@ module GuidesHelper
   def with_workaround_for_notextile(body)
     code_blocks = []
 
-    body.gsub!(%r{<(yaml|shell|ruby|erb|html|sql|plain)>(.*?)</\1>}m) do |m|
+    body.to_s.gsub!(%r{<(yaml|shell|ruby|erb|html|sql|plain)>(.*?)</\1>}m) do |m|
       brush = case $1
         when 'ruby', 'sql', 'plain'
           $1
@@ -42,7 +42,7 @@ module GuidesHelper
 <notextile>
 <div class="code_container">
 <pre class="brush: #{brush}; gutter: false; toolbar: false">
-#{ERB::Util.h($2).strip}
+#{ERB::Util.h($2).to_s.strip}
 </pre>
 </div>
 </notextile>
@@ -64,7 +64,7 @@ HTML
     header = $1
 
     header =~ /h2\.(.*)/
-    page_title = "Ruby on Rails Guides: #{$1.strip}"
+    page_title = "Ruby on Rails Guides: #{$1.to_s.strip}"
 
     header = textile(header)
 

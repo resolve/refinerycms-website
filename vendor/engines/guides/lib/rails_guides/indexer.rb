@@ -28,7 +28,7 @@ module GuidesHelper
         s.match?(re)
         if matched = s.matched
           matched =~ re
-          level, idx, title = $1.to_i, $2, $3.strip
+          level, idx, title = $1.to_i, $2, $3.to_s.strip
 
           if level < current_level
             # This is needed. Go figure.
@@ -59,7 +59,7 @@ module GuidesHelper
     end
 
     def title_to_idx(title)
-      idx = title.strip.parameterize.sub(/^\d+/, '')
+      idx = title.to_s.strip.parameterize.sub(/^\d+/, '')
       if warnings && idx.blank?
         puts "BLANK ID: please put an explicit ID for section #{title}, as in h5(#my-id)"
       end

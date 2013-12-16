@@ -46,7 +46,7 @@ class Guide < ActiveRecord::Base
       title = name.to_s.split('/').last
       content_url = "https://api.github.com/repos/#{options[:repo]}/git/blobs/#{blob['sha']}"
       guide = Base64::decode64(
-        HTTParty.get(content_url, HEADERS)['content']
+        HTTParty.get(content_url, HEADERS)['content'].to_s
       )
       github_url = "/blob/#{options[:branch]}/#{name.to_s.gsub(' ', '%20')}"
       guides << Guide.new({

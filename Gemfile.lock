@@ -141,7 +141,7 @@ GEM
     rack-rewrite (1.0.2)
     rack-test (0.5.7)
       rack (>= 1.0)
-    rake (10.0.3)
+    rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
     refinerycms (1.0.11)
@@ -260,7 +260,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth (= 4.2.9)
   httparty
-  mysql2 (~> 0.2.7)
+  mysql2 (< 0.3)
   newrelic_rpm
   rack-rewrite (~> 1.0.2)
   rails!

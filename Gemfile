@@ -1,8 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'sqlite3', :group => :development
-#gem 'mysql'
-gem 'mysql2', '~> 0.2.7'
+gem 'mysql2', '< 0.3'
 
 # REFINERY CMS ================================================================
 # Anything you put in here will be overridden when the app gets updated.
