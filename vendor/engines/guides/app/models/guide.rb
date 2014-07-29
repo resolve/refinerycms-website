@@ -22,7 +22,8 @@ class Guide < ActiveRecord::Base
   REPO = "refinery/refinerycms"
   BRANCH = "2-1-stable"
   BRANCHES = %w(2-1-stable 2-0-stable 1-0-stable master)
-  HEADERS = {:headers => {'User-Agent' => 'HTTParty'}}
+  TOKEN = "897191e0ba196cabe8b667a0b5ef009ac40a7dc9" # a nice read only token
+  HEADERS = {:headers => {'User-Agent' => 'HTTParty', 'Authorization' => "token #{TOKEN}"}}
 
   def self.refresh_github!(options = {})
     options = {:branch => BRANCH, :repo => REPO}.merge(options)
