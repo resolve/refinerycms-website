@@ -1,5 +1,7 @@
 RefinerycmsWebsite::Application.routes.draw do
 
+  get '/engines', :to => redirect('/extensions')
+
   get '/t/:major(.:minor)(.:patch)', :to => 'templates#show'
 
   # The priority is based upon order of creation:
