@@ -1,17 +1,14 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'sqlite3', :group => :development
-gem 'mysql2', '< 0.3'
+ruby '1.9.3'
+
+gem 'pg'
 
 # REFINERY CMS ================================================================
 # Anything you put in here will be overridden when the app gets updated.
 
 gem 'refinerycms', '~> 1.0.10'
 gem 'rails', :github => 'rails/rails', :branch => '3-0-stable'
-
-group :development, :test do
-  gem 'refinerycms-testing', '~> 1.0.10'
-end
 
 # END REFINERY CMS ============================================================
 
