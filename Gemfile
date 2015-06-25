@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'pg'
-gem 'puma'
 gem 'fog'
 
 # REFINERY CMS ================================================================
@@ -33,5 +32,10 @@ gem 'rack-rewrite',             '~> 1.0.2'
 # Add i18n support (optional, you can remove this if you really want to).
 gem 'refinerycms-i18n',         '~> 1.0.0'
 
-gem 'newrelic_rpm'
 # END USER DEFINED
+
+group :production do
+  gem 'rails_12factor'
+  gem 'puma'
+  gem 'newrelic_rpm'
+end

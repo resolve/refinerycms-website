@@ -224,6 +224,11 @@ GEM
     rack-rewrite (1.0.2)
     rack-test (0.5.7)
       rack (>= 1.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     rake (10.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -312,6 +317,7 @@ DEPENDENCIES
   puma
   rack-rewrite (~> 1.0.2)
   rails!
+  rails_12factor
   refinerycms (~> 1.0.10)
   refinerycms-blog (~> 1.6.2)
   refinerycms-guides!
