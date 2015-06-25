@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150625185600) do
+ActiveRecord::Schema.define(:version => 20150625220946) do
 
   create_table "blog_categories", :force => true do |t|
     t.string   "title",       :limit => 510
@@ -200,6 +200,8 @@ ActiveRecord::Schema.define(:version => 20150625185600) do
     t.string   "context",       :limit => 510
     t.datetime "created_at"
   end
+
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
   create_table "tags", :force => true do |t|
     t.string  "name",           :limit => 510
