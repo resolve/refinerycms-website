@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'pg'
+gem 'unicorn'
+gem 'fog'
 
 # REFINERY CMS ================================================================
 # Anything you put in here will be overridden when the app gets updated.
