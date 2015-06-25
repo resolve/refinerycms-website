@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/markevans/dragonfly.git
+  revision: 25d4a4a82c08199aa4fc49961970fb2b72cd41f6
+  ref: 25d4a4a82c
+  specs:
+    dragonfly (0.9.13)
+      multi_json (~> 1.0)
+      rack
+
+GIT
   remote: git://github.com/rails/rails.git
   revision: 857c6ee62c0582273d76e7b21b1eb295359eb837
   branch: 3-0-stable
@@ -70,9 +79,6 @@ GEM
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
-    dragonfly (0.9.15)
-      multi_json (~> 1.0)
-      rack
     erubis (2.6.6)
       abstract (>= 1.0.0)
     excon (0.45.3)
@@ -298,6 +304,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth (= 4.2.9)
+  dragonfly!
   fog
   httparty
   newrelic_rpm

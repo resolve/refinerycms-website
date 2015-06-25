@@ -9,8 +9,9 @@ gem 'fog'
 # REFINERY CMS ================================================================
 # Anything you put in here will be overridden when the app gets updated.
 
-gem 'refinerycms', '~> 1.0.10'
 gem 'rails', :github => 'rails/rails', :branch => '3-0-stable'
+gem 'dragonfly', github: 'markevans/dragonfly', ref: '25d4a4a82c'
+gem 'refinerycms', '~> 1.0.10'
 
 # END REFINERY CMS ============================================================
 
