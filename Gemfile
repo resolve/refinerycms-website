@@ -1,17 +1,16 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'sqlite3', :group => :development
-gem 'mysql2', '< 0.3'
+ruby '1.9.3'
+
+gem 'pg'
+gem 'fog'
 
 # REFINERY CMS ================================================================
 # Anything you put in here will be overridden when the app gets updated.
 
-gem 'refinerycms', '~> 1.0.10'
 gem 'rails', :github => 'rails/rails', :branch => '3-0-stable'
-
-group :development, :test do
-  gem 'refinerycms-testing', '~> 1.0.10'
-end
+gem 'dragonfly', github: 'markevans/dragonfly', ref: '25d4a4a82c'
+gem 'refinerycms', '~> 1.0.10'
 
 # END REFINERY CMS ============================================================
 
@@ -33,6 +32,10 @@ gem 'rack-rewrite',             '~> 1.0.2'
 # Add i18n support (optional, you can remove this if you really want to).
 gem 'refinerycms-i18n',         '~> 1.0.0'
 
-
-gem 'newrelic_rpm'
 # END USER DEFINED
+
+group :production do
+  gem 'rails_12factor'
+  gem 'puma'
+  gem 'newrelic_rpm'
+end

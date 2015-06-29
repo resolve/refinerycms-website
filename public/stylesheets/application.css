@@ -33,12 +33,12 @@ nav#menu {
   margin: 0px auto;
   height: 150px;
   position: relative;
-  background: url('/images/menu-shadow.png') no-repeat 0px 33px #404040;
+  background: url('http://d2prewpsu45gft.cloudfront.net/images/menu-shadow.png') no-repeat 0px 33px #404040;
   border-bottom: 1px solid #1e1e1e;
 }
 
 #page_container > header #logo a {
-  background: url('/images/refinery-cms-logo.png') no-repeat;
+  background: url('http://d2prewpsu45gft.cloudfront.net/images/refinery-cms-logo.png') no-repeat;
   width: 169px;
   height: 49px;
   text-indent: -9000em;
@@ -105,7 +105,7 @@ nav#menu, #site_bar_content {
 
 #page_container > footer {
   height: 207px;
-  background: url('/images/footer-gradient.png') repeat-x;
+  background: url('http://d2prewpsu45gft.cloudfront.net/images/footer-gradient.png') repeat-x;
   border-top: 1px solid #535353;
   width: 880px;
   margin: 0px auto;
@@ -121,7 +121,7 @@ nav#menu, #site_bar_content {
 }
 
 #page_container > footer #twitter {
-  background: url('/images/twitter-icon.png') no-repeat 0px 1px;
+  background: url('http://d2prewpsu45gft.cloudfront.net/images/twitter-icon.png') no-repeat 0px 1px;
   padding-left: 22px;
 }
 
@@ -137,7 +137,7 @@ nav#footer_menu ul {
 
 nav#footer_menu ul li {
   float: right;
-  background: url('/images/footer-menu-bullet.png') no-repeat left;
+  background: url('http://d2prewpsu45gft.cloudfront.net/images/footer-menu-bullet.png') no-repeat left;
   margin-right: 8px;
   padding-left: 8px;
 }
@@ -202,7 +202,7 @@ ul, ul li {
 #body_content ul li {
   list-style: none;
   padding-left: 50px;
-  background: url('/images/bullet.png') no-repeat 0px 2px;
+  background: url('http://d2prewpsu45gft.cloudfront.net/images/bullet.png') no-repeat 0px 2px;
   margin-bottom: 15px;
   min-height: 30px;
 }
@@ -302,7 +302,7 @@ blockquote {
 	margin: 0px;
 	min-height: 50px;
 	margin-bottom: 20px;
-	background: #555 url('/images/quote.png') no-repeat;
+	background: #555 url('http://d2prewpsu45gft.cloudfront.net/images/quote.png') no-repeat;
 	background-position: 15px 15px;
 	padding: 16px 40px 15px 75px;
 	-webkit-border-radius: 8px;

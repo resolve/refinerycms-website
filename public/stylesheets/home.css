@@ -7,7 +7,7 @@ section#feature_block {
   width: 960px;
   margin-left: -40px;
   height: 463px;
-  background: url('/images/feature-background.png') no-repeat;
+  background: url('http://d2prewpsu45gft.cloudfront.net/images/feature-background.png') no-repeat;
   position: relative;
 }
 
@@ -79,7 +79,7 @@ section#feature_block {
 }
 
 #version .digit {
-  background: url('/images/digit-background.png') no-repeat;
+  background: url('http://d2prewpsu45gft.cloudfront.net/images/digit-background.png') no-repeat;
   width: 58px;
 
 }
