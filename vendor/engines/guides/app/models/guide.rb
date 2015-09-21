@@ -20,7 +20,7 @@ class Guide < ActiveRecord::Base
 
   # TODO: Find this out automatically
   REPO = "refinery/refinerycms"
-  BRANCH = "2-1-stable"
+  BRANCH = "master"
   BRANCHES = %w(2-1-stable 2-0-stable 1-0-stable master)
   TOKEN = "897191e0ba196cabe8b667a0b5ef009ac40a7dc9" # a nice read only token
   HEADERS = {:headers => {'User-Agent' => 'HTTParty', 'Authorization' => "token #{TOKEN}"}}
