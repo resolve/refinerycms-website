@@ -39,3 +39,7 @@ group :production do
   gem 'puma'
   gem 'newrelic_rpm'
 end
+
+group :development do
+  gem 'pry'
+end
