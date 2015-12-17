@@ -18,6 +18,9 @@ class TemplatesController < ActionController::Metal
       end
       render :file => edge_template, :content_type => 'text/plain', :layout => nil
     elsif version.present?
+      # There is a problem with the 3.0.0 version template.
+      # See: https://github.com/refinery/refinerycms/issues/3079
+      version = "master" if version == "3.0.0"
       unless (version_template = template_directory.join("#{version}.rb")).file?
         Net::HTTP.start("raw.githubusercontent.com", :use_ssl => true) do |http|
           url = "/refinery/refinerycms/#{version}/templates/refinery/installer.rb"
