@@ -66,7 +66,7 @@ HTML
     header =~ /h2\.(.*)/
     page_title = "Ruby on Rails Guides: #{$1.to_s.strip}"
 
-    header = textile(header)
+    header = textile(header.to_s)
 
     view.content_for(:page_title) { page_title.html_safe }
     view.content_for(:header_section) { header.html_safe }
